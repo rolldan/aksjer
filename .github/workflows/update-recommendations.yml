@@ -1,0 +1,63 @@
+name: Oppdater Megleranbefalinger & Publiser GitHub Pages
+
+on:
+  schedule:
+    # Kjører kl. 07:30, 11:30 og 15:45 UTC (08:30, 12:30 og 16:45 CET) mandag–fredag
+    - cron: "30 7 * * 1-5"
+    - cron: "30 11 * * 1-5"
+    - cron: "45 15 * * 1-5"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages-and-recommendations"
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Sjekk ut repo
+        uses: actions/checkout@v4
+
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Hent siste megleranbefalinger og finansnyheter
+        run: python3 scripts/fetch_recommendations.py
+
+      - name: Commit og push oppdatert recommendations.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet data/recommendations.json; then
+            git add data/recommendations.json
+            git commit -m "chore(data): oppdater megleranbefalinger og nyhetsstrøm [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "Ingen nye endringer i data/recommendations.json"
+          fi
+
+      - name: Konfigurer GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Last opp nettsted-artefakt
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Publiser til GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

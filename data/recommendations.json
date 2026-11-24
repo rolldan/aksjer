@@ -1,0 +1,2091 @@
+{
+  "metadata": {
+    "updated_at": "2026-11-24T11:03:00+01:00",
+    "timezone": "Europe/Oslo (CET)",
+    "portfolio_value_nok": 344223.4,
+    "cash_nok": 33.15,
+    "total_value_nok": 344256.55,
+    "cost_basis_nok": 378828.17,
+    "unrealized_pnl_nok": -34604.77,
+    "unrealized_pnl_pct": -9.13,
+    "realized_pnl_nok": 144493.32,
+    "rules": {
+      "max_single_stock_pct": 15.0,
+      "max_sector_pct": 30.0,
+      "require_profitability": true
+    },
+    "brokers": [
+      "Pareto Securities",
+      "DNB Carnegie",
+      "ABG Sundal Collier",
+      "Arctic Securities",
+      "SB1 Markets",
+      "SEB",
+      "Fearnley Securities",
+      "Clarksons Securities",
+      "Nordea",
+      "Danske Bank"
+    ],
+    "last_rss_check": "2026-11-24T17:42:50+01:00"
+  },
+  "model_portfolios": [
+    {
+      "broker": "Pareto Securities",
+      "name": "Månedsportefølje november 2026",
+      "published": "2026-11-02",
+      "tickers": [
+        "AKRBP.OL",
+        "BAKKA.OL",
+        "CMBTO.OL",
+        "DNB.OL",
+        "ENDUR.OL",
+        "KMAR.OL",
+        "KOG.OL",
+        "LINK.OL",
+        "ODL.OL",
+        "VEND.OL",
+        "SCATC.OL"
+      ],
+      "changes_in": [
+        "KOG.OL",
+        "VEND.OL"
+      ],
+      "changes_out": [
+        "ENVIP.OL",
+        "NOD.OL"
+      ]
+    },
+    {
+      "broker": "DNB Carnegie",
+      "name": "Paul Harpers ukesportefølje (uke 48)",
+      "published": "2026-11-23",
+      "tickers": [
+        "SALM.OL",
+        "EQNR.OL",
+        "KOG.OL",
+        "NOD.OL",
+        "KIT.OL",
+        "MOWI.OL",
+        "B2I.OL",
+        "AKRBP.OL",
+        "ELK.OL"
+      ],
+      "changes_in": [
+        "KIT.OL"
+      ],
+      "changes_out": [
+        "DOFG.OL"
+      ]
+    }
+  ],
+  "sectors": [
+    {
+      "name": "Samlet Industri (inkl. Forsvar og Miljø/Kompositt)",
+      "value_nok": 111735.75,
+      "weight_pct": 32.46,
+      "post_rebalance_pct": 21.41,
+      "status": "BRUDD (> 30 %)"
+    },
+    {
+      "name": "Teknologi (Halvledere og Medieteknologi)",
+      "value_nok": 56276.1,
+      "weight_pct": 16.35,
+      "post_rebalance_pct": 16.35,
+      "status": "Innenfor (< 30 %)"
+    },
+    {
+      "name": "Telekom",
+      "value_nok": 48581.5,
+      "weight_pct": 14.11,
+      "post_rebalance_pct": 14.11,
+      "status": "Innenfor (< 30 %)"
+    },
+    {
+      "name": "Sjømat",
+      "value_nok": 47611.4,
+      "weight_pct": 13.83,
+      "post_rebalance_pct": 13.83,
+      "status": "Innenfor (< 30 %)"
+    },
+    {
+      "name": "Energi, Offshore og Vindservice",
+      "value_nok": 37874.12,
+      "weight_pct": 11.0,
+      "post_rebalance_pct": 10.22,
+      "status": "Innenfor (< 30 %)"
+    },
+    {
+      "name": "Helse og Medtech",
+      "value_nok": 29163.14,
+      "weight_pct": 8.47,
+      "post_rebalance_pct": 13.86,
+      "status": "Innenfor (< 30 %)"
+    },
+    {
+      "name": "Konsum / Detaljhandel",
+      "value_nok": 12981.38,
+      "weight_pct": 3.77,
+      "post_rebalance_pct": 5.86,
+      "status": "Innenfor (< 30 %)"
+    },
+    {
+      "name": "Finans / Bank / Investeringsselskaper",
+      "value_nok": 0.0,
+      "weight_pct": 0.0,
+      "post_rebalance_pct": 4.29,
+      "status": "Undervektet (0 %)"
+    }
+  ],
+  "rebalancing_plan": [
+    {
+      "step": 1,
+      "action": "TRIM / SELG",
+      "ticker": "KOG.OL",
+      "name": "Kongsberg Gruppen ASA",
+      "shares_delta": -81,
+      "shares_after": 134,
+      "price": 334.1,
+      "currency": "NOK",
+      "amount_nok": 27062,
+      "weight_before_pct": 20.87,
+      "weight_after_pct": 13.01,
+      "rationale": "Tar gevinst og eliminerer brudd på 15 %- og 30 %-reglene; beholder 134 aksjer mot kursmål 400–554 NOK."
+    },
+    {
+      "step": 2,
+      "action": "SELG",
+      "ticker": "ENVIP.OL",
+      "name": "Envipco Holding N.V.",
+      "shares_delta": -320,
+      "shares_after": 0,
+      "price": 34.3,
+      "currency": "NOK",
+      "amount_nok": 10976,
+      "weight_before_pct": 3.19,
+      "weight_after_pct": 0.0,
+      "rationale": "Brudd på kvalitetskrav: negativ EBITDA (-4,4 MEUR YTD 2026), 30 MEUR rettet emisjon 17.11 og tatt ut av Paretos november-portefølje."
+    },
+    {
+      "step": 3,
+      "action": "SELG",
+      "ticker": "QEC.OL",
+      "name": "Questerre Energy Corp",
+      "shares_delta": -1400,
+      "shares_after": 0,
+      "price": 1.85,
+      "currency": "NOK",
+      "amount_nok": 2590,
+      "weight_before_pct": 0.75,
+      "weight_after_pct": 0.0,
+      "rationale": "Binær politisk risiko og -27,6 MCAD nettotap i Q3; utenfor kvalitetsuniverset."
+    },
+    {
+      "step": 4,
+      "action": "SELG / SLETT",
+      "ticker": "PLCS",
+      "name": "Polarcus",
+      "shares_delta": -1006,
+      "shares_after": 0,
+      "price": 0.0861,
+      "currency": "NOK",
+      "amount_nok": 87,
+      "weight_before_pct": 0.03,
+      "weight_after_pct": 0.0,
+      "rationale": "Avviklet selskap – realiserer -5 370 NOK i skattemessig tapsfradrag."
+    },
+    {
+      "step": 5,
+      "action": "KJØP (ØK)",
+      "ticker": "NOVO-B.CO",
+      "name": "Novo Nordisk A/S",
+      "shares_delta": 48,
+      "shares_after": 98,
+      "price": 268.8,
+      "currency": "DKK",
+      "amount_nok": -18549,
+      "weight_before_pct": 5.61,
+      "weight_after_pct": 11.0,
+      "rationale": "Kjøp hos SEB (440 DKK), DNB Carnegie (400 DKK), Nordea (390 DKK), SB1M/Danske (345 DKK). >40 % EBIT-margin til P/E ~10,5x."
+    },
+    {
+      "step": 6,
+      "action": "KJØP (ØK)",
+      "ticker": "SYNSAM.ST",
+      "name": "Synsam AB",
+      "shares_delta": 125,
+      "shares_after": 350,
+      "price": 60.3,
+      "currency": "SEK",
+      "amount_nok": -7212,
+      "weight_before_pct": 3.77,
+      "weight_after_pct": 5.86,
+      "rationale": "Kjøp hos DNB Carnegie (økt til 87 SEK 13.11.2026) og Danske Bank (85 SEK). P/E ~14x 2027e."
+    },
+    {
+      "step": 7,
+      "action": "KJØP (NY)",
+      "ticker": "DNB.OL",
+      "name": "DNB Bank ASA (alt. INVE-B.ST)",
+      "shares_delta": 45,
+      "shares_after": 45,
+      "price": 328.3,
+      "currency": "NOK",
+      "amount_nok": -14774,
+      "weight_before_pct": 0.0,
+      "weight_after_pct": 4.29,
+      "rationale": "Tetter 0 %-hullet i Finans. Kjøp hos Pareto (360 NOK, i månedsporteføljen), ABG (352 NOK), SB1M (350 NOK), Arctic (345 NOK) og Nordea (340 NOK)."
+    }
+  ],
+  "stocks": [
+    {
+      "ticker": "KOG.OL",
+      "name": "Kongsberg Gruppen ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Industri og Forsvar",
+      "in_portfolio": true,
+      "shares": 215,
+      "gav": 294.33,
+      "price": 334.1,
+      "value_nok": 71831.5,
+      "weight_pct": 20.87,
+      "rule_status": "BRUDD (> 15 %)",
+      "portfolio_action": "REDUSER (Trim til ~13 %)",
+      "portfolio_rationale": "Sterk kjøpskonsensus etter Q3 (+50 % inntektsvekst), men 20,87 % vekt bryter 15 %-regelen og driver Industri til 32,46 %. Selg 81 aksjer, behold 134.",
+      "recommendations": [
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 554.0,
+          "upside_pct": 65.8,
+          "date": "2026-10-30",
+          "source": "Finansavisen / TDN Direkt & Pareto Research (i november-porteføljen)"
+        },
+        {
+          "broker": "Danske Bank",
+          "rating": "KJØP",
+          "target": 500.0,
+          "upside_pct": 49.7,
+          "date": "2026-09-24",
+          "source": "Bloomberg / MarketScreener (oppjustert fra 490 NOK)"
+        },
+        {
+          "broker": "SB1 Markets",
+          "rating": "KJØP",
+          "target": 425.0,
+          "upside_pct": 27.2,
+          "date": "2026-10-30",
+          "source": "Finansavisen / TDN Direkt (oppjustert etter Q3)"
+        },
+        {
+          "broker": "Nordea",
+          "rating": "KJØP",
+          "target": 425.0,
+          "upside_pct": 27.2,
+          "date": "2026-10-30",
+          "source": "Finwire / MarketScreener (oppjustert fra 400 NOK)"
+        },
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 420.0,
+          "upside_pct": 25.7,
+          "date": "2026-10-30",
+          "source": "Finwire / DNB Nyheter (i ukesporteføljen uke 48)"
+        },
+        {
+          "broker": "SEB",
+          "rating": "KJØP",
+          "target": 420.0,
+          "upside_pct": 25.7,
+          "date": "2026-10-30",
+          "source": "Finwire / MarketScreener (oppjustert fra 380 NOK)"
+        },
+        {
+          "broker": "Arctic Securities",
+          "rating": "KJØP",
+          "target": 400.0,
+          "upside_pct": 19.7,
+          "date": "2026-10-30",
+          "source": "Finansavisen / TDN Direkt (gjentar Kjøp etter Q3)"
+        }
+      ]
+    },
+    {
+      "ticker": "NOD.OL",
+      "name": "Nordic Semiconductor ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Teknologi",
+      "in_portfolio": true,
+      "shares": 282,
+      "gav": 172.54,
+      "price": 172.8,
+      "value_nok": 48729.6,
+      "weight_pct": 14.16,
+      "rule_status": "Nær taket (12–15 %)",
+      "portfolio_action": "HOLD",
+      "portfolio_rationale": "Bred kjøpskonsensus (210–250 NOK), men med 14,16 % vekt er posisjonen fullt vektet opp mot 15 %-grensen.",
+      "recommendations": [
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 250.0,
+          "upside_pct": 44.7,
+          "date": "2026-10-22",
+          "source": "DNB Nyheter / Paul Harpers ukesportefølje (uke 48)"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "KJØP",
+          "target": 250.0,
+          "upside_pct": 44.7,
+          "date": "2026-10-07",
+          "source": "Finansavisen / TDN Direkt (55 % BLE design-win andel)"
+        },
+        {
+          "broker": "SB1 Markets",
+          "rating": "KJØP",
+          "target": 225.0,
+          "upside_pct": 30.2,
+          "date": "2026-10-22",
+          "source": "Finansavisen (Petter Kongslie etter Q3)"
+        },
+        {
+          "broker": "Arctic Securities",
+          "rating": "KJØP",
+          "target": 220.0,
+          "upside_pct": 27.3,
+          "date": "2026-04-29",
+          "source": "Finansavisen / TDN Direkt"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 215.0,
+          "upside_pct": 24.4,
+          "date": "2026-10-22",
+          "source": "Pareto Research History (tatt ut av månedsporteføljen 02.11)"
+        },
+        {
+          "broker": "SEB",
+          "rating": "KJØP",
+          "target": 210.0,
+          "upside_pct": 21.5,
+          "date": "2026-10-23",
+          "source": "Finansavisen / TDN Direkt (oppgradert fra Hold til Kjøp)"
+        }
+      ]
+    },
+    {
+      "ticker": "TEL.OL",
+      "name": "Telenor ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Telekom",
+      "in_portfolio": true,
+      "shares": 365,
+      "gav": 137.73,
+      "price": 133.1,
+      "value_nok": 48581.5,
+      "weight_pct": 14.11,
+      "rule_status": "Nær taket (12–15 %)",
+      "portfolio_action": "HOLD",
+      "portfolio_rationale": "Defensiv utbyttebærebjelke (~7,5 % yield) med 1,2x gjeldsgrad. Med 14,11 % vekt er posten fullt vektet.",
+      "recommendations": [
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 166.0,
+          "upside_pct": 24.7,
+          "date": "2026-10-29",
+          "source": "Finansavisen / TDN Direkt (hevet fra 164 NOK etter Q3)"
+        },
+        {
+          "broker": "SEB",
+          "rating": "KJØP",
+          "target": 165.0,
+          "upside_pct": 24.0,
+          "date": "2026-10-06",
+          "source": "Finansavisen / TDN Direkt"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 150.0,
+          "upside_pct": 12.7,
+          "date": "2026-10-29",
+          "source": "Finansavisen / TDN Direkt & Pareto Research"
+        },
+        {
+          "broker": "Nordea",
+          "rating": "KJØP",
+          "target": 148.0,
+          "upside_pct": 11.2,
+          "date": "2026-10-19",
+          "source": "Finwire / Placera"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "HOLD",
+          "target": 135.0,
+          "upside_pct": 1.4,
+          "date": "2026-10-29",
+          "source": "Finansavisen / TDN Direkt (lavere Lyse-roaming 2027–28)"
+        }
+      ]
+    },
+    {
+      "ticker": "LSG.OL",
+      "name": "Lerøy Seafood Group ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Sjømat",
+      "in_portfolio": true,
+      "shares": 664,
+      "gav": 47.71,
+      "price": 44.0,
+      "value_nok": 29216.0,
+      "weight_pct": 8.49,
+      "rule_status": "Innenfor (< 15 %)",
+      "portfolio_action": "HOLD",
+      "portfolio_rationale": "90 % EBITDA-vekst i Q3 2026 og bedre biologi. Samlet sjømat er 13,83 %, så 8,49 % vekt holdes uendret.",
+      "recommendations": [
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "KJØP",
+          "target": 56.0,
+          "upside_pct": 27.3,
+          "date": "2026-10-30",
+          "source": "Finansavisen / TDN Direkt (sektorrapport sjømat)"
+        },
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 55.0,
+          "upside_pct": 25.0,
+          "date": "2026-11-09",
+          "source": "DNB Nyheter (EPS 5–19 % over konsensus 2027–28)"
+        },
+        {
+          "broker": "Fearnley Securities",
+          "rating": "KJØP",
+          "target": 52.0,
+          "upside_pct": 18.2,
+          "date": "2026-11-11",
+          "source": "Finansavisen / TDN Direkt (hevet fra 49 NOK etter Q3)"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "HOLD",
+          "target": 46.0,
+          "upside_pct": 4.5,
+          "date": "2026-11-11",
+          "source": "Finansavisen & Pareto Research (nedgradert fra Kjøp)"
+        },
+        {
+          "broker": "SEB",
+          "rating": "HOLD",
+          "target": 45.0,
+          "upside_pct": 2.3,
+          "date": "2026-11-18",
+          "source": "Finansavisen (foretrekker SalMar og Mowi)"
+        }
+      ]
+    },
+    {
+      "ticker": "CDLR.OL",
+      "name": "Cadeler A/S",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Energi og Offshore",
+      "in_portfolio": true,
+      "shares": 440,
+      "gav": 52.46,
+      "price": 58.05,
+      "value_nok": 25542.0,
+      "weight_pct": 7.42,
+      "rule_status": "Innenfor (< 15 %)",
+      "portfolio_action": "HOLD",
+      "portfolio_rationale": "Rekordordrebok på 2,42 mrd. EUR og Forward P/E ~5,9x. Vekt på 7,42 % er passe under flåteutbyggingen.",
+      "recommendations": [
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 80.0,
+          "upside_pct": 37.8,
+          "date": "2026-09-22",
+          "source": "Finansavisen / Bloomberg (etter Menck-oppkjøp)"
+        },
+        {
+          "broker": "Danske Bank",
+          "rating": "KJØP",
+          "target": 72.0,
+          "upside_pct": 24.0,
+          "date": "2026-09-22",
+          "source": "Finansavisen / Bloomberg"
+        },
+        {
+          "broker": "SB1 Markets",
+          "rating": "KJØP",
+          "target": 70.0,
+          "upside_pct": 20.6,
+          "date": "2026-09-22",
+          "source": "Finansavisen / Bloomberg"
+        },
+        {
+          "broker": "Clarksons Securities",
+          "rating": "KJØP",
+          "target": 69.0,
+          "upside_pct": 18.9,
+          "date": "2026-09-20",
+          "source": "Finansavisen"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "KJØP",
+          "target": 68.0,
+          "upside_pct": 17.1,
+          "date": "2026-09-20",
+          "source": "Finansavisen"
+        },
+        {
+          "broker": "SEB",
+          "rating": "HOLD",
+          "target": 61.0,
+          "upside_pct": 5.1,
+          "date": "2026-09-22",
+          "source": "Finansavisen"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "HOLD",
+          "target": 55.0,
+          "upside_pct": -5.3,
+          "date": "2026-08-26",
+          "source": "Pareto Research History"
+        }
+      ]
+    },
+    {
+      "ticker": "NOVO-B.CO",
+      "name": "Novo Nordisk A/S",
+      "exchange": "CSE",
+      "currency": "DKK",
+      "sector": "Helse og Medtech",
+      "in_portfolio": true,
+      "shares": 50,
+      "gav": 281.88,
+      "price": 268.8,
+      "value_nok": 19313.28,
+      "weight_pct": 5.61,
+      "rule_status": "Innenfor (< 15 %)",
+      "portfolio_action": "KJØP (ØK til ~11 %)",
+      "portfolio_rationale": "Handles til P/E ~10,5x med >40 % EBIT-margin og sterk støtte fra 5 av 6 meglerhus. Øk med ~18 500 NOK (+48 aksjer).",
+      "recommendations": [
+        {
+          "broker": "SEB",
+          "rating": "KJØP",
+          "target": 440.0,
+          "upside_pct": 63.7,
+          "date": "2026-11-20",
+          "source": "Smart Investering / MarketScreener"
+        },
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 400.0,
+          "upside_pct": 48.8,
+          "date": "2026-09-25",
+          "source": "Euroinvestor / TargetWatch (gjentar Kjøp etter CMD)"
+        },
+        {
+          "broker": "Nordea",
+          "rating": "KJØP",
+          "target": 390.0,
+          "upside_pct": 45.1,
+          "date": "2026-11-05",
+          "source": "TargetWatch (hevet fra 380 DKK etter Q3)"
+        },
+        {
+          "broker": "SB1 Markets",
+          "rating": "KJØP",
+          "target": 345.0,
+          "upside_pct": 28.3,
+          "date": "2026-11-06",
+          "source": "TargetWatch (hevet fra 335 DKK etter Q3)"
+        },
+        {
+          "broker": "Danske Bank",
+          "rating": "KJØP",
+          "target": 345.0,
+          "upside_pct": 28.3,
+          "date": "2026-10-07",
+          "source": "TargetWatch / MarketScreener"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "SELG",
+          "target": 250.0,
+          "upside_pct": -7.0,
+          "date": "2026-11-05",
+          "source": "Unge Investorer / Finwire (hevet fra 230 DKK)"
+        }
+      ]
+    },
+    {
+      "ticker": "BAKKA.OL",
+      "name": "P/F Bakkafrost",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Sjømat",
+      "in_portfolio": true,
+      "shares": 43,
+      "gav": 464.36,
+      "price": 427.8,
+      "value_nok": 18395.4,
+      "weight_pct": 5.34,
+      "rule_status": "Innenfor (< 15 %)",
+      "portfolio_action": "HOLD",
+      "portfolio_rationale": "Sterk biologi på Færøyene og med i Paretos november-portefølje. 5,34 % vekt komplementerer Lerøy godt.",
+      "recommendations": [
+        {
+          "broker": "Fearnley Securities",
+          "rating": "KJØP",
+          "target": 510.0,
+          "upside_pct": 19.2,
+          "date": "2026-11-04",
+          "source": "Nordnet / Bloomberg"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "KJØP",
+          "target": 505.0,
+          "upside_pct": 18.0,
+          "date": "2026-11-03",
+          "source": "Finansavisen / TDN Direkt (oppgradert til Kjøp)"
+        },
+        {
+          "broker": "Arctic Securities",
+          "rating": "KJØP",
+          "target": 500.0,
+          "upside_pct": 16.9,
+          "date": "2026-11-03",
+          "source": "Finansavisen / TDN Direkt"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 490.0,
+          "upside_pct": 14.5,
+          "date": "2026-11-03",
+          "source": "Pareto Research (i november-porteføljen)"
+        },
+        {
+          "broker": "SEB",
+          "rating": "HOLD",
+          "target": 475.0,
+          "upside_pct": 11.0,
+          "date": "2026-11-03",
+          "source": "Nordnet / Finansavisen"
+        },
+        {
+          "broker": "DNB Carnegie",
+          "rating": "HOLD",
+          "target": 430.0,
+          "upside_pct": 0.5,
+          "date": "2026-11-03",
+          "source": "Finansavisen / TDN Direkt (nedgradert grunnet Skottland)"
+        }
+      ]
+    },
+    {
+      "ticker": "SYNSAM.ST",
+      "name": "Synsam AB",
+      "exchange": "SSE",
+      "currency": "SEK",
+      "sector": "Konsum",
+      "in_portfolio": true,
+      "shares": 225,
+      "gav": 60.22,
+      "price": 60.3,
+      "value_nok": 12981.38,
+      "weight_pct": 3.77,
+      "rule_status": "Innenfor (< 15 %)",
+      "portfolio_action": "KJØP (ØK til ~5,9 %)",
+      "portfolio_rationale": "Sterk Q3 (7,6 % organisk vekst, 73,6 % bruttomargin), lav P/E (~14x 2027e) og undervektet konsumsektor. Øk med ~7 200 NOK.",
+      "recommendations": [
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 87.0,
+          "upside_pct": 44.3,
+          "date": "2026-11-13",
+          "source": "Placera / Finwire & Börskollen (hevet fra 83 SEK etter Q3)"
+        },
+        {
+          "broker": "Danske Bank",
+          "rating": "KJØP",
+          "target": 85.0,
+          "upside_pct": 41.0,
+          "date": "2026-08-24",
+          "source": "Börskollen (hevet fra 80 SEK)"
+        },
+        {
+          "broker": "Nordea",
+          "rating": "HOLD",
+          "target": 62.0,
+          "upside_pct": 2.8,
+          "date": "2026-11-16",
+          "source": "Placera / Finwire (hevet fra 60 SEK)"
+        },
+        {
+          "broker": "SEB",
+          "rating": "HOLD",
+          "target": 60.0,
+          "upside_pct": -0.5,
+          "date": "2026-05-11",
+          "source": "Börskollen"
+        }
+      ]
+    },
+    {
+      "ticker": "HEX.OL",
+      "name": "Hexagon Composites ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Industri og Forsvar",
+      "in_portfolio": true,
+      "shares": 1050,
+      "gav": 15.63,
+      "price": 11.7,
+      "value_nok": 12285.0,
+      "weight_pct": 3.57,
+      "rule_status": "Innenfor (< 15 %)",
+      "portfolio_action": "HOLD",
+      "portfolio_rationale": "Operasjonelt vendepunkt i Q3 (+73 % omsetning, 108 MNOK EBITDA). Hold 3,57 % vekt, avvent positiv FCF før bijkjøp.",
+      "recommendations": [
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 19.0,
+          "upside_pct": 62.4,
+          "date": "2026-11-04",
+          "source": "Finansavisen / TDN Direkt & Pareto Research"
+        },
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 16.0,
+          "upside_pct": 36.8,
+          "date": "2026-11-06",
+          "source": "DNB Nyheter (vekst i Mobile Pipeline og RNG/CNG)"
+        }
+      ]
+    },
+    {
+      "ticker": "IVSO.ST",
+      "name": "Invisio AB",
+      "exchange": "SSE",
+      "currency": "SEK",
+      "sector": "Industri og Forsvar",
+      "in_portfolio": true,
+      "shares": 61,
+      "gav": 236.3,
+      "price": 200.8,
+      "value_nok": 11719.65,
+      "weight_pct": 3.4,
+      "rule_status": "Innenfor (< 15 %)",
+      "portfolio_action": "HOLD",
+      "portfolio_rationale": "40 % inntektsvekst i Q3 og gjeldfri balanse. Sterk meglerstøtte (280–350 SEK), hold 3,40 % vekt.",
+      "recommendations": [
+        {
+          "broker": "SEB",
+          "rating": "KJØP",
+          "target": 350.0,
+          "upside_pct": 74.3,
+          "date": "2026-07-01",
+          "source": "Börskollen konsensusoversikt"
+        },
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 330.0,
+          "upside_pct": 64.3,
+          "date": "2026-09-29",
+          "source": "Börskollen (hevet fra 320 SEK)"
+        },
+        {
+          "broker": "Nordea",
+          "rating": "KJØP",
+          "target": 315.0,
+          "upside_pct": 56.9,
+          "date": "2026-11-02",
+          "source": "Börskollen (etter Q3)"
+        },
+        {
+          "broker": "Danske Bank",
+          "rating": "KJØP",
+          "target": 300.0,
+          "upside_pct": 49.4,
+          "date": "2026-11-03",
+          "source": "Börskollen"
+        },
+        {
+          "broker": "SB1 Markets",
+          "rating": "KJØP",
+          "target": 285.0,
+          "upside_pct": 41.9,
+          "date": "2026-11-03",
+          "source": "Börskollen"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 280.0,
+          "upside_pct": 39.4,
+          "date": "2026-11-03",
+          "source": "Börskollen & Pareto Research"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "HOLD",
+          "target": 220.0,
+          "upside_pct": 9.6,
+          "date": "2026-11-04",
+          "source": "Börskollen"
+        }
+      ]
+    },
+    {
+      "ticker": "ENVIP.OL",
+      "name": "Envipco Holding N.V.",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Industri og Forsvar",
+      "in_portfolio": true,
+      "shares": 320,
+      "gav": 61.85,
+      "price": 34.3,
+      "value_nok": 10976.0,
+      "weight_pct": 3.19,
+      "rule_status": "Brudd på kvalitetskrav",
+      "portfolio_action": "SELG",
+      "portfolio_rationale": "Selv om meglerhusene har Kjøp (Pareto/SEB tilrettela 30 MEUR emisjon 17.11), gir negativ EBITDA (-4,4 MEUR YTD) og utvanning SELG etter kvalitetsreglene.",
+      "recommendations": [
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 82.0,
+          "upside_pct": 139.1,
+          "date": "2026-11-12",
+          "source": "Finansavisen (tatt ut av månedsporteføljen 02.11; tilrettelegger i emisjon 17.11)"
+        },
+        {
+          "broker": "SEB",
+          "rating": "KJØP",
+          "target": 80.0,
+          "upside_pct": 133.2,
+          "date": "2026-11-17",
+          "source": "Finansavisen (tilrettelegger i 30 MEUR rettet emisjon)"
+        },
+        {
+          "broker": "Fearnley Securities",
+          "rating": "KJØP",
+          "target": 56.0,
+          "upside_pct": 63.3,
+          "date": "2026-11-12",
+          "source": "Finansavisen / TDN Direkt (49 % UK-markedsandel)"
+        },
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 55.0,
+          "upside_pct": 60.3,
+          "date": "2026-11-12",
+          "source": "DNB Nyheter (9x 2027e P/E)"
+        }
+      ]
+    },
+    {
+      "ticker": "REG1V.HE",
+      "name": "Revenio Group Oyj",
+      "exchange": "HEX",
+      "currency": "EUR",
+      "sector": "Helse og Medtech",
+      "in_portfolio": true,
+      "shares": 100,
+      "gav": 15.23,
+      "price": 9.17,
+      "value_nok": 9849.86,
+      "weight_pct": 2.86,
+      "rule_status": "Innenfor (< 15 %)",
+      "portfolio_action": "HOLD (Avvent integrasjon)",
+      "portfolio_rationale": "Visionix-oppkjøpet har midlertidig økt gjeldsgraden til 5,1x EBITDA. Hold 2,86 % vekt, men ikke øk før synergier vises.",
+      "recommendations": [
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 21.6,
+          "upside_pct": 135.6,
+          "date": "2026-09-07",
+          "source": "DNB Nyheter (venter Visionix-synergier)"
+        },
+        {
+          "broker": "Nordea",
+          "rating": "KJØP",
+          "target": 12.0,
+          "upside_pct": 30.9,
+          "date": "2026-11-13",
+          "source": "Placera / Finwire & TargetWatch (etter Q3)"
+        }
+      ]
+    },
+    {
+      "ticker": "PLSV.OL",
+      "name": "Paratus Energy Services Ltd",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Energi og Offshore",
+      "in_portfolio": true,
+      "shares": 205,
+      "gav": 49.19,
+      "price": 47.1,
+      "value_nok": 9655.5,
+      "weight_pct": 2.81,
+      "rule_status": "Innenfor (< 15 %)",
+      "portfolio_action": "HOLD",
+      "portfolio_rationale": "Petrobras-forlengelser til 2032 støtter ~19 % direkteavkastning (0,22 USD/kvartal). 2,81 % vekt er passe.",
+      "recommendations": [
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 65.0,
+          "upside_pct": 38.0,
+          "date": "2026-11-09",
+          "source": "DNB Nyheter & Finansavisen"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "KJØP",
+          "target": 60.0,
+          "upside_pct": 27.4,
+          "date": "2026-08-10",
+          "source": "Finansavisen konsensusoversikt"
+        },
+        {
+          "broker": "Fearnley Securities",
+          "rating": "KJØP",
+          "target": 58.0,
+          "upside_pct": 23.1,
+          "date": "2026-08-10",
+          "source": "Finansavisen"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "HOLD",
+          "target": 52.0,
+          "upside_pct": 10.4,
+          "date": "2026-09-18",
+          "source": "Pareto Research History"
+        }
+      ]
+    },
+    {
+      "ticker": "APR.OL",
+      "name": "Appear ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Teknologi",
+      "in_portfolio": true,
+      "shares": 215,
+      "gav": 63.1,
+      "price": 35.1,
+      "value_nok": 7546.5,
+      "weight_pct": 2.19,
+      "rule_status": "Innenfor (< 15 %)",
+      "portfolio_action": "HOLD (Under oppsyn)",
+      "portfolio_rationale": "Gjeldfri balanse og 70,1 % bruttomargin, men svak EMEA i 2026. Hold 2,19 % vekt, avvent snuoperasjon i 2027.",
+      "recommendations": [
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "KJØP",
+          "target": 70.0,
+          "upside_pct": 99.4,
+          "date": "2026-08-03",
+          "source": "Finansavisen / TDN Direkt"
+        },
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 51.0,
+          "upside_pct": 45.3,
+          "date": "2026-10-19",
+          "source": "Finansavisen / TDN Direkt"
+        },
+        {
+          "broker": "Arctic Securities",
+          "rating": "KJØP",
+          "target": 50.0,
+          "upside_pct": 42.5,
+          "date": "2026-10-26",
+          "source": "Finansavisen / TDN Direkt"
+        },
+        {
+          "broker": "SB1 Markets",
+          "rating": "KJØP",
+          "target": 50.0,
+          "upside_pct": 42.5,
+          "date": "2026-10-13",
+          "source": "Finansavisen / TDN Direkt"
+        }
+      ]
+    },
+    {
+      "ticker": "GENO.OL",
+      "name": "General Oceans ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Industri og Forsvar",
+      "in_portfolio": true,
+      "shares": 330,
+      "gav": 16.44,
+      "price": 14.92,
+      "value_nok": 4923.6,
+      "weight_pct": 1.43,
+      "rule_status": "Innenfor (< 15 %)",
+      "portfolio_action": "HOLD",
+      "portfolio_rationale": "19 % valutajustert vekst i Q3 og 18 % EBITA-margin YTD. Enstemmig kjøp med 60–81 % oppside.",
+      "recommendations": [
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 27.0,
+          "upside_pct": 81.0,
+          "date": "2026-11-12",
+          "source": "DNB Nyheter"
+        },
+        {
+          "broker": "Arctic Securities",
+          "rating": "KJØP",
+          "target": 25.0,
+          "upside_pct": 67.6,
+          "date": "2026-11-13",
+          "source": "Finansavisen / TDN Direkt (etter Q3)"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "KJØP",
+          "target": 24.0,
+          "upside_pct": 60.9,
+          "date": "2026-11-18",
+          "source": "Finansavisen / TDN Direkt"
+        }
+      ]
+    },
+    {
+      "ticker": "QEC.OL",
+      "name": "Questerre Energy Corp",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Energi og Offshore",
+      "in_portfolio": true,
+      "shares": 1400,
+      "gav": 2.96,
+      "price": 1.85,
+      "value_nok": 2590.0,
+      "weight_pct": 0.75,
+      "rule_status": "Brudd på kvalitetskrav",
+      "portfolio_action": "SELG",
+      "portfolio_rationale": "Binær politisk risiko og 27,6 MCAD tap i Q3. Kun SB1M dekker aksjen (var rådgiver for selskapet). Selg.",
+      "recommendations": [
+        {
+          "broker": "SB1 Markets",
+          "rating": "KJØP",
+          "target": 2.7,
+          "upside_pct": 45.9,
+          "date": "2026-11-13",
+          "source": "Finansavisen (nedjustert fra 3,00 NOK etter Q3)"
+        }
+      ]
+    },
+    {
+      "ticker": "DNB.OL",
+      "name": "DNB Bank ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Finans",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 328.3,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Kandidat (Finans 0 %)",
+      "portfolio_action": "KJØP NY (~15 000 NOK)",
+      "portfolio_rationale": "Toppvalg for å tette 0 %-hullet i Finans. ~15 % ROE, P/E 9,9x og bred kjøpskonsensus.",
+      "recommendations": [
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 360.0,
+          "upside_pct": 9.7,
+          "date": "2026-11-19",
+          "source": "Finansavisen / TDN Direkt (i november-porteføljen)"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "KJØP",
+          "target": 352.0,
+          "upside_pct": 7.2,
+          "date": "2026-10-13",
+          "source": "Finansavisen / TDN Direkt (foretrukket storbank)"
+        },
+        {
+          "broker": "SB1 Markets",
+          "rating": "KJØP",
+          "target": 350.0,
+          "upside_pct": 6.6,
+          "date": "2026-10-22",
+          "source": "Placera / Finwire"
+        },
+        {
+          "broker": "Arctic Securities",
+          "rating": "KJØP",
+          "target": 345.0,
+          "upside_pct": 5.1,
+          "date": "2026-10-26",
+          "source": "Finansavisen / TDN Direkt (sektorfavoritt)"
+        },
+        {
+          "broker": "Nordea",
+          "rating": "KJØP",
+          "target": 340.0,
+          "upside_pct": 3.6,
+          "date": "2026-10-22",
+          "source": "Placera / Finwire"
+        },
+        {
+          "broker": "Danske Bank",
+          "rating": "HOLD",
+          "target": 320.0,
+          "upside_pct": -2.5,
+          "date": "2026-10-22",
+          "source": "Placera / Finwire"
+        }
+      ]
+    },
+    {
+      "ticker": "INVE-B.ST",
+      "name": "Investor AB ser. B",
+      "exchange": "SSE",
+      "currency": "SEK",
+      "sector": "Finans",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 434.7,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Kandidat (Finans 0 %)",
+      "portfolio_action": "KANDIDAT (Alternativ til DNB)",
+      "portfolio_rationale": "Sterk Q3 i Patricia Industries og Mölnlycke; nordisk kvalitetsbærebjelke innen finans/investering.",
+      "recommendations": [
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 465.0,
+          "upside_pct": 7.0,
+          "date": "2026-10-19",
+          "source": "Börskollen / Placera (hevet fra 440 SEK)"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "KJØP",
+          "target": 460.0,
+          "upside_pct": 5.8,
+          "date": "2026-10-19",
+          "source": "Börskollen"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "HOLD",
+          "target": 425.0,
+          "upside_pct": -2.2,
+          "date": "2026-10-19",
+          "source": "Pareto Research & EFN"
+        },
+        {
+          "broker": "SEB",
+          "rating": "HOLD",
+          "target": 425.0,
+          "upside_pct": -2.2,
+          "date": "2026-10-19",
+          "source": "EFN / Placera"
+        }
+      ]
+    },
+    {
+      "ticker": "MING.OL",
+      "name": "SpareBank 1 SMN",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Finans",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 215.0,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Kandidat (Finans 0 %)",
+      "portfolio_action": "KANDIDAT",
+      "portfolio_rationale": "14,1 % ROE i 2027e og ~5,9 % direkteavkastning; oppgradert til Kjøp hos Pareto og ABG.",
+      "recommendations": [
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 245.0,
+          "upside_pct": 14.0,
+          "date": "2026-11-19",
+          "source": "Finansavisen / TDN Direkt (oppgradert fra Hold)"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "KJØP",
+          "target": 235.0,
+          "upside_pct": 9.3,
+          "date": "2026-10-13",
+          "source": "Finansavisen / TDN Direkt (oppgradert fra Hold)"
+        },
+        {
+          "broker": "Arctic Securities",
+          "rating": "HOLD",
+          "target": 215.0,
+          "upside_pct": 0.0,
+          "date": "2026-10-26",
+          "source": "Finansavisen / TDN Direkt"
+        }
+      ]
+    },
+    {
+      "ticker": "STB.OL",
+      "name": "Storebrand ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Finans",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 202.6,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Kandidat (Finans 0 %)",
+      "portfolio_action": "KANDIDAT",
+      "portfolio_rationale": "Enstemmig kjøp blant fire meglerhus innen kapitalforvaltning og forsikring.",
+      "recommendations": [
+        {
+          "broker": "Danske Bank",
+          "rating": "KJØP",
+          "target": 245.0,
+          "upside_pct": 20.9,
+          "date": "2026-09-09",
+          "source": "TargetWatch"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 220.0,
+          "upside_pct": 8.6,
+          "date": "2026-10-22",
+          "source": "Pareto Research & TargetWatch"
+        },
+        {
+          "broker": "Nordea",
+          "rating": "KJØP",
+          "target": 217.0,
+          "upside_pct": 7.1,
+          "date": "2026-10-22",
+          "source": "Placera / Finwire"
+        },
+        {
+          "broker": "SB1 Markets",
+          "rating": "KJØP",
+          "target": 215.0,
+          "upside_pct": 6.1,
+          "date": "2026-10-22",
+          "source": "Placera / Finwire"
+        }
+      ]
+    },
+    {
+      "ticker": "SALM.OL",
+      "name": "SalMar ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Sjømat",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 587.5,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Overvåkes",
+      "portfolio_action": "AVVENT (Sjømat allerede 13,8 %)",
+      "portfolio_rationale": "Toppvalg i sjømat hos SEB, ABG og DNB Carnegies ukesportefølje.",
+      "recommendations": [
+        {
+          "broker": "SEB",
+          "rating": "KJØP",
+          "target": 670.0,
+          "upside_pct": 14.0,
+          "date": "2026-11-18",
+          "source": "Finansavisen (toppvalg i sjømat)"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "KJØP",
+          "target": 664.0,
+          "upside_pct": 13.0,
+          "date": "2026-10-30",
+          "source": "Finansavisen / TDN Direkt"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "HOLD",
+          "target": 550.0,
+          "upside_pct": -6.4,
+          "date": "2026-11-03",
+          "source": "Pareto Research History"
+        }
+      ]
+    },
+    {
+      "ticker": "AKRBP.OL",
+      "name": "Aker BP ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Energi og Offshore",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 307.9,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Overvåkes",
+      "portfolio_action": "OVERblikk",
+      "portfolio_rationale": "I både Paretos månedsportefølje og DNB Carnegies ukesportefølje.",
+      "recommendations": [
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 430.0,
+          "upside_pct": 39.7,
+          "date": "2026-10-30",
+          "source": "Pareto Research (i november-porteføljen)"
+        },
+        {
+          "broker": "Nordea",
+          "rating": "KJØP",
+          "target": 420.0,
+          "upside_pct": 36.4,
+          "date": "2026-10-19",
+          "source": "Investorprat / Placera"
+        },
+        {
+          "broker": "Arctic Securities",
+          "rating": "HOLD",
+          "target": 400.0,
+          "upside_pct": 29.9,
+          "date": "2026-11-02",
+          "source": "Investorprat"
+        },
+        {
+          "broker": "SB1 Markets",
+          "rating": "KJØP",
+          "target": 395.0,
+          "upside_pct": 28.3,
+          "date": "2026-11-10",
+          "source": "Börskollen / Investorprat"
+        },
+        {
+          "broker": "Fearnley Securities",
+          "rating": "HOLD",
+          "target": 365.0,
+          "upside_pct": 18.5,
+          "date": "2026-11-03",
+          "source": "Investorprat"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "HOLD",
+          "target": 325.0,
+          "upside_pct": 5.6,
+          "date": "2026-11-20",
+          "source": "Finansavisen (oppgradert til Hold)"
+        },
+        {
+          "broker": "SEB",
+          "rating": "HOLD",
+          "target": 318.0,
+          "upside_pct": 3.3,
+          "date": "2026-11-10",
+          "source": "Börskollen / Investorprat"
+        }
+      ]
+    },
+    {
+      "ticker": "EQNR.OL",
+      "name": "Equinor ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Energi og Offshore",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 383.3,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Overvåkes",
+      "portfolio_action": "UNNGÅ",
+      "portfolio_rationale": "Delt syn: Nordea har Kjøp (480 NOK), mens ABG og SEB har Selg pga. gassprisrisiko.",
+      "recommendations": [
+        {
+          "broker": "Nordea",
+          "rating": "KJØP",
+          "target": 480.0,
+          "upside_pct": 25.2,
+          "date": "2026-10-19",
+          "source": "Placera / Finwire"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "HOLD",
+          "target": 430.0,
+          "upside_pct": 12.2,
+          "date": "2026-10-30",
+          "source": "Pareto Research History"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "SELG",
+          "target": 360.0,
+          "upside_pct": -6.1,
+          "date": "2026-11-20",
+          "source": "Finansavisen"
+        },
+        {
+          "broker": "SEB",
+          "rating": "SELG",
+          "target": 356.0,
+          "upside_pct": -7.1,
+          "date": "2026-11-10",
+          "source": "Börskollen / Finwire"
+        }
+      ]
+    },
+    {
+      "ticker": "SUBC.OL",
+      "name": "Subsea 7 S.A.",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Energi og Offshore",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 307.4,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Overvåkes",
+      "portfolio_action": "OVERBLIKK",
+      "portfolio_rationale": "Sterk Q3 og 12 % FCF-yield 2027e; Kjøp hos DNB Carnegie og Fearnley.",
+      "recommendations": [
+        {
+          "broker": "DNB Carnegie",
+          "rating": "KJØP",
+          "target": 400.0,
+          "upside_pct": 30.1,
+          "date": "2026-08-18",
+          "source": "Investorprat"
+        },
+        {
+          "broker": "Fearnley Securities",
+          "rating": "KJØP",
+          "target": 390.0,
+          "upside_pct": 26.9,
+          "date": "2026-11-20",
+          "source": "Finansavisen / TDN Direkt"
+        },
+        {
+          "broker": "SEB",
+          "rating": "HOLD",
+          "target": 348.0,
+          "upside_pct": 13.2,
+          "date": "2026-11-10",
+          "source": "Börskollen"
+        },
+        {
+          "broker": "ABG Sundal Collier",
+          "rating": "HOLD",
+          "target": 335.0,
+          "upside_pct": 9.0,
+          "date": "2026-10-08",
+          "source": "Investorprat"
+        },
+        {
+          "broker": "SB1 Markets",
+          "rating": "HOLD",
+          "target": 315.0,
+          "upside_pct": 2.5,
+          "date": "2026-11-04",
+          "source": "Investorprat"
+        },
+        {
+          "broker": "Pareto Securities",
+          "rating": "HOLD",
+          "target": 290.0,
+          "upside_pct": -5.7,
+          "date": "2026-11-20",
+          "source": "Finansavisen / TDN Direkt"
+        }
+      ]
+    },
+    {
+      "ticker": "SCATC.OL",
+      "name": "Scatec ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Energi og Offshore",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 83.95,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Kandidat",
+      "portfolio_action": "KANDIDAT",
+      "portfolio_rationale": ">50 % oppside hos Pareto og Arctic; inne i Paretos november-portefølje.",
+      "recommendations": [
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 130.0,
+          "upside_pct": 54.9,
+          "date": "2026-11-02",
+          "source": "Pareto Research (i november-porteføljen)"
+        },
+        {
+          "broker": "Arctic Securities",
+          "rating": "KJØP",
+          "target": 128.0,
+          "upside_pct": 52.5,
+          "date": "2026-10-22",
+          "source": "Placera / Finwire"
+        }
+      ]
+    },
+    {
+      "ticker": "HAFNI.OL",
+      "name": "Hafnia Ltd",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Shipping",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 92.0,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Kandidat",
+      "portfolio_action": "KANDIDAT",
+      "portfolio_rationale": "Kjøp hos SEB og Arctic innen produkttank.",
+      "recommendations": [
+        {
+          "broker": "SEB",
+          "rating": "KJØP",
+          "target": 113.0,
+          "upside_pct": 22.8,
+          "date": "2026-11-19",
+          "source": "Placera / Finwire"
+        },
+        {
+          "broker": "Arctic Securities",
+          "rating": "KJØP",
+          "target": 111.0,
+          "upside_pct": 20.7,
+          "date": "2026-11-19",
+          "source": "Placera / Finwire"
+        },
+        {
+          "broker": "DNB Carnegie",
+          "rating": "HOLD",
+          "target": 95.0,
+          "upside_pct": 3.3,
+          "date": "2026-11-19",
+          "source": "Placera / Finwire"
+        }
+      ]
+    },
+    {
+      "ticker": "VEND.OL",
+      "name": "Vend Marketplaces ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Teknologi",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 250.0,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Kandidat",
+      "portfolio_action": "KANDIDAT",
+      "portfolio_rationale": "Tatt inn i Paretos november-portefølje etter Q3 EBIT 13 % over forventning.",
+      "recommendations": [
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 320.0,
+          "upside_pct": 28.0,
+          "date": "2026-11-02",
+          "source": "Finansavisen (i november-porteføljen)"
+        }
+      ]
+    },
+    {
+      "ticker": "NORBT.OL",
+      "name": "Norbit ASA",
+      "exchange": "OSE",
+      "currency": "NOK",
+      "sector": "Teknologi",
+      "in_portfolio": false,
+      "shares": 0,
+      "gav": 0,
+      "price": 178.8,
+      "value_nok": 0,
+      "weight_pct": 0.0,
+      "rule_status": "Overvåkes",
+      "portfolio_action": "OVERBLIKK",
+      "portfolio_rationale": "Kjøp hos Pareto (245 NOK), nedgradert til Hold hos DNB Carnegie (187 NOK) etter kursoppgang.",
+      "recommendations": [
+        {
+          "broker": "Pareto Securities",
+          "rating": "KJØP",
+          "target": 245.0,
+          "upside_pct": 37.0,
+          "date": "2026-11-13",
+          "source": "Finansavisen (etter sterke Q3-tall)"
+        },
+        {
+          "broker": "DNB Carnegie",
+          "rating": "HOLD",
+          "target": 187.0,
+          "upside_pct": 4.6,
+          "date": "2026-11-17",
+          "source": "Finansavisen / TDN Direkt"
+        }
+      ]
+    }
+  ],
+  "news_feed": [
+    {
+      "published": "2026-11-24",
+      "source": "E24 Børs og Finans RSS",
+      "broker": null,
+      "title": "Equinor sikrer kjempeavtale",
+      "link": "https://e24.no/energi-og-klima/i/8Pm8o2/equinor-sikrer-kjempeavtale?utm_medium=rss",
+      "detected_ticker": "EQNR.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-23",
+      "source": "DNB",
+      "broker": null,
+      "title": "DNB Carnegies anbefaling på BW LPG og Cadeler - DNB",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPd29ObDhiYWMyU3BIVHJkU0NweFA3R043enhQUmlGeWc4eFQxQWJXVnQ4R0Npdmw0SXowQUFQRU9GNTRRazFxMHNjazd2TUVXZ1ByRFdhZ20tR0U1VU1oalFTcWIya0R1UHkzSWN3WlY1RExqVVNCdk84eDRIVmhUTUtMd3ltUEp4RVY3cV9YSHBkWm11X0JRSg?oc=5",
+      "detected_ticker": "CDLR.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-23",
+      "source": "Finansavisen",
+      "broker": "DNB Carnegie",
+      "title": "DNB Carnegie setter salgsstempel på Røkke-aksje - Finansavisen",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYnJqMEVYc1RXYmZxSGxnOGZJOHBSUmRQRnV2M2Fpc3I5UWMybjBtbExiU01teXhEZWxVSDM2STB0RXptY2Q4TDZjblJtbkdEd1p6SHBESkI5MkpsQTlxNGdwVFpiLXBRYWI4SXZGS2I2bVRxRHRXNUM0Mkg0MlVvMF9jNU5OMld1d3NLeUNWcFhROTVEVEdmSDkxYTB2VGlwa1M4?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-23",
+      "source": "E24 Børs og Finans RSS",
+      "broker": "Arctic Securities",
+      "title": "Petter Stordalen investerer i Arctic Securities",
+      "link": "https://e24.no/boers-og-finans/i/8Pm0Jw/petter-stordalen-investerer-i-arctic-securities?utm_medium=rss",
+      "detected_ticker": null,
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-20",
+      "source": "DNB",
+      "broker": null,
+      "title": "DNB Carnegies anbefaling på Frontline og COOR - DNB",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPRDdSSDUxT3IyZUl6VzNCQTB4ZTZJc2pPY0daVGFKeHNvMGplRkZtNHlHWkZWWkJOel9MWVJ3cG84LS1xZm1jUVFmQXA0YVVsa2ZLUjlKVktMSFdmYXhkX0ZUazlrN2JJZFVCOXY4eHg5cjcza0FwaHlSYVRueUR4ME1SN1RnNDE0MjlreDlYSGtSY2ZJVE1OWg?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-19",
+      "source": "DNB",
+      "broker": null,
+      "title": "DNB Carnegies anbefaling på Höegh Autoliners og Subsea 7 - DNB",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTkJhVTdxc040ZlJ4QkNmMVBHSlZkQWFYdGhkMWdwdWVLRUZXSndyc2lTb1hsc2dMaDk1bzg1OFBaR2prSW9pbHJ6dGFSNzZEY3EzTU9XeDNFVmNLOTVVS1FCS0FuNWJHa1V6LXl1WU05Y0phUmd4VVZDa2dkaW81UGtYYVlaQ3QwRllZNm5URXpSRURYVC1pZU1rcC15Y1FSZ3UwRG5sWEk?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-17",
+      "source": "DNB",
+      "broker": null,
+      "title": "DNB Carnegies anbefaling på FLSmidth og SKF - DNB",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOc2VuUl9YYkh1dVJqSXAyNzV2OG9HbkZQVHZxMjUxQV9GQUZnbWhTa1NGM205MnlKZklKNEVKaENnZ0J4UExENDh2YjN1eUIyNFBjTmZmSnE3c2hGc05ndlFhbFh6SUZKQlk5Y0h0MzNqQlUzdXltejU4SlRBNVZkTUVMWWg3Y25Wb0RONmR3OGlPcmpaM0E?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-16",
+      "source": "Affärsvärlden",
+      "broker": null,
+      "title": "Europabörserna kring nollan – Novo Nordisk stiger - Affärsvärlden",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOX1hPMHlGckZRXzY4d1dYU2dQRUJGeEd5VUEySFNnVTJfbmxtSXhjT3FrYl9sRHRaakJSUDRyNVRDaWdXVGc5bWNmMDU4QWpBbE02bGdNQlJBTUN6Y3REQnZ3SkkxRkJaQkVuMVFYNlV1SEwzUjVLbEFGTnFxRDRaWXNZZzRqLUpWQTB3OQ?oc=5",
+      "detected_ticker": "NOVO-B.CO",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-11",
+      "source": "DNB",
+      "broker": null,
+      "title": "DNB Carnegies anbefaling på Himalaya Shipping og Envipco - DNB",
+      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNcXhFcUNJZGV1S1hKcUM2Mnl2bHE4Y1AtaDVKTnNEU1ZNbXdsMWdxaUNJRVRaUnB0LUktUUJJSjFjVEROZUY1VURQOURKc1NvRUk3VlZEbmJKb0l4RTkxclF4N1hxVUoxcHJ5MUdYUUVwSXFTdm9xV1pQR0lDQXNiYVpmanlENTVoRUpkeUlTc0JqMkJNVTAzOHUxZmgzTFJOaENmeHhfRQ?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-06",
+      "source": "DNB",
+      "broker": null,
+      "title": "DNB Carnegies anbefaling på Orkla og Hexagon Composites - DNB",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPMGt3NDRsd3gwZmtWTmFHX0hpeHRHSXVfRk45Qlh2WV9Edy1mem81Y25mVGtzcWVfV0dnM1kzNlcxalpjNmZvdWltSkFzb0xnS0ZnLTlTQjF0d05qNkNFZ2g4cTRtRUNMTUJUb3dUcVZUTXU4MHZmNlVLcnNKR1diRm40VHV5bktrck54ck44Z0huMFoyUS1iTFpUVVZ0QXdTV0pqeXNB?oc=5",
+      "detected_ticker": "HEX.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-05",
+      "source": "Placera.se",
+      "broker": null,
+      "title": "Novo Nordisk får flera höjda riktkurser - Placera.se",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMXVDdmFScDZvT19mSlpsWVMtdEJjTDdzX2tLMEhEUWZKUW1hV2owUlJCandfZVJwcjFneDNMazd5U2RRUHBlb2czNDROYlZwMVZpTzZkR256cEtoTXpkTGx2dDBZSzZONUtKWGQwNHMweUNQZ3Y3ZzdJN1EwcVl1Q2hqaUdHbW8y?oc=5",
+      "detected_ticker": "NOVO-B.CO",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-04",
+      "source": "DNB",
+      "broker": null,
+      "title": "DNB Carnegies anbefaling på Subsea 7, Mowi og Link Mobility - DNB",
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNcXJGbWw2aHRpSTloMWRQWGZnR0lGM3lnTU1aU0UwZVlHaDdSekM3RnA1M3JmaDJyRDhfa051MWFUUkprMEJJMVk0cUNZZWU5T1RSY1p0TkJ3T1hXZ3dQOGJTS1Z6dFhmQXVQRzJTTnpYVWcycTY0V05JbjU5TUdjd2lpN0szZktRU1RNRDZfS0gxemg4NGRMcE1KNFhvLXdyTDJUZnRIQUxMMGc?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-03",
+      "source": "Finansavisen",
+      "broker": "Arctic Securities",
+      "title": "Arctic kapper kursmål i to etter sjokkguiding - Finansavisen",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdXVaVVA3UkNtUUpGR0ZQRlVsZ0g4Nm91c0d5Ym5xZXozLVVKZ1dwN190MHF3bUlFb1dzSHhfbWJyMWt4ZUxsUWNhUFAxSFFLckEwWVZjd1d3OFBidkFSRDdlSzZrS2VaNEJCSHBIaWotVWRfandydVc0S2tTWmJXdnFQSjJfanc0T0w3ZDRaLV8zeXJxVlRlZTdDZkNDeHAx?oc=5",
+      "detected_ticker": null,
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-03",
+      "source": "Börsvärlden",
+      "broker": "Pareto Securities",
+      "title": "SB1, Pareto och Danske Bank sänker riktkurserna för Invisio – fortsatt positiva - Börsvärlden",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQaWZ0NUxBQXRKOUlYUWJma24wT0xnY1k5TEx1bTNRNm00cjV1OWFNRVJIbjZ6TzRiYXQ5eThEUXVsRzVnd0E3ck5aQzM5cENUYkUwYmJTaWtDNkFiYm9VblVSVk1KRXF0Smo1Zkt2ME5mUVB5emR2ek1qcXNiQnBTaWxyRVM1bmVXeU5RSDFwVV9XWGhEOXVXU0NYRmp0N3pSSVZfZ2pJT2pLZXpDbkE?oc=5",
+      "detected_ticker": "IVSO.ST",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-02",
+      "source": "Finansavisen",
+      "broker": "Pareto Securities",
+      "title": "SCATEC: FEARNLEY, DNB CARNEGIE OG ABG NEDJUSTERER KURSMÅL, PARETO OPPJUSTERER - Finansavisen",
+      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNODVpa2VrODB5YkZhWWJCQTlPSEY0WVVxWGszUTROYU9EdGpQNjNINThjSHFqV3NTNGpCeWZpei13M0RnT2FGdEtoLWtGMkRRbnZ6RFdkeDVOZW1yal9FamxKUDhfajItN0VOb3Q0RUNFTnk0cGx3OF91d19PQXUycHV2MWdvZjRkVE5UWG0tcmtLYW1aQ1pRMTNNWWxqUG9OUzlfUld4aDBidEIydm4wM1JzUUdmOEJzWTlnMjB3bngwXzF3?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-11-01",
+      "source": "HurBra.se",
+      "broker": null,
+      "title": "Mest köpta aktier oktober 2026: Investor delar spararna - HurBra.se",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBFT01STTFxNnVMc1lFS2c3dVBPRHdCa3BUWVZqc0I0UEJMRTduWmgtX213dnQ4cktCejduVDY5SkFqTW0tbjdWalFncURfQnozX01sYXgzQzVzcExGZGc?oc=5",
+      "detected_ticker": "INVE-B.ST",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-26",
+      "source": "Finansavisen",
+      "broker": "Pareto Securities",
+      "title": "TGS (NY): PARETO OG SEB SENKER KURSMÅL, FEARNLEY ØKER KURSMÅL - Finansavisen",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPM21hcnd6SlBnTVpoN0JycnNYTGFQM0JyRWRxcnhVSThQMDBEZHN0X2xLYW5xTi1ZaFdUUnViOGlNdUZaMDRfSlRmNHZnTnJCRHRiNlppd0J4T3V6Z2VJSnBxWVVjalFMdjBDTFNRUWhMRHFIZ0pwSzluOTdrSk5aQzZNTDBNeHNkUVpCSXVvTFN0eVNxSTdtUDFVV0RBaGlYTTJtMnMxRXRrSFNFUEE?oc=5",
+      "detected_ticker": null,
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-23",
+      "source": "Finansavisen",
+      "broker": "DNB Carnegie",
+      "title": "Kitron: Arctic og DNB Carnegie oppgraderer til kjøp, nedjusterer kursmål - Finansavisen",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxObUVVZmtIXzVHbVlvNFdQbWRIY3V4VkdfLVJmc2tyVGVHRE00ODJzUWpJVlRYZm1qakltc2FoRjdsd0I3QWQ3WlJSUjE1R1RGMXZOYnU0bDFRd2xzaWNnMUFYTEd5UFQtVmZaYnhRMmNzeG1DMUxmQURsbzFOeVYtX1BiUDA1UzNHRmF6MGg2VWw5SFJKMWI5ZzBQaHhzeDJjN2pZZ2dhZDVtN1BwMEdzUmhrblI2R0pEYmUtMDFSaw?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": "KJØP",
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-23",
+      "source": "Börskollen",
+      "broker": null,
+      "title": "Så stor uppsida ser analytikerna i Investor efter rapporten - Börskollen",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQSUdmdE55ODIxaC13SC1xN2xwbTBobWdUM1NDSXV6bWFjQkFxVWpTeU1CWFQ2SmUzLUhZMHpyTzk5amZUbVdlQ3luNjgzQWdVblB2SW50dVJUQXpfWHU1ek12azVXdnFzVUpheF8xaXBkZS1wMm5DdnNTMVR0LTNIWE9mTEZMVVVfbDVBdGNEbm5WNmw0c25TeldwUGk?oc=5",
+      "detected_ticker": "INVE-B.ST",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-22",
+      "source": "Börsvärlden",
+      "broker": "Nordea",
+      "title": "Nordea upprepar köp för Novo Nordisk – ser positiva kursdrivare - Börsvärlden",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOQWxhZUNkVUo0cHVUbUNtNmhkZG5XQzN1YjVnYjU3ZkwyVkJpR0lpenJqaFYycmFXdm5nbW13TnZORlMxcEV6ZlozbXFQVjRsdDFvYUs4bUtmRXFVWVpZNXBSX3RfS2xHNHVlcTJoNjdFVUlPT2xsZk9ZcWQtTnlWX3EwLW84d0t6dnNpVms1SXhlWUtSbkNPOUpR?oc=5",
+      "detected_ticker": "NOVO-B.CO",
+      "detected_rating": "KJØP",
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-19",
+      "source": "Investornytt",
+      "broker": null,
+      "title": "Kan AI sende FINN på historiens skraphaug? - Investornytt",
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSGtUOVFRdGxVSzZjSVQ0NE4yVi12N1ZQbk1aY0w1ZGZ5cXAxcHNaSTBUMG9TNkRIWlFLYV9qalhERi1EZjRlMnVRMTVBM2dsMUt0MmE4TWxDUWVyZjZjeWd5RUdYd3N2MGd1Z3hCaEFPUmYyVmhLc3g2RVJ6TVNDaU82VmRZSThxZXVFSXpORVBsOWtP?oc=5",
+      "detected_ticker": "INVE-B.ST",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-19",
+      "source": "EFN",
+      "broker": null,
+      "title": "Storbanken höjer riktkursen för Investor - EFN",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE05cXdxQURSVjVMaHRtTkZ4QUlabUJLQ0E4dmQzQnBSOG5hQVluUUpRbjFoRjN5a3lQZmhuM3pVaERIZm9uVXFwNkJBQ1dOMG9ZcERVcUZKTWg3WkU4aXlEZDRkSVZ2dw?oc=5",
+      "detected_ticker": "INVE-B.ST",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-19",
+      "source": "DI",
+      "broker": null,
+      "title": "Nytt ”street high” på Investor – här är dagens rekar - DI",
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE41SzQ1N0VZNlZDRkFPby1hYThLYzU0WFVxNmQ5V1QtY3VrMDl4MEJtdkc4c2U2dEdzeTJjYkp0Tjl0ZlN3X3JXdW5tMzNRdFhNeXhqckRqYWkxbVFCSm1TTEJlTWtKbE5kQ3VVdGJrX1E5ZXdWZEEyamRiNkE?oc=5",
+      "detected_ticker": "INVE-B.ST",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-19",
+      "source": "Placera.se",
+      "broker": null,
+      "title": "Höjda riktkurser för Investor - Placera.se",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9sQm0yYmd1TzNpb3lBWTlLMi1OR0ZmTTY3R1BtNG53a2JLWmpVMHIxTDNKMXpranAtaFVweE5WQzlSY2FlZVpOalZ0MGNLdlpWR3BIaEp4NG1fUUlQN3VXcTVCNUc2NEFrY2pjeVNxVnlSOXZpVGdWSF9QYw?oc=5",
+      "detected_ticker": "INVE-B.ST",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-19",
+      "source": "Börsvärlden",
+      "broker": "Pareto Securities",
+      "title": "Handelsbanken och Pareto höjer riktkurserna för Investor – upprepar behåll - Börsvärlden",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNbkVHeTd4QkdwSzJyWkRkTkpaWXppQUxhMjFBOEFRa0V2STR2elRoNTNjRnBYd0dJeGdYOHZhNjVjZzhxMnN1NnBqWkk5SnBtUURPSzZwYTRzYXF0Qzg1RzB0TEFCaXJaUVlaaGRwUndyY3FMbGlDZ0ZEUFhWaTd2OFBFWlA5LTBtM1V5SU9lUThzUkZDcDhPU1R0aVFTRFQtS01UMUlvdF8?oc=5",
+      "detected_ticker": "INVE-B.ST",
+      "detected_rating": "HOLD",
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-16",
+      "source": "DNB",
+      "broker": null,
+      "title": "DNB Carnegies anbefaling på Norsk Hydro og Mowi - DNB",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaUJrMUhSU19xZE1UeEJpSHlid0dsSmRUdnZwOTZqVXlnSGhjRjYtY3FCeERCVFZvRE5seXA4eUpSczdIOG5ZTTVxbkQzV1lKQzZZXzRpejhXZ2dOcnB2aXZRYnQxOGdnLU9mZ002ZUNUeHV2dTI1Z29HZUYtdERqRGJ5a3lPZ3BOUkptSGs4OFNFYnBBbEhfbjZ6Yw?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-09",
+      "source": "FinansWatch.no",
+      "broker": null,
+      "title": "Barclays nedgraderer DNB før regnskapssesongen - FinansWatch.no",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5GX2lmOU82T1JKR29hRnhDUHRTVkc1VThzTmE2dHR3ZElJSTVxZ0FfNXlTblRUMFZRLW9UeTZiai13eXpoWHRhRmJmbllmeFg2bkY5RWozbGJQUDZxUXVzOUpWNnFGUQ?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-09",
+      "source": "Affärsvärlden",
+      "broker": "Nordea",
+      "title": "Nordea fortsatt positivt till Novo - Affärsvärlden",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5wZEZFWmVGYWdnNkNlMUM2cHFBRXhOU3FXZmNyRzlYU09jd0lnTWhXVzZjZkJQZGM2a0d5YlJEVG1jSUIzMFdZbHdYeEtDSTU5N0hYb0t0TFRIajdTd2lPUVdlZC1QYndTbHBpOGM3eE5EamItbnFMX09Ndw?oc=5",
+      "detected_ticker": null,
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-08",
+      "source": "Radio Haugaland",
+      "broker": "Pareto Securities",
+      "title": "Dagens aksjetips: Ny forsvarsfavoritt overtar – Pareto ser 48 prosent oppside - Radio Haugaland",
+      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNXJucGh1SE1aQUwwUDZIWEhRSEc4ZUUzeU9ZUGRCWVlDZExMYmoxRmYwSFhsd2NxQU0zbVVDTTVwb09BY3d2MGdGeUQ0SFhzbWMyRkxkckVyMWFQaFAwa1FrcGhWV200R0hzUk5TdVZlUXJDZmo1T1hzcFZPc3pNUWcwTTF1X1FmRDM0S0tIcUlYb3VXaWhULQ?oc=5",
+      "detected_ticker": null,
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-07",
+      "source": "Placera.se",
+      "broker": null,
+      "title": "Höjd riktkurs för Saab - Placera.se",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBSa2lSb2UyWVBqbkQ2enYxaXpwSlU3SXVaRmRXb0JFVGxNWHRURGJ2UkZmMXprTnQ1cnk2RjRGNHhrTUtSdDlQd2JSbG9XYTUxUlB3U3I4OWpSV0RFa1plNlptQkE4TFYtQmxVRWpVZjVuUQ?oc=5",
+      "detected_ticker": null,
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-06",
+      "source": "DNB",
+      "broker": null,
+      "title": "DNB Carnegies anbefaling på Sparebank1 Sør- og Nord-Norge - DNB",
+      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNFFRbmVMcDVrWTI5QzlTWGwyUDQyR0JGRVFrOFdiQi1IYUlDWnJWZkw2Um54NzJKZnVkWWVpOWFUbElWcUMwTVNULXkyU3BOWEE3d1BUb1hLVkFIcXdwOWstQ3h4UVktQ3BWczFyeVBkM0tlTWNqWnNTejd5S0lBTERsdG9Ic0VfSGNEd3hLVzR0OFJFalFSTkNiLVFtMV9rMU9sNWVlX2U?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-05",
+      "source": "iLaks",
+      "broker": "DNB Carnegie",
+      "title": "DNB Carnegie halverer resultatestimat i Grieg Seafood - iLaks",
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9hOEd2aGRaR0gyZFZoMWk2RzJRMXhKcFM1ckkycFl1TUk0ZHdiMVZJVkZOaVEyS2dxZmFSTFpxUkRIUmRydmduazhrSkZ2X1ZqRUZRdXRYTzFlNjRkbHd3UEFjYlVvMlB6WTFvN09Oei1wWFJlX2pSdG03QQ?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-05",
+      "source": "DI",
+      "broker": null,
+      "title": "Storbank köprekar Investor-bolag: Fortsatt AI-vinnare - DI",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNT3FEcUlsMnV2cFljZm5OMzlBQUtpTXlxLVl5Yjg0aUljRXhnMzFvZ3g4Y3pQUjh5aXlGRzBFWGpyNFBSTWdGRVA5ZDVCMml4RVVkTUVtUzFaQk5BRHg2QmdXQU5jYXR5YWtNTFZ5d0U3UzVPNUhRQmRVTXE1UzlyOEhLNEpIZw?oc=5",
+      "detected_ticker": "INVE-B.ST",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-10-04",
+      "source": "E24",
+      "broker": "Pareto Securities",
+      "title": "Pareto bytter Kongsberg-aksjer: –⁠ Kan skuffe - E24",
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPOVFYemdzUmdwRjY2U0k2ZjNQTEFTa01JU2hza3NDNDl1RVl2bjdLNy1aTU1uVUpvSG1WejV5RVpZTTl1Y1IwVEpDeWRnQ3RzNlFqQy1YS09mUkxzbEVoN2YxX2dzbjlnaGM2VW1rYTFtUUV6YXNtT1FkMVNrOUJSRkdzdlM1aVlL?oc=5",
+      "detected_ticker": null,
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-09-29",
+      "source": "FinansWatch.no",
+      "broker": "SEB",
+      "title": "SEB oppgraderer Norion Bank - FinansWatch.no",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBPNC1fUFpXOG40T2Q5MUpEUGQ5SGZhOU5HMjVsaV92QnFKQ3RZT1VNU1Uwc3F1YmF4YTFRYWRTdVJCSGFsQVdnR0VoUV9UREdpTmZ2cnZfYzBvb1RENHFyUmVSblhLdw?oc=5",
+      "detected_ticker": null,
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-09-29",
+      "source": "EFN",
+      "broker": "DNB Carnegie",
+      "title": "Plötsligt lyft i Invisio – DNB Carnegie höjer riktkurs - EFN",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE4zWTdTWVhGREJHYURZRzBSNW1MWVdYeUk1SVNYbDlBNDRxUURNNzktUTBQT19uY01GVEd6ZUVaM19GOGk4SjVVclkzTU53RFk?oc=5",
+      "detected_ticker": "IVSO.ST",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-09-29",
+      "source": "DI",
+      "broker": null,
+      "title": "Invisio stiger efter DNB Carnegies höjda riktkurs - DI",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9Qazk4VklBRzZSVk5udWVzc29zbkJMZHFyaHZ3V1BVVUVIY0NrY2RNbHdBanU1NlFTUUVrV0hYVGc0TUNBRWtqT3NpWjJxeUhEU3hFY3lsZmk0N0pIUERoM2UzdXRjamZkS0lRUE1uSUY3ZG1ZcGJ6SlZQTzdHdw?oc=5",
+      "detected_ticker": "IVSO.ST",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-09-23",
+      "source": "iLaks",
+      "broker": "Arctic Securities",
+      "title": "Arctic Securities tror Mowi slakter vesentlig mer laks enn guidet for tredje kvartal - iLaks",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNa1NXcEt1X1dBNUNMc2h3akFEX0FaV3p2Q2t3SUs3ZEpzdENnZHhzdXp0d0U1TzJfcC0yX2U2VmNKWk1sRnUzLTdmWjVZS2twdDFuSlByemNnYmJXSVhhOXpDOXA0Rmd0ek5Xb01WdTNCN3hPMEViZEVSLUwta3ZPODZRaXIyWGwzQ2x4aXRpWGFMcjlGZXBsbjZqYmFUZWt4MlZOYw?oc=5",
+      "detected_ticker": null,
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-09-11",
+      "source": "EFN",
+      "broker": null,
+      "title": "Dagens rekar: Novo Nordisk sänks och Academedia köpstämplas - EFN",
+      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5KOVRrNUhheVA5N2pNSkp3RlZCbEZ5by16N083VHV1WWotWEFoaUF1QklhQm9xTzBhYVp0VEY3VkdsWmh4eWk1bldtZlRXVXVIWnY4ZFJoRkJzd2F0VFdmRm9UMHZiZzlsc1ZHaDlmQkg5YlJyN2pnUWJnMGNNUQ?oc=5",
+      "detected_ticker": "NOVO-B.CO",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
+      "published": "2026-09-10",
+      "source": "DNB",
+      "broker": null,
+      "title": "DNB Carnegies anbefaling på OMC Tankers og Cambi - DNB",
+      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVWFBdFRoRnhTdGFqT0lzcjN1OVdzRVAyQmszUWhkQUdHNzEyNHFKUGh4U0xBWGlNaFlHeUhzaFpRZlQxRVF1c2lPNmdkbDl5NVQ0XzBHMEFUWElGcUhaeGhIMVR2cTlMMy1IRkd1NWEtRHZwWXpZS3p6dWJ1a01JT0xYZmVGbUloMzFVYUd3ZXRKRmM1b2hPMVJCNms?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    }
+  ]
+}

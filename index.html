@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nordiske Megleranbefalinger & Porteføljestyring (15 % / 30 %)</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-top">
+        <div>
+          <h1>Nordiske Megleranbefalinger &amp; Porteføljeforslag</h1>
+          <p class="subtitle">
+            Oslo Børs &amp; Norden — Kursmål fra Pareto, DNB Carnegie, ABG, Arctic, SB1 Markets, SEB, Fearnley, Clarksons, Nordea og Danske Bank
+          </p>
+        </div>
+        <div class="meta-badge" id="last-updated-badge">
+          Oppdatert: <strong>Laster...</strong>
+        </div>
+      </div>
+
+      <div class="kpi-grid" id="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Porteføljeverdi (16 aktive)</div>
+          <div class="kpi-value" id="kpi-portfolio-val">344 223 NOK</div>
+          <div class="kpi-sub">Total inkl. kontanter: 344 257 NOK</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Posisjonsgrense (15 %-regel)</div>
+          <div class="kpi-value" style="color: #f87171;">1 brudd (KOG 20,9 %)</div>
+          <div class="kpi-sub">2 nær taket: NOD (14,2 %), TEL (14,1 %)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Sektorgrense (30 %-regel)</div>
+          <div class="kpi-value" style="color: #f87171;">Industri 32,5 %</div>
+          <div class="kpi-sub">Faller til 21,4 % etter rebalansering</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Frigjort til kjøp (Steg 1–2)</div>
+          <div class="kpi-value" style="color: #34d399;">~40 748 NOK</div>
+          <div class="kpi-sub">Øk i NOVO-B, SYNSAM + ny post i DNB</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="panel-recommendations">Megleranbefalinger &amp; Kursmål</button>
+      <button class="tab-btn" data-tab="panel-rebalance">Porteføljegrep (15 % / 30 %-reglene)</button>
+      <button class="tab-btn" data-tab="panel-models">Modellporteføljer &amp; Nyhetsstrøm</button>
+    </div>
+
+    <!-- PANEL 1: MEGLERANBEFALINGER -->
+    <section id="panel-recommendations" class="panel active">
+      <div class="filters-bar">
+        <div class="filter-group">
+          <label for="search-input">Søk (aksje, ticker, sektor)</label>
+          <input type="text" id="search-input" placeholder="F.eks. KOG, Novo, DNB, Sjømat..." />
+        </div>
+        <div class="filter-group">
+          <label for="broker-filter">Meglerhus</label>
+          <select id="broker-filter">
+            <option value="ALL">Alle meglerhus (10)</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="rating-filter">Anbefaling</label>
+          <select id="rating-filter">
+            <option value="ALL">Alle (Kjøp / Hold / Selg)</option>
+            <option value="KJØP">KJØP</option>
+            <option value="HOLD">HOLD</option>
+            <option value="SELG">SELG</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="ownership-filter">Porteføljestatus</label>
+          <select id="ownership-filter">
+            <option value="ALL">Alle aksjer (Portefølje + Kandidater)</option>
+            <option value="PORTFOLIO">Kun i porteføljen (16)</option>
+            <option value="CANDIDATES">Kun nye kandidater</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="sort-select">Sorter etter</label>
+          <select id="sort-select">
+            <option value="weight_desc">Porteføljevekt (høyest først)</option>
+            <option value="upside_desc">Snitt oppside til kursmål (høyest først)</option>
+            <option value="max_upside_desc">Høyeste enkelt-kursmål oppside</option>
+            <option value="buy_count_desc">Flest KJØP-anbefalinger</option>
+            <option value="name_asc">Alfabetisk (A–Å)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="results-summary" class="subtitle" style="margin-bottom: 1rem;"></div>
+      <div class="stocks-grid" id="stocks-grid"></div>
+    </section>
+
+    <!-- PANEL 2: PORTEFØLJEGREP & REBALANSERING -->
+    <section id="panel-rebalance" class="panel">
+      <h2 class="section-title">Konkret ordre- og rebalanseringsplan (Steg 1–3)</h2>
+      <p class="subtitle" style="margin-bottom: 1rem;">
+        Kryssjekk av meglerhusenes kursmål mot porteføljereglene (maks 15 % per aksje, maks 30 % per sektor og krav til positiv kontantstrøm/EBITDA).
+      </p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Steg</th>
+              <th>Handling</th>
+              <th>Aksje (Ticker)</th>
+              <th>Antall aksjer</th>
+              <th>Kurs</th>
+              <th>Beløp (NOK)</th>
+              <th>Vekt før &rarr; etter</th>
+              <th>Begrunnelse &amp; Meglerstøtte</th>
+            </tr>
+          </thead>
+          <tbody id="rebalance-tbody"></tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title">Sektorbalanse mot 30 %-regelen</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Sektor</th>
+              <th>Markedsverdi (NOK)</th>
+              <th>Nåværende vekt</th>
+              <th>Etter rebalansering</th>
+              <th>Status mot 30 %-grense</th>
+            </tr>
+          </thead>
+          <tbody id="sector-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PANEL 3: MODELLPORTEFØLJER & NYHETSSTRØM -->
+    <section id="panel-models" class="panel">
+      <h2 class="section-title">Meglerhusenes modellporteføljer (november 2026)</h2>
+      <div class="model-grid" id="model-grid"></div>
+
+      <h2 class="section-title">Siste innhentede finansnyheter (RSS-oppdatering)</h2>
+      <p class="subtitle" style="margin-bottom: 1rem;">
+        Oppdateres automatisk via <code>scripts/fetch_recommendations.py</code> og GitHub Actions på hverdager.
+      </p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Dato</th>
+              <th>Kilde / Meglerhus</th>
+              <th>Tittel</th>
+              <th>Detektert aksje / anbefaling</th>
+            </tr>
+          </thead>
+          <tbody id="news-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

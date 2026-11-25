@@ -459,6 +459,86 @@ tr:last-child td {
   display: none;
 }
 
+.btn-watch {
+  background: var(--surface-elevated);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.76rem;
+  font-weight: 600;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-watch:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.btn-watch.active {
+  background: rgba(56, 189, 248, 0.18);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.season-box {
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.season-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(42px, 1fr));
+  gap: 0.28rem;
+  margin-top: 0.5rem;
+  overflow-x: auto;
+}
+
+.season-cell {
+  text-align: center;
+  padding: 0.28rem 0.15rem;
+  border-radius: 0.35rem;
+  background: var(--surface-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.72rem;
+}
+
+.season-cell span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.66rem;
+}
+
+.season-cell strong {
+  display: block;
+  margin-top: 0.1rem;
+}
+
+.season-cell.pos {
+  background: rgba(16, 185, 129, 0.14);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.season-cell.neg {
+  background: rgba(239, 68, 68, 0.14);
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+.disclaimer-box {
+  background: rgba(245, 158, 11, 0.1);
+  border-left: 3px solid var(--hold-text);
+  padding: 0.65rem 0.9rem;
+  border-radius: 0 0.45rem 0.45rem 0;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 1.15rem;
+}
+
 @media (max-width: 640px) {
   .stocks-grid {
     grid-template-columns: 1fr;

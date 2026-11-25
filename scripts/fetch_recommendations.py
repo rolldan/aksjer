@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
 """
 Oppdaterer data/recommendations.json hver time:
-1. Henter siste aksjekurser og dagens kursendring fra Yahoo Finance (OSE, SSE, CSE, HEX) + valutakurser (SEK, DKK, EUR -> NOK).
-2. Beregner aktuell porteføljeverdi i NOK, dagens endring i NOK/%, urealisert resultat, porteføljevekter, sektorvekter og oppside til kursmål.
-3. Lagrer daglig verdiutvikling i daily_values.
-4. Henter siste børsmeldinger fra Oslo Børs NewsWeb API (både for porteføljeaksjer, kandidater og interessante meldinger på Oslo Børs).
-5. Henter siste finansnyheter om kursmål og anbefalinger fra RSS (Google News NO/SE og E24).
+1. Sikrer at alle portefølje-, kandidat- og «Følg med på»-aksjer ligger i stocks-listen.
+2. Henter siste aksjekurser og dagens kursendring fra Yahoo Finance (OSE, SSE, CSE, HEX) + valutakurser (SEK, DKK, EUR -> NOK).
+3. Beregner historisk sesongmønster (månedlig gjennomsnittsavkastning, andel positive år, beste/svakeste måneder og 3-månedersperioder siste opptil 10 år) fra Yahoo Finance.
+4. Beregner aktuell porteføljeverdi i NOK (både mobilverdi uten suspendert Cadeler A/S og totalverdi inkl. Cadeler-oppgjør), dagens endring, urealisert resultat, porteføljevekter og oppside til kursmål.
+5. Henter siste børsmeldinger fra Oslo Børs NewsWeb API.
+6. Henter siste finansnyheter om kursmål og anbefalinger fra RSS (Google News NO/SE og E24).
 """
 
 import datetime
 import json
 import os
 import re
+import statistics
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -21,6 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_PATH = os.path.join(BASE_DIR, "data", "recommendations.json")
 
 OSLO_TZ = datetime.timezone(datetime.timedelta(hours=1))
+
+MONTH_NAMES_NO = [
+    "", "Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Des"
+]
 
 FX_SYMBOLS = {
     "NOK": None,
@@ -35,6 +41,204 @@ DEFAULT_FX = {
     "DKK": 1.4370,
     "EUR": 10.7414,
 }
+
+DEFAULT_WATCHLIST = [
+    "DNB.OL",
+    "NOVO-B.CO",
+    "SYNSAM.ST",
+    "INVE-B.ST",
+    "SALM.OL",
+    "MOWI.OL",
+    "AKRBP.OL",
+    "SUBC.OL",
+    "SCATC.OL",
+    "KIT.OL",
+    "VEND.OL",
+    "MING.OL",
+    "KOG.OL",
+    "NOD.OL",
+]
+
+ADDITIONAL_CANDIDATES = [
+    {
+        "ticker": "MOWI.OL",
+        "name": "Mowi ASA",
+        "exchange": "OSE",
+        "currency": "NOK",
+        "sector": "Sjømat",
+        "in_portfolio": False,
+        "shares": 0,
+        "gav": 0,
+        "price": 225.60,
+        "rule_status": "Kandidat",
+        "portfolio_action": "KANDIDAT",
+        "portfolio_rationale": "Kjøp hos SEB (250 NOK) og inne i DNB Carnegies ukesportefølje.",
+        "recommendations": [
+            {"broker": "SEB", "rating": "KJØP", "target": 250.0, "upside_pct": 10.8, "date": "2026-11-18", "source": "Finansavisen (kjøpsanbefaling sammen med SalMar)"},
+            {"broker": "Pareto Securities", "rating": "HOLD", "target": 230.0, "upside_pct": 2.0, "date": "2026-11-04", "source": "Pareto Research History"},
+        ],
+    },
+    {
+        "ticker": "KIT.OL",
+        "name": "Kitron ASA",
+        "exchange": "OSE",
+        "currency": "NOK",
+        "sector": "Teknologi",
+        "in_portfolio": False,
+        "shares": 0,
+        "gav": 0,
+        "price": 85.90,
+        "rule_status": "Kandidat",
+        "portfolio_action": "KANDIDAT",
+        "portfolio_rationale": "Tatt inn i DNB Carnegies ukesportefølje 09.11.2026 etter kursfall på Q3-tallene.",
+        "recommendations": [
+            {"broker": "DNB Carnegie", "rating": "HOLD", "target": 103.0, "upside_pct": 19.9, "date": "2026-11-09", "source": "Finansavisen / TDN Direkt (i DNB Carnegies ukesportefølje)"},
+            {"broker": "Pareto Securities", "rating": "HOLD", "target": 90.44, "upside_pct": 5.3, "date": "2026-10-23", "source": "Pareto Research History"},
+        ],
+    },
+    {
+        "ticker": "DOFG.OL",
+        "name": "DOF Group ASA",
+        "exchange": "OSE",
+        "currency": "NOK",
+        "sector": "Energi og Offshore",
+        "in_portfolio": False,
+        "shares": 0,
+        "gav": 0,
+        "price": 122.10,
+        "rule_status": "Kandidat",
+        "portfolio_action": "KANDIDAT",
+        "portfolio_rationale": "Petrobras-forlengelser for tre PLSV-fartøy til 2032; Kjøp hos DNB Carnegie og Fearnley.",
+        "recommendations": [
+            {"broker": "DNB Carnegie", "rating": "KJØP", "target": 150.0, "upside_pct": 22.9, "date": "2026-11-09", "source": "DNB Nyheter"},
+            {"broker": "Fearnley Securities", "rating": "KJØP", "target": 148.0, "upside_pct": 21.2, "date": "2026-08-10", "source": "Finansavisen"},
+        ],
+    },
+    {
+        "ticker": "KMAR.OL",
+        "name": "Kongsberg Maritime ASA",
+        "exchange": "OSE",
+        "currency": "NOK",
+        "sector": "Industri og Forsvar",
+        "in_portfolio": False,
+        "shares": 0,
+        "gav": 0,
+        "price": 58.84,
+        "rule_status": "Kandidat",
+        "portfolio_action": "KANDIDAT",
+        "portfolio_rationale": "Inne i Paretos månedsportefølje for november 2026.",
+        "recommendations": [
+            {"broker": "Pareto Securities", "rating": "KJØP", "target": 80.0, "upside_pct": 36.0, "date": "2026-11-02", "source": "Pareto Research History (i november-porteføljen)"},
+        ],
+    },
+    {
+        "ticker": "ODL.OL",
+        "name": "Odfjell Drilling Ltd",
+        "exchange": "OSE",
+        "currency": "NOK",
+        "sector": "Energi og Offshore",
+        "in_portfolio": False,
+        "shares": 0,
+        "gav": 0,
+        "price": 109.40,
+        "rule_status": "Kandidat",
+        "portfolio_action": "KANDIDAT",
+        "portfolio_rationale": "Inne i Paretos månedsportefølje for november 2026.",
+        "recommendations": [
+            {"broker": "Pareto Securities", "rating": "KJØP", "target": 120.0, "upside_pct": 9.7, "date": "2026-11-03", "source": "Pareto Research History (i november-porteføljen)"},
+        ],
+    },
+    {
+        "ticker": "LINK.OL",
+        "name": "LINK Mobility Group Holding ASA",
+        "exchange": "OSE",
+        "currency": "NOK",
+        "sector": "Teknologi",
+        "in_portfolio": False,
+        "shares": 0,
+        "gav": 0,
+        "price": 25.10,
+        "rule_status": "Kandidat",
+        "portfolio_action": "KANDIDAT",
+        "portfolio_rationale": "Inne i Paretos november-portefølje (~11–13 % FCF-yield 2027–2028e).",
+        "recommendations": [
+            {"broker": "Pareto Securities", "rating": "KJØP", "target": 35.0, "upside_pct": 39.4, "date": "2026-11-04", "source": "Pareto Research History (i november-porteføljen)"},
+        ],
+    },
+    {
+        "ticker": "YAR.OL",
+        "name": "Yara International ASA",
+        "exchange": "OSE",
+        "currency": "NOK",
+        "sector": "Industri",
+        "in_portfolio": False,
+        "shares": 0,
+        "gav": 0,
+        "price": 402.00,
+        "rule_status": "Overvåkes",
+        "portfolio_action": "OVERBLIKK",
+        "portfolio_rationale": "Uenighet blant meglerhusene: Kjøp hos Pareto (500 NOK), Hold hos SEB (420 NOK) og Selg hos DNB Carnegie (350 NOK).",
+        "recommendations": [
+            {"broker": "Pareto Securities", "rating": "KJØP", "target": 500.0, "upside_pct": 24.4, "date": "2026-10-23", "source": "Finansavisen / TDN Direkt"},
+            {"broker": "SEB", "rating": "HOLD", "target": 420.0, "upside_pct": 4.5, "date": "2026-10-08", "source": "Finansavisen / TDN Direkt"},
+            {"broker": "DNB Carnegie", "rating": "SELG", "target": 350.0, "upside_pct": -12.9, "date": "2026-10-23", "source": "Finansavisen / TDN Direkt"},
+        ],
+    },
+    {
+        "ticker": "ORK.OL",
+        "name": "Orkla ASA",
+        "exchange": "OSE",
+        "currency": "NOK",
+        "sector": "Konsum",
+        "in_portfolio": False,
+        "shares": 0,
+        "gav": 0,
+        "price": 101.90,
+        "rule_status": "Overvåkes",
+        "portfolio_action": "OVERBLIKK",
+        "portfolio_rationale": "Hold hos både Pareto (107 NOK) og DNB Carnegie (95 NOK).",
+        "recommendations": [
+            {"broker": "Pareto Securities", "rating": "HOLD", "target": 107.0, "upside_pct": 5.0, "date": "2026-11-06", "source": "Pareto Research History"},
+            {"broker": "DNB Carnegie", "rating": "HOLD", "target": 95.0, "upside_pct": -6.8, "date": "2026-11-06", "source": "DNB Nyheter"},
+        ],
+    },
+    {
+        "ticker": "VAR.OL",
+        "name": "Vår Energi ASA",
+        "exchange": "OSE",
+        "currency": "NOK",
+        "sector": "Energi og Offshore",
+        "in_portfolio": False,
+        "shares": 0,
+        "gav": 0,
+        "price": 49.50,
+        "rule_status": "Overvåkes",
+        "portfolio_action": "UNNGÅ",
+        "portfolio_rationale": "Kjøp hos Nordea (62 NOK), men Selg hos ABG (45 NOK) og SEB (41 NOK).",
+        "recommendations": [
+            {"broker": "Nordea", "rating": "KJØP", "target": 62.0, "upside_pct": 25.3, "date": "2026-10-19", "source": "Placera / Finwire"},
+            {"broker": "ABG Sundal Collier", "rating": "SELG", "target": 45.0, "upside_pct": -9.1, "date": "2026-11-20", "source": "Finansavisen"},
+            {"broker": "SEB", "rating": "SELG", "target": 41.0, "upside_pct": -17.2, "date": "2026-11-10", "source": "Börskollen / Finwire"},
+        ],
+    },
+    {
+        "ticker": "GJF.OL",
+        "name": "Gjensidige Forsikring ASA",
+        "exchange": "OSE",
+        "currency": "NOK",
+        "sector": "Finans",
+        "in_portfolio": False,
+        "shares": 0,
+        "gav": 0,
+        "price": 260.00,
+        "rule_status": "Overvåkes",
+        "portfolio_action": "OVERBLIKK",
+        "portfolio_rationale": "Hold hos Pareto (280 NOK).",
+        "recommendations": [
+            {"broker": "Pareto Securities", "rating": "HOLD", "target": 280.0, "upside_pct": 7.7, "date": "2026-10-26", "source": "Pareto Research History"},
+        ],
+    },
+]
 
 EXTRA_OSLO_ISSUERS = [
     "MOWI", "DOFG", "KIT", "KMAR", "ODL", "LINK", "ORK", "YAR", "VAR", "GJF", "ELK", "B2I", "ENDUR"
@@ -97,6 +301,40 @@ BORSMELDING_NOISE_PATTERNS = re.compile(
 )
 
 
+def ensure_candidates_and_watchlist(data: dict):
+    stocks = data.setdefault("stocks", [])
+    existing_tickers = {s.get("ticker", "").upper() for s in stocks}
+    for cand in ADDITIONAL_CANDIDATES:
+        if cand["ticker"].upper() not in existing_tickers:
+            stocks.append(dict(cand))
+            existing_tickers.add(cand["ticker"].upper())
+
+    if "watchlist" not in data or not isinstance(data["watchlist"], list) or len(data["watchlist"]) == 0:
+        data["watchlist"] = list(DEFAULT_WATCHLIST)
+
+    for wt in data["watchlist"]:
+        wt_up = (wt or "").strip().upper()
+        if wt_up and wt_up not in existing_tickers:
+            stocks.append({
+                "ticker": wt_up,
+                "name": wt_up,
+                "exchange": "OSE" if wt_up.endswith(".OL") else "NORDIC",
+                "currency": "NOK" if wt_up.endswith(".OL") else "SEK",
+                "sector": "Overvåkes",
+                "in_portfolio": False,
+                "shares": 0,
+                "gav": 0,
+                "price": 0.0,
+                "value_nok": 0.0,
+                "weight_pct": 0.0,
+                "rule_status": "Følg med på",
+                "portfolio_action": "FØLG MED PÅ",
+                "portfolio_rationale": "Lagt til i «Følg med på»-listen.",
+                "recommendations": [],
+            })
+            existing_tickers.add(wt_up)
+
+
 def fetch_yahoo_quote(symbol: str, timeout: int = 8):
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(symbol)}?interval=1d&range=5d"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
@@ -122,6 +360,125 @@ def fetch_yahoo_quote(symbol: str, timeout: int = 8):
         "price": round(float(price), 4 if price < 5 else 2),
         "prev_close": round(float(prev_close), 4 if prev_close and prev_close < 5 else 2) if prev_close else None,
         "day_change_pct": day_change_pct,
+        "short_name": meta.get("longName") or meta.get("shortName"),
+        "currency": meta.get("currency"),
+    }
+
+
+def fetch_yahoo_seasonality(symbol: str, timeout: int = 8):
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(symbol)}?interval=1mo&range=10y"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        payload = json.loads(resp.read())
+    results = payload.get("chart", {}).get("result") or []
+    if not results:
+        return None
+    res = results[0]
+    timestamps = res.get("timestamp") or []
+    closes = (res.get("indicators", {}).get("quote", [{}])[0].get("close")) or []
+    if len(timestamps) < 4 or len(closes) < 4:
+        return None
+
+    points = []
+    for ts, cl in zip(timestamps, closes):
+        if cl is not None and cl > 0:
+            dt = datetime.datetime.fromtimestamp(ts, tz=datetime.timezone.utc)
+            points.append((dt.year, dt.month, float(cl)))
+
+    if len(points) < 4:
+        return None
+
+    by_month = {m: [] for m in range(1, 13)}
+    years_seen = set()
+    for i in range(1, len(points)):
+        y_prev, m_prev, c_prev = points[i - 1]
+        y_cur, m_cur, c_cur = points[i]
+        # Kun påfølgende måneder
+        diff_months = (y_cur - y_prev) * 12 + (m_cur - m_prev)
+        if diff_months != 1 or c_prev <= 0:
+            continue
+        ret_pct = ((c_cur / c_prev) - 1.0) * 100.0
+        # Filtrer ut ekstreme databrudd/spleis-feil
+        if -75.0 <= ret_pct <= 150.0:
+            by_month[m_cur].append(ret_pct)
+            years_seen.add(y_cur)
+
+    months_stats = []
+    for m in range(1, 13):
+        vals = by_month[m]
+        if vals:
+            avg_val = round(sum(vals) / len(vals), 2)
+            med_val = round(statistics.median(vals), 2)
+            win_rate = round((sum(1 for v in vals if v > 0) / len(vals)) * 100.0, 0)
+            months_stats.append({
+                "month": m,
+                "name": MONTH_NAMES_NO[m],
+                "avg_pct": avg_val,
+                "median_pct": med_val,
+                "win_rate_pct": int(win_rate),
+                "count": len(vals),
+            })
+        else:
+            months_stats.append({
+                "month": m,
+                "name": MONTH_NAMES_NO[m],
+                "avg_pct": 0.0,
+                "median_pct": 0.0,
+                "win_rate_pct": 0,
+                "count": 0,
+            })
+
+    valid_months = [ms for ms in months_stats if ms["count"] >= 2]
+    if not valid_months:
+        valid_months = [ms for ms in months_stats if ms["count"] >= 1]
+    if not valid_months:
+        return None
+
+    sorted_by_avg = sorted(valid_months, key=lambda x: x["avg_pct"], reverse=True)
+    best_months = sorted_by_avg[:2]
+    weakest_months = list(reversed(sorted_by_avg[-2:]))
+
+    # Beregn beste og svakeste rullerende 3-månedersperiode
+    month_map = {ms["month"]: ms["avg_pct"] for ms in months_stats}
+    windows_3m = []
+    for start_m in range(1, 13):
+        m1 = start_m
+        m2 = ((start_m) % 12) + 1
+        m3 = ((start_m + 1) % 12) + 1
+        sum_3m = round(month_map.get(m1, 0.0) + month_map.get(m2, 0.0) + month_map.get(m3, 0.0), 1)
+        label = f"{MONTH_NAMES_NO[m1]}–{MONTH_NAMES_NO[m3]}"
+        windows_3m.append((label, sum_3m))
+
+    windows_3m.sort(key=lambda x: x[1], reverse=True)
+    best_3m = windows_3m[0]
+    weak_3m = windows_3m[-1]
+
+    n_years = len(years_seen)
+    b1, b2 = best_months[0], best_months[1] if len(best_months) > 1 else best_months[0]
+    w1, w2 = weakest_months[0], weakest_months[1] if len(weakest_months) > 1 else weakest_months[0]
+
+    summary_no = (
+        f"Basert på {n_years} år med kursdata har {b1['name']} ({b1['avg_pct']:+.1f} %, positiv i {b1['win_rate_pct']} % av årene) "
+        f"og {b2['name']} ({b2['avg_pct']:+.1f} %) vært de historisk sterkeste månedene, "
+        f"mens {w1['name']} ({w1['avg_pct']:+.1f} %) og {w2['name']} ({w2['avg_pct']:+.1f} %) har vært svakest. "
+        f"Beste 3-månedersperiode historisk er {best_3m[0]} ({best_3m[1]:+.1f} % samlet snitt). "
+        f"(Historisk sesongmønster er kun statistikk og ingen garanti for fremtidig kursutvikling.)"
+    )
+
+    return {
+        "years_analyzed": n_years,
+        "best_months": [
+            {"name": bm["name"], "avg_pct": bm["avg_pct"], "win_rate_pct": bm["win_rate_pct"], "count": bm["count"]}
+            for bm in best_months
+        ],
+        "weakest_months": [
+            {"name": wm["name"], "avg_pct": wm["avg_pct"], "win_rate_pct": wm["win_rate_pct"], "count": wm["count"]}
+            for wm in weakest_months
+        ],
+        "best_3m_window": f"{best_3m[0]} ({best_3m[1]:+.1f} %)",
+        "weakest_3m_window": f"{weak_3m[0]} ({weak_3m[1]:+.1f} %)",
+        "months": months_stats,
+        "summary_no": summary_no,
     }
 
 
@@ -141,27 +498,41 @@ def update_prices_and_portfolio(data: dict, now_oslo: datetime.datetime):
 
     stocks = data.get("stocks", [])
     updated_count = 0
+    seasonality_count = 0
+
     for s in stocks:
         ticker = s.get("ticker", "")
         if not ticker or ticker == "PLCS":
             continue
+
+        # Oppdater sesongmønster (10 års månedlige data)
+        try:
+            seas = fetch_yahoo_seasonality(ticker)
+            if seas:
+                s["seasonality"] = seas
+                seasonality_count += 1
+        except Exception as e:
+            print(f"[WARN] Kunne ikke beregne sesongdata for {ticker}: {e}")
+
         # Cadeler A/S (440 aksjer) er under tvangsinnløsning (Squeeze-out) til fast kontantkurs 58,42 NOK (frist 07.12.2026)
         if ticker == "CDLR.OL" and s.get("squeeze_out_price"):
             s["price"] = float(s["squeeze_out_price"])
             s["prev_close"] = float(s["squeeze_out_price"])
             s["day_change_pct"] = 0.0
             s["price_updated_at"] = "Fast innløsningskurs (58,42 NOK)"
-            continue
-        try:
-            q = fetch_yahoo_quote(ticker)
-            if q and q.get("price"):
-                s["price"] = q["price"]
-                s["prev_close"] = q["prev_close"]
-                s["day_change_pct"] = q["day_change_pct"]
-                s["price_updated_at"] = now_oslo.strftime("%Y-%m-%d %H:%M CET")
-                updated_count += 1
-        except Exception as e:
-            print(f"[WARN] Kunne ikke hente kurs for {ticker}: {e}")
+        else:
+            try:
+                q = fetch_yahoo_quote(ticker)
+                if q and q.get("price"):
+                    s["price"] = q["price"]
+                    s["prev_close"] = q["prev_close"]
+                    s["day_change_pct"] = q["day_change_pct"]
+                    s["price_updated_at"] = now_oslo.strftime("%Y-%m-%d %H:%M CET")
+                    if s.get("name") == ticker and q.get("short_name"):
+                        s["name"] = q["short_name"]
+                    updated_count += 1
+            except Exception as e:
+                print(f"[WARN] Kunne ikke hente kurs for {ticker}: {e}")
 
         price = float(s.get("price") or 0.0)
         for rec in s.get("recommendations", []):
@@ -195,7 +566,6 @@ def update_prices_and_portfolio(data: dict, now_oslo: datetime.datetime):
             s["day_change_nok"] = 0.0
             s["weight_pct"] = 0.0
 
-    # Beregn både verdi som vises i DNB-mobilappen (uten suspendert Cadeler A/S) og total reell verdi inkl. Cadeler-innløsning (25 704,80 NOK)
     cdlr_val = sum(float(s.get("value_nok") or 0.0) for s in stocks if s.get("ticker") == "CDLR.OL" and s.get("in_portfolio"))
     mobile_portfolio_nok = round(total_portfolio_nok - cdlr_val, 2)
     total_portfolio_nok = round(total_portfolio_nok, 2)
@@ -209,7 +579,7 @@ def update_prices_and_portfolio(data: dict, now_oslo: datetime.datetime):
                 s["rule_status"] = f"BRUDD (> 15 %: {w:.2f} %)"
             elif w >= 12.0:
                 s["rule_status"] = "Nær taket (12–15 %)"
-            elif "kvalitetskrav" not in (s.get("rule_status") or "").lower():
+            elif "kvalitetskrav" not in (s.get("rule_status") or "").lower() and "tvangsinnløsning" not in (s.get("rule_status") or "").lower():
                 s["rule_status"] = "Innenfor (< 15 %)"
 
     meta = data.setdefault("metadata", {})
@@ -228,7 +598,6 @@ def update_prices_and_portfolio(data: dict, now_oslo: datetime.datetime):
     meta["unrealized_pnl_nok"] = round(total_portfolio_nok - cost_basis_nok, 2)
     meta["unrealized_pnl_pct"] = round(((total_portfolio_nok - cost_basis_nok) / cost_basis_nok) * 100.0, 2)
 
-    # Oppdater daglig verdi-historikk
     today_str = now_oslo.strftime("%Y-%m-%d")
     daily_values = data.get("daily_values", [])
     if not daily_values:
@@ -246,6 +615,7 @@ def update_prices_and_portfolio(data: dict, now_oslo: datetime.datetime):
         "date": today_str,
         "updated_at": now_oslo.strftime("%H:%M CET"),
         "portfolio_value_nok": total_portfolio_nok,
+        "mobile_visible_value_nok": mobile_portfolio_nok,
         "total_value_nok": meta["total_value_nok"],
         "day_change_nok": day_change_nok,
         "day_change_pct": day_change_pct,
@@ -255,7 +625,10 @@ def update_prices_and_portfolio(data: dict, now_oslo: datetime.datetime):
     by_date[today_str] = today_entry
     data["daily_values"] = sorted(by_date.values(), key=lambda x: x["date"], reverse=True)[:60]
 
-    print(f"[OK] Oppdaterte kurser for {updated_count} aksjer. Porteføljeverdi: {total_portfolio_nok:,.2f} NOK ({day_change_pct:+.2f} % i dag)")
+    print(
+        f"[OK] Oppdaterte kurser for {updated_count} aksjer og sesongmønster for {seasonality_count} aksjer. "
+        f"Mobilverdi: {mobile_portfolio_nok:,.2f} NOK | Inkl. Cadeler: {total_portfolio_nok:,.2f} NOK"
+    )
 
 
 def format_newsweb_time(iso_str: str) -> str:
@@ -345,7 +718,6 @@ def update_oslo_bors_meldinger(data: dict):
             "relevance": relevance,
         }
 
-    # 1. Hent siste meldinger på tvers av hele Oslo Børs
     try:
         general_msgs = fetch_newsweb_messages(api_base, "")
         for m in general_msgs:
@@ -354,12 +726,10 @@ def update_oslo_bors_meldinger(data: dict):
     except Exception as e:
         print(f"[WARN] Kunne ikke hente generell NewsWeb-liste: {e}")
 
-    # 2. Hent de siste meldingene spesifikt for porteføljeaksjer og utvalgte kandidater på Oslo Børs
-    tracked_issuers = sorted(portfolio_issuers) + sorted(candidate_issuers - portfolio_issuers)[:10]
+    tracked_issuers = sorted(portfolio_issuers) + sorted(candidate_issuers - portfolio_issuers)[:12]
     for issuer in tracked_issuers:
         try:
             issuer_msgs = fetch_newsweb_messages(api_base, f"?issuer={urllib.parse.quote(issuer)}")
-            # Ta de 4 nyeste meldingene per selskap
             for m in issuer_msgs[:4]:
                 process_msg(m)
         except Exception as e:
@@ -369,7 +739,7 @@ def update_oslo_bors_meldinger(data: dict):
         collected.values(),
         key=lambda x: x.get("published_raw", ""),
         reverse=True,
-    )[:80]
+    )[:85]
 
     data["borsmeldinger"] = sorted_msgs
     print(f"[OK] Lagret {len(sorted_msgs)} børsmeldinger fra Oslo Børs NewsWeb.")
@@ -510,6 +880,7 @@ def main():
         data = json.load(f)
 
     now_oslo = datetime.datetime.now(OSLO_TZ)
+    ensure_candidates_and_watchlist(data)
     update_prices_and_portfolio(data, now_oslo)
     update_oslo_bors_meldinger(data)
     update_rss_news(data, now_oslo)

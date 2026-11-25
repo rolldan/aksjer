@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nordiske Megleranbefalinger, Børsmeldinger & Porteføljestyring</title>
+  <title>Nordiske Megleranbefalinger, Følg med på, Sesongmønster & Portefølje</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -13,7 +13,7 @@
         <div>
           <h1>Nordiske Megleranbefalinger, Børsmeldinger &amp; Portefølje</h1>
           <p class="subtitle">
-            Oppdateres hver time med ferske kurser, aktuell daglig porteføljeverdi, Oslo Børs NewsWeb-meldinger og kursmål fra 10 nordiske meglerhus
+            Oppdateres hver time med ferske kurser, aktuell daglig porteføljeverdi, «Følg med på»-liste, 10-års sesongmønster, Oslo Børs NewsWeb og kursmål fra 10 meglerhus
           </p>
         </div>
         <div class="header-actions">
@@ -27,8 +27,8 @@
       <div class="kpi-grid" id="kpi-grid">
         <div class="kpi-card">
           <div class="kpi-label">Aktuell verdi på mobil (uten Cadeler)</div>
-          <div class="kpi-value" id="kpi-portfolio-val">314 356 NOK</div>
-          <div class="kpi-sub" id="kpi-total-val">+ Cadeler-oppgjør (25 705 NOK) = 340 061 NOK</div>
+          <div class="kpi-value" id="kpi-portfolio-val">312 723 NOK</div>
+          <div class="kpi-sub" id="kpi-total-val">+ Cadeler-oppgjør (25 705 NOK) = 338 428 NOK</div>
         </div>
         <div class="kpi-card">
           <div class="kpi-label">Utvikling i dag &amp; Urealisert</div>
@@ -41,9 +41,9 @@
           <div class="kpi-sub" id="kpi-rule-15-sub">2 nær taket (NOD, TEL)</div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-label">Siste børsmeldinger (Oslo Børs)</div>
-          <div class="kpi-value" id="kpi-newsweb-count" style="color: #38bdf8;">80 meldinger</div>
-          <div class="kpi-sub" id="kpi-newsweb-sub">Overvåker dine aksjer + Oslo Børs</div>
+          <div class="kpi-label">Følg med på &amp; Børsmeldinger</div>
+          <div class="kpi-value" id="kpi-newsweb-count" style="color: #38bdf8;">14 fulgte aksjer</div>
+          <div class="kpi-sub" id="kpi-newsweb-sub">85 børsmeldinger fra Oslo Børs</div>
         </div>
       </div>
     </div>
@@ -54,6 +54,8 @@
 
     <div class="tabs">
       <button class="tab-btn active" data-tab="panel-recommendations">Megleranbefalinger &amp; Kursmål</button>
+      <button class="tab-btn" data-tab="panel-watchlist">Følg med på (<span id="watchlist-tab-count">0</span>)</button>
+      <button class="tab-btn" data-tab="panel-seasonality">Sesongmønster (Historisk)</button>
       <button class="tab-btn" data-tab="panel-borsmeldinger">Børsmeldinger (Oslo Børs)</button>
       <button class="tab-btn" data-tab="panel-editor">Rediger aksjeliste / Portefølje</button>
       <button class="tab-btn" data-tab="panel-rebalance">Porteføljegrep &amp; Daglig verdi</button>
@@ -87,7 +89,8 @@
           <select id="ownership-filter">
             <option value="ALL">Alle aksjer (Portefølje + Kandidater)</option>
             <option value="PORTFOLIO">Kun i min portefølje</option>
-            <option value="CANDIDATES">Kun nye kandidater</option>
+            <option value="WATCHLIST">Kun i «Følg med på»</option>
+            <option value="CANDIDATES">Kun kandidater utenfor porteføljen</option>
           </select>
         </div>
         <div class="filter-group">
@@ -106,7 +109,106 @@
       <div class="stocks-grid" id="stocks-grid"></div>
     </section>
 
-    <!-- PANEL 2: BØRSMELDINGER OSLO BØRS -->
+    <!-- PANEL 2: FØLG MED PÅ (WATCHLIST) -->
+    <section id="panel-watchlist" class="panel">
+      <div class="editor-card">
+        <div class="header-top" style="margin-bottom: 0.85rem;">
+          <div>
+            <h2 class="section-title" style="margin: 0;">Følg med på — Overvåkningsliste med kursmål og sesongmønster</h2>
+            <p class="subtitle">
+              Klikk på <strong>«☆ Følg med på»</strong> på en hvilken som helst aksje i oversikten for å legge den til her, eller legg til/fjern aksjer manuelt nedenfor. Viser aktuell kurs, anbefalinger fra de 10 store meglerhusene og historisk sesongmønster.
+            </p>
+          </div>
+          <div class="header-actions">
+            <button class="btn" id="reset-watchlist-btn" title="Tilbakestill Følg med på-listen til standardutvalget">Tilbakestill liste</button>
+          </div>
+        </div>
+
+        <div class="filters-bar" style="margin-bottom: 0;">
+          <div class="filter-group">
+            <label for="wl-select-existing">Velg fra kjente aksjer i databasen</label>
+            <select id="wl-select-existing">
+              <option value="">-- Velg aksje å legge til --</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="wl-custom-ticker">Eller skriv inn ticker (f.eks. MOWI.OL, EQNR.OL, FRO.OL)</label>
+            <input type="text" id="wl-custom-ticker" placeholder="F.eks. FRO.OL eller YAR.OL" />
+          </div>
+          <div class="filter-group">
+            <label for="wl-custom-name">Selskapsnavn (valgfritt)</label>
+            <input type="text" id="wl-custom-name" placeholder="F.eks. Frontline plc" />
+          </div>
+          <div class="filter-group">
+            <button class="btn btn-primary" id="wl-add-btn" style="width: 100%;">+ Legg til i «Følg med på»</button>
+          </div>
+          <div class="filter-group">
+            <label for="wl-search">Filtrer i «Følg med på»</label>
+            <input type="text" id="wl-search" placeholder="Søk blant dine fulgte aksjer..." />
+          </div>
+        </div>
+      </div>
+
+      <div id="wl-summary" class="subtitle" style="margin-bottom: 1rem;"></div>
+      <div class="stocks-grid" id="watchlist-grid"></div>
+    </section>
+
+    <!-- PANEL 3: HISTORISK SESONGANALYSE -->
+    <section id="panel-seasonality" class="panel">
+      <div class="disclaimer-box">
+        <strong>Viktig om historisk sesongmønster:</strong> Analysen under viser gjennomsnittlig månedlig avkastning (<code>Jan</code>–<code>Des</code>), andel positive år og beste/svakeste 3-månedersperiode basert på opptil 10 års historiske sluttkurser fra Yahoo Finance. <strong>Historisk sesongmønster er kun statistisk historikk og gir ingen garanti for fremtidig kursutvikling.</strong>
+      </div>
+
+      <div class="filters-bar">
+        <div class="filter-group">
+          <label for="seas-search">Søk (aksje, ticker, måned)</label>
+          <input type="text" id="seas-search" placeholder="F.eks. KOG, SalMar, Des, Apr..." />
+        </div>
+        <div class="filter-group">
+          <label for="seas-scope">Utvalg av aksjer</label>
+          <select id="seas-scope">
+            <option value="ALL">Alle analyserte aksjer</option>
+            <option value="PORTFOLIO">Kun i min portefølje</option>
+            <option value="WATCHLIST">Kun i «Følg med på»</option>
+            <option value="CANDIDATES">Kun kandidater utenfor porteføljen</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="seas-month-filter">Fokusmåned (vis aksjer som historisk er sterke i valgt måned)</label>
+          <select id="seas-month-filter">
+            <option value="ALL">Alle måneder (vis helårsoversikt)</option>
+            <option value="11">November (inneværende måned)</option>
+            <option value="12">Desember (neste måned)</option>
+            <option value="1">Januar (nyttårsrally)</option>
+            <option value="2">Februar</option>
+            <option value="3">Mars</option>
+            <option value="4">April</option>
+            <option value="5">Mai</option>
+            <option value="6">Juni</option>
+            <option value="7">Juli</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">Oktober</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="seas-sort">Sorter etter</label>
+          <select id="seas-sort">
+            <option value="focus_month_desc">Høyest snitt i valgt fokusmåned (eller Des)</option>
+            <option value="nov_desc">Sterkest i november (historisk snitt)</option>
+            <option value="dec_desc">Sterkest i desember (historisk snitt)</option>
+            <option value="jan_desc">Sterkest i januar (historisk snitt)</option>
+            <option value="weight_desc">Porteføljevekt (høyest først)</option>
+            <option value="name_asc">Alfabetisk (A–Å)</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="seas-summary" class="subtitle" style="margin-bottom: 1rem;"></div>
+      <div class="stocks-grid" id="seasonality-grid"></div>
+    </section>
+
+    <!-- PANEL 4: BØRSMELDINGER OSLO BØRS -->
     <section id="panel-borsmeldinger" class="panel">
       <div class="filters-bar">
         <div class="filter-group">
@@ -118,6 +220,7 @@
           <select id="bm-relevance">
             <option value="ALL">Alle relevante meldinger på Oslo Børs</option>
             <option value="MINE_AKSJER">Kun mine porteføljeaksjer</option>
+            <option value="WATCHLIST">Kun aksjer i «Følg med på»</option>
             <option value="MINE_OG_KANDIDATER">Mine aksjer + kandidataksjer</option>
             <option value="KANDIDATER">Kun kandidataksjer</option>
             <option value="OSLO_BORS_ELLERS">Øvrige selskaper på Oslo Børs</option>
@@ -152,7 +255,7 @@
       </div>
     </section>
 
-    <!-- PANEL 3: REDIGER AKSJELISTE / PORTEFØLJE -->
+    <!-- PANEL 5: REDIGER AKSJELISTE / PORTEFØLJE -->
     <section id="panel-editor" class="panel">
       <div class="editor-card">
         <div class="header-top" style="margin-bottom: 0.85rem;">
@@ -172,7 +275,6 @@
           </div>
         </div>
 
-        <!-- Legg til ny aksje -->
         <div class="filters-bar" style="margin-bottom: 0.85rem;">
           <div class="filter-group">
             <label for="new-ticker">Ticker (f.eks. DNB.OL, MOWI.OL)</label>
@@ -212,7 +314,6 @@
           </div>
         </div>
 
-        <!-- Synkroniser permanent til GitHub -->
         <details style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
           <summary style="cursor: pointer; color: var(--accent); font-weight: 600;">
             Lagre endringer permanent til GitHub (`rolldan/aksjer`) eller lim inn fra DNB/Sbanken
@@ -242,6 +343,7 @@
           <thead>
             <tr>
               <th>I portefølje</th>
+              <th>Følg med</th>
               <th>Aksje (Ticker)</th>
               <th>Sektor</th>
               <th>Antall aksjer</th>
@@ -258,7 +360,7 @@
       </div>
     </section>
 
-    <!-- PANEL 4: PORTEFØLJEGREP & DAGLIG VERDI -->
+    <!-- PANEL 6: PORTEFØLJEGREP & DAGLIG VERDI -->
     <section id="panel-rebalance" class="panel">
       <h2 class="section-title">Daglig verdiutvikling for porteføljen</h2>
       <p class="subtitle" style="margin-bottom: 0.85rem;">
@@ -270,8 +372,8 @@
             <tr>
               <th>Dato</th>
               <th>Sist målt</th>
-              <th>Aksjeverdi (NOK)</th>
-              <th>Totalverdi inkl. kontanter (NOK)</th>
+              <th>Mobilverdi uten Cadeler (NOK)</th>
+              <th>Total aksjeverdi inkl. Cadeler (NOK)</th>
               <th>Endring i dag (NOK / %)</th>
               <th>Urealisert totalt (NOK)</th>
             </tr>
@@ -316,7 +418,7 @@
       </div>
     </section>
 
-    <!-- PANEL 5: MODELLPORTEFØLJER & NYHETSSTRØM -->
+    <!-- PANEL 7: MODELLPORTEFØLJER & NYHETSSTRØM -->
     <section id="panel-models" class="panel">
       <h2 class="section-title">Meglerhusenes modellporteføljer (november 2026)</h2>
       <div class="model-grid" id="model-grid"></div>

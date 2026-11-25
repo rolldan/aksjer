@@ -1,12 +1,15 @@
 (function () {
   const STORAGE_KEY = "rolldan_aksjer_custom_portfolio_v1";
+  const WATCHLIST_KEY = "rolldan_aksjer_watchlist_v1";
   const GH_TOKEN_KEY = "rolldan_aksjer_gh_token";
   let appData = null;
+  let watchlistSet = new Set();
 
   const els = {
     lastUpdated: document.getElementById("last-updated-badge"),
     refreshNowBtn: document.getElementById("refresh-now-btn"),
     localBanner: document.getElementById("local-override-banner"),
+    watchlistTabCount: document.getElementById("watchlist-tab-count"),
     kpiPortfolioVal: document.getElementById("kpi-portfolio-val"),
     kpiTotalVal: document.getElementById("kpi-total-val"),
     kpiDayChange: document.getElementById("kpi-day-change"),
@@ -22,6 +25,20 @@
     sortSelect: document.getElementById("sort-select"),
     stocksGrid: document.getElementById("stocks-grid"),
     resultsSummary: document.getElementById("results-summary"),
+    wlSelectExisting: document.getElementById("wl-select-existing"),
+    wlCustomTicker: document.getElementById("wl-custom-ticker"),
+    wlCustomName: document.getElementById("wl-custom-name"),
+    wlAddBtn: document.getElementById("wl-add-btn"),
+    wlSearch: document.getElementById("wl-search"),
+    wlSummary: document.getElementById("wl-summary"),
+    watchlistGrid: document.getElementById("watchlist-grid"),
+    resetWatchlistBtn: document.getElementById("reset-watchlist-btn"),
+    seasSearch: document.getElementById("seas-search"),
+    seasScope: document.getElementById("seas-scope"),
+    seasMonthFilter: document.getElementById("seas-month-filter"),
+    seasSort: document.getElementById("seas-sort"),
+    seasSummary: document.getElementById("seas-summary"),
+    seasonalityGrid: document.getElementById("seasonality-grid"),
     bmSearch: document.getElementById("bm-search"),
     bmRelevance: document.getElementById("bm-relevance"),
     bmCategory: document.getElementById("bm-category"),
@@ -74,6 +91,79 @@
       EUR: 10.7414
     };
     return Number(rates[currency] || 1.0);
+  }
+
+  function loadWatchlist(defaultList) {
+    try {
+      const raw = localStorage.getItem(WATCHLIST_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+          watchlistSet = new Set(parsed.map((t) => String(t).toUpperCase()));
+          return;
+        }
+      }
+    } catch (e) {
+      // Fallback til default
+    }
+    watchlistSet = new Set((defaultList || []).map((t) => String(t).toUpperCase()));
+  }
+
+  function saveWatchlist() {
+    const arr = Array.from(watchlistSet);
+    localStorage.setItem(WATCHLIST_KEY, JSON.stringify(arr));
+    if (appData) {
+      appData.watchlist = arr;
+    }
+  }
+
+  function isWatched(ticker) {
+    return watchlistSet.has(String(ticker || "").toUpperCase());
+  }
+
+  function toggleWatchlist(ticker, customName) {
+    const clean = String(ticker || "").trim().toUpperCase();
+    if (!clean) return;
+    if (watchlistSet.has(clean)) {
+      watchlistSet.delete(clean);
+    } else {
+      watchlistSet.add(clean);
+      ensureStockExists(clean, customName);
+    }
+    saveWatchlist();
+    refreshAllViews(false);
+  }
+
+  function ensureStockExists(ticker, customName) {
+    if (!appData) return;
+    const clean = String(ticker || "").trim().toUpperCase();
+    const existing = appData.stocks.find((s) => s.ticker.toUpperCase() === clean);
+    if (existing) {
+      if (customName && existing.name === existing.ticker) {
+        existing.name = customName;
+      }
+      return existing;
+    }
+    const newStock = {
+      ticker: clean,
+      name: customName || clean,
+      exchange: clean.endsWith(".OL") ? "OSE" : clean.endsWith(".ST") ? "SSE" : clean.endsWith(".CO") ? "CSE" : "NORDIC",
+      currency: clean.endsWith(".OL") ? "NOK" : clean.endsWith(".ST") ? "SEK" : clean.endsWith(".CO") ? "DKK" : "EUR",
+      sector: "Følg med på",
+      in_portfolio: false,
+      shares: 0,
+      gav: 0,
+      price: 0,
+      value_nok: 0,
+      weight_pct: 0,
+      rule_status: "Følg med på",
+      portfolio_action: "FØLG MED PÅ",
+      portfolio_rationale: "Lagt til i «Følg med på»-listen. Kurs og sesongmønster oppdateres ved neste synkronisering.",
+      recommendations: []
+    };
+    appData.stocks.push(newStock);
+    saveLocalOverrides();
+    return newStock;
   }
 
   function loadLocalOverrides() {
@@ -206,11 +296,12 @@
       if (s.in_portfolio && totalPortNok > 0) {
         const w = (s.value_nok / totalPortNok) * 100;
         s.weight_pct = Number(w.toFixed(2));
+        const rsLower = (s.rule_status || "").toLowerCase();
         if (w > 15.0) {
           s.rule_status = `BRUDD (> 15 %: ${formatNumber(w, 1)} %)`;
         } else if (w >= 12.0) {
           s.rule_status = "Nær taket (12–15 %)";
-        } else if (!(s.rule_status || "").toLowerCase().includes("kvalitetskrav")) {
+        } else if (!rsLower.includes("kvalitetskrav") && !rsLower.includes("tvangsinnløsning")) {
           s.rule_status = "Innenfor (< 15 %)";
         }
       }
@@ -234,7 +325,7 @@
     const ov = loadLocalOverrides();
     if (ov && ov.saved_at) {
       els.localBanner.style.display = "block";
-      els.localBanner.innerHTML = `Viser din manuelt oppdaterte aksjeliste (lagret i nettleseren ${ov.saved_at.slice(0, 16).replace("T", " ")}). Kurser, kursmål og børsmeldinger hentes løpende fra serveren.`;
+      els.localBanner.innerHTML = `Viser din manuelt oppdaterte aksjeliste (lagret i nettleseren ${ov.saved_at.slice(0, 16).replace("T", " ")}). Kurser, sesongmønster, kursmål og børsmeldinger hentes løpende fra serveren.`;
     } else {
       els.localBanner.style.display = "none";
     }
@@ -281,12 +372,40 @@
         : "Ingen nær 15 %-taket";
 
     const bm = appData.borsmeldinger || [];
-    const portIssuers = new Set(
-      appData.stocks.filter((s) => s.in_portfolio).map((s) => s.ticker.split(".")[0].toUpperCase())
-    );
-    const myBmCount = bm.filter((item) => portIssuers.has((item.ticker || "").toUpperCase())).length;
-    els.kpiNewswebCount.textContent = `${bm.length} børsmeldinger`;
-    els.kpiNewswebSub.textContent = `${myBmCount} på dine porteføljeaksjer`;
+    els.watchlistTabCount.textContent = watchlistSet.size;
+    els.kpiNewswebCount.textContent = `${watchlistSet.size} fulgte aksjer`;
+    els.kpiNewswebSub.textContent = `${bm.length} børsmeldinger fra Oslo Børs`;
+  }
+
+  function renderSeasonalityMiniBox(stock) {
+    const seas = stock.seasonality;
+    if (!seas || !Array.isArray(seas.months)) return "";
+    const cells = seas.months
+      .map((m) => {
+        const avg = Number(m.avg_pct || 0);
+        const cls = m.count > 0 ? (avg > 0.3 ? "pos" : avg < -0.3 ? "neg" : "") : "";
+        const sign = avg > 0 ? "+" : "";
+        return `
+          <div class="season-cell ${cls}" title="${m.name}: snitt ${sign}${formatNumber(avg, 1)} %, positiv i ${m.win_rate_pct} % av årene (${m.count} år)">
+            <span>${m.name}</span>
+            <strong class="${avg >= 0 ? "upside-pos" : "upside-neg"}">${m.count > 0 ? `${sign}${formatNumber(avg, 1)}%` : "–"}</strong>
+          </div>
+        `;
+      })
+      .join("");
+
+    const bNames = (seas.best_months || []).map((b) => `${b.name} (${b.avg_pct >= 0 ? "+" : ""}${formatNumber(b.avg_pct, 1)} %)`).join(", ");
+    const wNames = (seas.weakest_months || []).map((w) => `${w.name} (${w.avg_pct >= 0 ? "+" : ""}${formatNumber(w.avg_pct, 1)} %)`).join(", ");
+
+    return `
+      <div class="season-box">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.35rem;">
+          <span><strong>Historisk sesong (${seas.years_analyzed} år):</strong> Sterkest: <span class="upside-pos">${bNames}</span></span>
+          <span>Svakest: <span class="upside-neg">${wNames}</span></span>
+        </div>
+        <div class="season-grid">${cells}</div>
+      </div>
+    `;
   }
 
   function computeStats(stock, brokerFilter, ratingFilter) {
@@ -308,6 +427,98 @@
     return { filteredRecs: recs, avgUpside, maxUpside, buyCount, totalCount: allRecs.length };
   }
 
+  function buildStockCardHtml(stock, stats, includeSeasonality = false) {
+    const avgTarget =
+      stats.filteredRecs.length > 0
+        ? stats.filteredRecs.reduce((acc, r) => acc + r.target, 0) / stats.filteredRecs.length
+        : 0;
+    const upsideCls = stats.avgUpside >= 0 ? "upside-pos" : "upside-neg";
+    const upsidePrefix = stats.avgUpside >= 0 ? "+" : "";
+    const isBreach = (stock.rule_status || "").toUpperCase().includes("BRUDD");
+    const dayPct = Number(stock.day_change_pct || 0);
+    const daySign = dayPct >= 0 ? "+" : "";
+    const dayCls = dayPct >= 0 ? "upside-pos" : "upside-neg";
+    const watched = isWatched(stock.ticker);
+
+    const recsHtml =
+      stats.filteredRecs.length > 0
+        ? stats.filteredRecs
+            .map((r) => {
+              const uCls = r.upside_pct >= 0 ? "upside-pos" : "upside-neg";
+              const uPref = r.upside_pct >= 0 ? "+" : "";
+              return `
+                <div class="rec-row">
+                  <strong>${r.broker}</strong>
+                  <span class="badge ${ratingBadgeClass(r.rating)}">${r.rating}</span>
+                  <span>${formatNumber(r.target, 2)} ${stock.currency}</span>
+                  <span class="${uCls}">${uPref}${formatNumber(r.upside_pct, 1)} %</span>
+                  <div class="rec-source">${r.date} &bull; ${r.source}</div>
+                </div>
+              `;
+            })
+            .join("")
+        : `<div class="rec-source" style="padding: 0.4rem;">Ingen registrerte meglerkursmål i tabellen ennå.</div>`;
+
+    return `
+      <article class="stock-card">
+        <div class="stock-header">
+          <div>
+            <div class="stock-title">${stock.name} <span style="color: var(--text-muted); font-weight: 500;">(${stock.ticker})</span></div>
+            <div class="stock-meta">${stock.exchange} &bull; ${stock.sector} &bull; ${
+      stock.in_portfolio
+        ? `<strong>${formatNumber(stock.value_nok, 0)} NOK</strong> (${formatNumber(stock.weight_pct, 2)} %)`
+        : "Kandidat / Overvåkes"
+    }</div>
+          </div>
+          <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap; justify-content: flex-end;">
+            <button class="btn-watch ${watched ? "active" : ""}" data-watch-ticker="${stock.ticker}" title="Legg til eller fjern fra Følg med på">
+              ${watched ? "★ Følger" : "☆ Følg med på"}
+            </button>
+            <span class="badge ${ratingBadgeClass(stock.portfolio_action)}">${stock.portfolio_action}</span>
+          </div>
+        </div>
+
+        <div class="stock-metrics">
+          <div class="metric-item">
+            <span>Siste kurs</span>
+            <strong>${stock.price > 0 ? `${formatNumber(stock.price, 2)} ${stock.currency}` : "–"}</strong>
+          </div>
+          <div class="metric-item">
+            <span>I dag</span>
+            <strong class="${dayCls}">${daySign}${formatNumber(dayPct, 2)} %</strong>
+          </div>
+          <div class="metric-item">
+            <span>Snitt kursmål (${stats.filteredRecs.length})</span>
+            <strong>${avgTarget > 0 ? `${formatNumber(avgTarget, 2)} ${stock.currency}` : "–"}</strong>
+          </div>
+          <div class="metric-item">
+            <span>Snitt oppside</span>
+            <strong class="${upsideCls}">${stats.avgUpside > -900 ? `${upsidePrefix}${formatNumber(stats.avgUpside, 1)} %` : "–"}</strong>
+          </div>
+        </div>
+
+        <div class="portfolio-rule-box ${isBreach ? "breach" : ""}">
+          <strong>Status (${stock.rule_status}):</strong> ${stock.portfolio_rationale}
+        </div>
+
+        ${includeSeasonality ? renderSeasonalityMiniBox(stock) : ""}
+
+        <div class="rec-list">
+          ${recsHtml}
+        </div>
+      </article>
+    `;
+  }
+
+  function bindWatchButtons(container) {
+    container.querySelectorAll("[data-watch-ticker]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const t = e.currentTarget.dataset.watchTicker;
+        toggleWatchlist(t);
+      });
+    });
+  }
+
   function renderStocks() {
     if (!appData) return;
     const q = (els.searchInput.value || "").trim().toLowerCase();
@@ -323,6 +534,7 @@
       })
       .filter(({ stock, stats }) => {
         if (ownership === "PORTFOLIO" && !stock.in_portfolio) return false;
+        if (ownership === "WATCHLIST" && !isWatched(stock.ticker)) return false;
         if (ownership === "CANDIDATES" && stock.in_portfolio) return false;
         if ((broker !== "ALL" || rating !== "ALL") && stats.filteredRecs.length === 0) {
           return false;
@@ -344,84 +556,147 @@
     });
 
     const totalRecsShown = list.reduce((sum, item) => sum + item.stats.filteredRecs.length, 0);
-    els.resultsSummary.textContent = `Viser ${list.length} aksjer og ${totalRecsShown} megleranbefalinger.`;
+    els.resultsSummary.textContent = `Viser ${list.length} aksjer og ${totalRecsShown} megleranbefalinger. Klikk «☆ Følg med på» på en aksje for å legge den i din egen overvåkningsliste.`;
 
-    els.stocksGrid.innerHTML = list
-      .map(({ stock, stats }) => {
-        const avgTarget =
-          stats.filteredRecs.length > 0
-            ? stats.filteredRecs.reduce((acc, r) => acc + r.target, 0) / stats.filteredRecs.length
-            : 0;
-        const upsideCls = stats.avgUpside >= 0 ? "upside-pos" : "upside-neg";
-        const upsidePrefix = stats.avgUpside >= 0 ? "+" : "";
-        const isBreach = (stock.rule_status || "").toUpperCase().includes("BRUDD");
-        const dayPct = Number(stock.day_change_pct || 0);
-        const daySign = dayPct >= 0 ? "+" : "";
-        const dayCls = dayPct >= 0 ? "upside-pos" : "upside-neg";
+    els.stocksGrid.innerHTML = list.map(({ stock, stats }) => buildStockCardHtml(stock, stats, false)).join("");
+    bindWatchButtons(els.stocksGrid);
+  }
 
-        const recsHtml =
-          stats.filteredRecs.length > 0
-            ? stats.filteredRecs
-                .map((r) => {
-                  const uCls = r.upside_pct >= 0 ? "upside-pos" : "upside-neg";
-                  const uPref = r.upside_pct >= 0 ? "+" : "";
-                  return `
-                    <div class="rec-row">
-                      <strong>${r.broker}</strong>
-                      <span class="badge ${ratingBadgeClass(r.rating)}">${r.rating}</span>
-                      <span>${formatNumber(r.target, 2)} ${stock.currency}</span>
-                      <span class="${uCls}">${uPref}${formatNumber(r.upside_pct, 1)} %</span>
-                      <div class="rec-source">${r.date} &bull; ${r.source}</div>
-                    </div>
-                  `;
-                })
-                .join("")
-            : `<div class="rec-source" style="padding: 0.4rem;">Ingen registrerte meglerkursmål for dette filteret.</div>`;
+  function renderWatchlist() {
+    if (!appData) return;
+
+    // Populer nedtrekksmeny med aksjer som ikke allerede følges
+    const unwatched = [...appData.stocks]
+      .filter((s) => !isWatched(s.ticker))
+      .sort((a, b) => a.name.localeCompare(b.name, "nb"));
+    els.wlSelectExisting.innerHTML =
+      `<option value="">-- Velg blant ${unwatched.length} aksjer i databasen --</option>` +
+      unwatched.map((s) => `<option value="${s.ticker}">${s.name} (${s.ticker})</option>`).join("");
+
+    const q = (els.wlSearch.value || "").trim().toLowerCase();
+    const watchedList = appData.stocks
+      .filter((s) => isWatched(s.ticker))
+      .map((s) => ({ stock: s, stats: computeStats(s, "ALL", "ALL") }))
+      .filter(({ stock }) => {
+        if (!q) return true;
+        return `${stock.name} ${stock.ticker} ${stock.sector}`.toLowerCase().includes(q);
+      })
+      .sort((a, b) => b.stats.avgUpside - a.stats.avgUpside);
+
+    els.wlSummary.textContent = `Du følger med på ${watchlistSet.size} aksjer (sorteret etter høyeste snitt-oppside til meglerhusenes kursmål).`;
+
+    if (watchedList.length === 0) {
+      els.watchlistGrid.innerHTML = `<div class="stock-card">Ingen aksjer i «Følg med på» matcher søket. Klikk på «☆ Følg med på» på en aksje eller legg til ovenfor.</div>`;
+      return;
+    }
+
+    els.watchlistGrid.innerHTML = watchedList.map(({ stock, stats }) => buildStockCardHtml(stock, stats, true)).join("");
+    bindWatchButtons(els.watchlistGrid);
+  }
+
+  function getMonthAvg(stock, monthNum) {
+    if (!stock.seasonality || !Array.isArray(stock.seasonality.months)) return -999;
+    const m = stock.seasonality.months.find((x) => Number(x.month) === Number(monthNum));
+    return m && m.count > 0 ? Number(m.avg_pct) : -999;
+  }
+
+  function renderSeasonality() {
+    if (!appData) return;
+    const q = (els.seasSearch.value || "").trim().toLowerCase();
+    const scope = els.seasScope.value;
+    const focusMonth = els.seasMonthFilter.value;
+    const sortBy = els.seasSort.value;
+
+    let list = appData.stocks.filter((s) => {
+      if (!s.seasonality || !Array.isArray(s.seasonality.months)) return false;
+      if (scope === "PORTFOLIO" && !s.in_portfolio) return false;
+      if (scope === "WATCHLIST" && !isWatched(s.ticker)) return false;
+      if (scope === "CANDIDATES" && s.in_portfolio) return false;
+      if (focusMonth !== "ALL") {
+        const mAvg = getMonthAvg(s, Number(focusMonth));
+        if (mAvg <= 0) return false;
+      }
+      if (q) {
+        const hay = `${s.name} ${s.ticker} ${s.sector} ${s.seasonality.summary_no} ${s.seasonality.best_3m_window}`.toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+
+    const activeFocusMonth = focusMonth !== "ALL" ? Number(focusMonth) : 12;
+
+    list.sort((a, b) => {
+      if (sortBy === "focus_month_desc") return getMonthAvg(b, activeFocusMonth) - getMonthAvg(a, activeFocusMonth);
+      if (sortBy === "nov_desc") return getMonthAvg(b, 11) - getMonthAvg(a, 11);
+      if (sortBy === "dec_desc") return getMonthAvg(b, 12) - getMonthAvg(a, 12);
+      if (sortBy === "jan_desc") return getMonthAvg(b, 1) - getMonthAvg(a, 1);
+      if (sortBy === "weight_desc") return (b.weight_pct || 0) - (a.weight_pct || 0);
+      if (sortBy === "name_asc") return a.name.localeCompare(b.name, "nb");
+      return 0;
+    });
+
+    els.seasSummary.textContent = `Viser historisk sesongmønster for ${list.length} aksjer.`;
+
+    els.seasonalityGrid.innerHTML = list
+      .map((s) => {
+        const seas = s.seasonality;
+        const watched = isWatched(s.ticker);
+        const cells = seas.months
+          .map((m) => {
+            const avg = Number(m.avg_pct || 0);
+            const isHighlighted = focusMonth !== "ALL" && Number(focusMonth) === Number(m.month);
+            const cls = m.count > 0 ? (avg > 0.3 ? "pos" : avg < -0.3 ? "neg" : "") : "";
+            const sign = avg > 0 ? "+" : "";
+            return `
+              <div class="season-cell ${cls}" style="${isHighlighted ? "outline: 2px solid var(--accent);" : ""}">
+                <span>${m.name}</span>
+                <strong class="${avg >= 0 ? "upside-pos" : "upside-neg"}">${m.count > 0 ? `${sign}${formatNumber(avg, 1)}%` : "–"}</strong>
+                <span style="font-size: 0.62rem;">${m.count > 0 ? `${m.win_rate_pct}% pos` : ""}</span>
+              </div>
+            `;
+          })
+          .join("");
 
         return `
           <article class="stock-card">
             <div class="stock-header">
               <div>
-                <div class="stock-title">${stock.name} <span style="color: var(--text-muted); font-weight: 500;">(${stock.ticker})</span></div>
-                <div class="stock-meta">${stock.exchange} &bull; ${stock.sector} &bull; ${
-          stock.in_portfolio
-            ? `<strong>${formatNumber(stock.value_nok, 0)} NOK</strong> (${formatNumber(stock.weight_pct, 2)} %)`
-            : "Kandidat utenfor porteføljen"
-        }</div>
+                <div class="stock-title">${s.name} <span style="color: var(--text-muted); font-weight: 500;">(${s.ticker})</span></div>
+                <div class="stock-meta">${s.exchange} &bull; ${s.sector} &bull; ${seas.years_analyzed} års historikk</div>
               </div>
-              <span class="badge ${ratingBadgeClass(stock.portfolio_action)}">${stock.portfolio_action}</span>
+              <div style="display: flex; gap: 0.4rem; align-items: center;">
+                <button class="btn-watch ${watched ? "active" : ""}" data-watch-ticker="${s.ticker}">
+                  ${watched ? "★ Følger" : "☆ Følg med på"}
+                </button>
+              </div>
             </div>
 
-            <div class="stock-metrics">
+            <div class="stock-metrics" style="grid-template-columns: repeat(3, 1fr);">
+              <div class="metric-item">
+                <span>Beste 3-mnd periode</span>
+                <strong class="upside-pos">${seas.best_3m_window || "–"}</strong>
+              </div>
+              <div class="metric-item">
+                <span>Svakeste 3-mnd periode</span>
+                <strong class="upside-neg">${seas.weakest_3m_window || "–"}</strong>
+              </div>
               <div class="metric-item">
                 <span>Siste kurs</span>
-                <strong>${formatNumber(stock.price, 2)} ${stock.currency}</strong>
-              </div>
-              <div class="metric-item">
-                <span>I dag</span>
-                <strong class="${dayCls}">${daySign}${formatNumber(dayPct, 2)} %</strong>
-              </div>
-              <div class="metric-item">
-                <span>Snitt kursmål (${stats.filteredRecs.length})</span>
-                <strong>${avgTarget > 0 ? `${formatNumber(avgTarget, 2)} ${stock.currency}` : "–"}</strong>
-              </div>
-              <div class="metric-item">
-                <span>Snitt oppside</span>
-                <strong class="${upsideCls}">${stats.avgUpside > -900 ? `${upsidePrefix}${formatNumber(stats.avgUpside, 1)} %` : "–"}</strong>
+                <strong>${formatNumber(s.price, 2)} ${s.currency}</strong>
               </div>
             </div>
 
-            <div class="portfolio-rule-box ${isBreach ? "breach" : ""}">
-              <strong>Regelstatus (${stock.rule_status}):</strong> ${stock.portfolio_rationale}
-            </div>
+            <div class="season-grid">${cells}</div>
 
-            <div class="rec-list">
-              ${recsHtml}
+            <div class="portfolio-rule-box">
+              ${seas.summary_no}
             </div>
           </article>
         `;
       })
       .join("");
+
+    bindWatchButtons(els.seasonalityGrid);
   }
 
   function renderBorsmeldinger() {
@@ -434,6 +709,9 @@
     const portIssuers = new Set(
       appData.stocks.filter((s) => s.in_portfolio).map((s) => s.ticker.split(".")[0].toUpperCase())
     );
+    const watchIssuers = new Set(
+      Array.from(watchlistSet).map((t) => t.split(".")[0].toUpperCase())
+    );
     const candIssuers = new Set(
       appData.stocks.filter((s) => !s.in_portfolio).map((s) => s.ticker.split(".")[0].toUpperCase())
     );
@@ -441,10 +719,12 @@
     const filtered = allBm.filter((m) => {
       const iss = (m.ticker || "").toUpperCase();
       const isMine = portIssuers.has(iss);
+      const isWatch = watchIssuers.has(iss);
       const isCand = !isMine && (candIssuers.has(iss) || m.is_candidate);
 
       if (relFilter === "MINE_AKSJER" && !isMine) return false;
-      if (relFilter === "MINE_OG_KANDIDATER" && !isMine && !isCand) return false;
+      if (relFilter === "WATCHLIST" && !isWatch) return false;
+      if (relFilter === "MINE_OG_KANDIDATER" && !isMine && !isCand && !isWatch) return false;
       if (relFilter === "KANDIDATER" && !isCand) return false;
       if (relFilter === "OSLO_BORS_ELLERS" && (isMine || isCand)) return false;
 
@@ -477,10 +757,13 @@
       .map((m) => {
         const iss = (m.ticker || "").toUpperCase();
         const isMine = portIssuers.has(iss);
+        const isWatch = watchIssuers.has(iss);
         const isCand = !isMine && (candIssuers.has(iss) || m.is_candidate);
         let statusBadge = `<span class="badge badge-hold">Oslo Børs</span>`;
         if (isMine) {
           statusBadge = `<span class="badge badge-buy">Min portefølje</span>`;
+        } else if (isWatch) {
+          statusBadge = `<span class="badge badge-portfolio">★ Følg med på</span>`;
         } else if (isCand) {
           statusBadge = `<span class="badge badge-portfolio">Kandidat</span>`;
         }
@@ -513,6 +796,7 @@
         const uPct = Number(s.unrealized_pct || 0);
         const uSign = uNok >= 0 ? "+" : "";
         const uCls = uNok >= 0 ? "upside-pos" : "upside-neg";
+        const watched = isWatched(s.ticker);
 
         return `
           <tr data-ticker="${s.ticker}">
@@ -520,11 +804,16 @@
               <input type="checkbox" class="ed-in-port" data-ticker="${s.ticker}" ${s.in_portfolio ? "checked" : ""} />
             </td>
             <td>
+              <button class="btn-watch ${watched ? "active" : ""}" data-watch-ticker="${s.ticker}">
+                ${watched ? "★ Følger" : "☆ Følg"}
+              </button>
+            </td>
+            <td>
               <strong>${s.name}</strong> (<code>${s.ticker}</code>)
               <div style="font-size: 0.75rem; color: var(--text-muted);">${s.exchange} &bull; ${s.currency}</div>
             </td>
             <td>
-              <input type="text" class="inline-input ed-sector" data-ticker="${s.ticker}" value="${s.sector || ""}" style="width: 135px;" />
+              <input type="text" class="inline-input ed-sector" data-ticker="${s.ticker}" value="${s.sector || ""}" style="width: 130px;" />
             </td>
             <td>
               <input type="number" step="1" class="inline-input ed-shares" data-ticker="${s.ticker}" value="${Number(s.shares || 0)}" />
@@ -547,6 +836,8 @@
         `;
       })
       .join("");
+
+    bindWatchButtons(els.editorTbody);
 
     document.querySelectorAll(".ed-in-port, .ed-sector, .ed-shares, .ed-gav, .ed-price").forEach((input) => {
       input.addEventListener("change", (e) => {
@@ -597,12 +888,13 @@
         const dPct = Number(d.day_change_pct || 0);
         const dSign = dNok >= 0 ? "+" : "";
         const dCls = dNok >= 0 ? "upside-pos" : "upside-neg";
+        const mobVal = d.mobile_visible_value_nok || (d.portfolio_value_nok - 25704.8);
         return `
           <tr>
             <td><strong>${d.date}</strong></td>
             <td>${d.updated_at || "Sluttkurs"}</td>
-            <td><strong>${formatNumber(d.portfolio_value_nok, 2)} NOK</strong></td>
-            <td>${formatNumber(d.total_value_nok, 2)} NOK</td>
+            <td><strong>${formatNumber(mobVal, 2)} NOK</strong></td>
+            <td>${formatNumber(d.portfolio_value_nok, 2)} NOK</td>
             <td class="${dCls}">${dSign}${formatNumber(dNok, 2)} NOK (${dSign}${formatNumber(dPct, 2)} %)</td>
             <td class="${d.unrealized_pnl_nok >= 0 ? "upside-pos" : "upside-neg"}">${formatNumber(d.unrealized_pnl_nok, 2)} NOK</td>
           </tr>
@@ -697,10 +989,41 @@
     }
     renderKpis();
     renderStocks();
+    renderWatchlist();
+    renderSeasonality();
     renderBorsmeldinger();
     renderEditor();
     renderRebalanceAndSectors();
     renderModelsAndNews();
+  }
+
+  function setupWatchlistActions() {
+    els.wlAddBtn.addEventListener("click", () => {
+      const selected = els.wlSelectExisting.value;
+      let custom = (els.wlCustomTicker.value || "").trim().toUpperCase();
+      const customName = (els.wlCustomName.value || "").trim();
+
+      let targetTicker = custom || selected;
+      if (!targetTicker) return;
+      if (!targetTicker.includes(".")) {
+        targetTicker += ".OL";
+      }
+
+      watchlistSet.add(targetTicker);
+      ensureStockExists(targetTicker, customName);
+      saveWatchlist();
+
+      els.wlSelectExisting.value = "";
+      els.wlCustomTicker.value = "";
+      els.wlCustomName.value = "";
+      refreshAllViews(false);
+    });
+
+    els.resetWatchlistBtn.addEventListener("click", () => {
+      localStorage.removeItem(WATCHLIST_KEY);
+      loadWatchlist((appData && appData.watchlist) || []);
+      refreshAllViews(false);
+    });
   }
 
   function setupEditorActions() {
@@ -809,6 +1132,7 @@
     });
 
     els.exportJsonBtn.addEventListener("click", () => {
+      appData.watchlist = Array.from(watchlistSet);
       const blob = new Blob([JSON.stringify(appData, null, 2)], { type: "application/json" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -838,6 +1162,7 @@
       els.ghSyncStatus.style.color = "#38bdf8";
 
       try {
+        appData.watchlist = Array.from(watchlistSet);
         const apiUrl = "https://api.github.com/repos/rolldan/aksjer/contents/data/recommendations.json";
         const getRes = await fetch(apiUrl, {
           headers: { Authorization: `Bearer ${token}`, Accept: "application/vnd.github+json" }
@@ -856,7 +1181,7 @@
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            message: "chore(portfolio): manuell oppdatering av aksjeliste fra nettsiden",
+            message: "chore(portfolio): manuell oppdatering av aksjeliste og Følg med på fra nettsiden",
             content: contentB64,
             sha: fileMeta.sha,
             branch: "main"
@@ -890,7 +1215,9 @@
     try {
       const res = await fetch(`data/recommendations.json?t=${Date.now()}`);
       const rawData = await res.json();
+      loadWatchlist(rawData.watchlist || []);
       appData = applyLocalOverrides(rawData);
+      watchlistSet.forEach((wt) => ensureStockExists(wt));
 
       if (appData.metadata && appData.metadata.updated_at) {
         els.lastUpdated.innerHTML = `Oppdatert: <strong>${appData.metadata.updated_at.replace("T", " ").slice(0, 16)} CET</strong>`;
@@ -914,11 +1241,19 @@
 
   function init() {
     setupTabs();
+    setupWatchlistActions();
     setupEditorActions();
 
     [els.searchInput, els.brokerFilter, els.ratingFilter, els.ownershipFilter, els.sortSelect].forEach((el) => {
       el.addEventListener("input", renderStocks);
       el.addEventListener("change", renderStocks);
+    });
+
+    els.wlSearch.addEventListener("input", renderWatchlist);
+
+    [els.seasSearch, els.seasScope, els.seasMonthFilter, els.seasSort].forEach((el) => {
+      el.addEventListener("input", renderSeasonality);
+      el.addEventListener("change", renderSeasonality);
     });
 
     [els.bmSearch, els.bmRelevance, els.bmCategory].forEach((el) => {
@@ -929,7 +1264,6 @@
     els.refreshNowBtn.addEventListener("click", loadServerData);
 
     loadServerData();
-    // Automatisk oppfriskning i nettleseren hvert 5. minutt
     setInterval(loadServerData, 5 * 60 * 1000);
   }
 

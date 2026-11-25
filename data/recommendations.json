@@ -26,7 +26,7 @@
       "Nordea",
       "Danske Bank"
     ],
-    "last_rss_check": "2026-11-25T10:00:42+01:00"
+    "last_rss_check": "2026-11-25T10:03:37+01:00"
   },
   "model_portfolios": [
     {
@@ -1958,6 +1958,16 @@
       "detected_target": null
     },
     {
+      "published": "2026-10-16",
+      "source": "Placera.se",
+      "broker": null,
+      "title": "Avanza och Investor åt olika håll på rapporter - Placera.se",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQOXVORWRKN2w0alVZekp1ZGhBeXQxcTBkblF2d1NZSTZUbE1VczVzX3dQcDM2NU8xZVRvZDJiR1AzZjEyaDZRLXNVbEdTQWZSMW0zdFNqM0doalF6RUVGeF8tLTBiUVI4NDFPMGplZEZZUmFObGhGNlQ3X3A1eEY4bTBBQVRyU05IekU5dzFwaXQ0UQ?oc=5",
+      "detected_ticker": "INVE-B.ST",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
       "published": "2026-10-09",
       "source": "FinansWatch.no",
       "broker": null,
@@ -2074,16 +2084,6 @@
       "title": "Arctic Securities tror Mowi slakter vesentlig mer laks enn guidet for tredje kvartal - iLaks",
       "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNa1NXcEt1X1dBNUNMc2h3akFEX0FaV3p2Q2t3SUs3ZEpzdENnZHhzdXp0d0U1TzJfcC0yX2U2VmNKWk1sRnUzLTdmWjVZS2twdDFuSlByemNnYmJXSVhhOXpDOXA0Rmd0ek5Xb01WdTNCN3hPMEViZEVSLUwta3ZPODZRaXIyWGwzQ2x4aXRpWGFMcjlGZXBsbjZqYmFUZWt4MlZOYw?oc=5",
       "detected_ticker": null,
-      "detected_rating": null,
-      "detected_target": null
-    },
-    {
-      "published": "2026-09-11",
-      "source": "EFN",
-      "broker": null,
-      "title": "Dagens rekar: Novo Nordisk sänks och Academedia köpstämplas - EFN",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5KOVRrNUhheVA5N2pNSkp3RlZCbEZ5by16N083VHV1WWotWEFoaUF1QklhQm9xTzBhYVp0VEY3VkdsWmh4eWk1bldtZlRXVXVIWnY4ZFJoRkJzd2F0VFdmRm9UMHZiZzlsc1ZHaDlmQkg5YlJyN2pnUWJnMGNNUQ?oc=5",
-      "detected_ticker": "NOVO-B.CO",
       "detected_rating": null,
       "detected_target": null
     }

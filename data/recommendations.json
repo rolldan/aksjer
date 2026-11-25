@@ -26,7 +26,7 @@
       "Nordea",
       "Danske Bank"
     ],
-    "last_rss_check": "2026-11-24T17:42:50+01:00"
+    "last_rss_check": "2026-11-25T10:00:42+01:00"
   },
   "model_portfolios": [
     {
@@ -1698,6 +1698,16 @@
       "detected_target": null
     },
     {
+      "published": "2026-11-24",
+      "source": "DNB",
+      "broker": null,
+      "title": "DNB Carnegies anbefaling på Sandvik, Demant og Tomra - DNB",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQcV9jaG90MmY2ck85QXZhZEh1bTk3YnhqV29qZVV5blg3SFdYQ096eVk1ZW5RazZLTzlKUDNIdzVqTUFzazdkTWxyUC1qZy1TQ0VUdDZvMVF3a1BzdG5GTjBxbVR0ZTN5QkRJYVU5ZjE1RGc3cGUtVzB4eGNSelAwTjctRlBYUjdCcFNERzJLVTdKWjhZWmI4S2piWUo5OF9FY1E?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
       "published": "2026-11-23",
       "source": "DNB",
       "broker": null,
@@ -2074,16 +2084,6 @@
       "title": "Dagens rekar: Novo Nordisk sänks och Academedia köpstämplas - EFN",
       "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5KOVRrNUhheVA5N2pNSkp3RlZCbEZ5by16N083VHV1WWotWEFoaUF1QklhQm9xTzBhYVp0VEY3VkdsWmh4eWk1bldtZlRXVXVIWnY4ZFJoRkJzd2F0VFdmRm9UMHZiZzlsc1ZHaDlmQkg5YlJyN2pnUWJnMGNNUQ?oc=5",
       "detected_ticker": "NOVO-B.CO",
-      "detected_rating": null,
-      "detected_target": null
-    },
-    {
-      "published": "2026-09-10",
-      "source": "DNB",
-      "broker": null,
-      "title": "DNB Carnegies anbefaling på OMC Tankers og Cambi - DNB",
-      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQVWFBdFRoRnhTdGFqT0lzcjN1OVdzRVAyQmszUWhkQUdHNzEyNHFKUGh4U0xBWGlNaFlHeUhzaFpRZlQxRVF1c2lPNmdkbDl5NVQ0XzBHMEFUWElGcUhaeGhIMVR2cTlMMy1IRkd1NWEtRHZwWXpZS3p6dWJ1a01JT0xYZmVGbUloMzFVYUd3ZXRKRmM1b2hPMVJCNms?oc=5",
-      "detected_ticker": "DNB.OL",
       "detected_rating": null,
       "detected_target": null
     }

@@ -243,10 +243,17 @@
   function renderKpis() {
     if (!appData) return;
     const m = appData.metadata || {};
-    const activeCount = appData.stocks.filter((s) => s.in_portfolio && s.shares > 0).length;
+    const cdlrStock = appData.stocks.find((s) => s.ticker === "CDLR.OL" && s.in_portfolio);
+    const cdlrVal = cdlrStock ? Number(cdlrStock.value_nok || 0) : 0;
+    const mobileVal = Number(m.portfolio_value_nok || 0) - cdlrVal;
 
-    els.kpiPortfolioVal.textContent = `${formatNumber(m.portfolio_value_nok, 0)} NOK`;
-    els.kpiTotalVal.textContent = `Inkl. kontanter (${formatNumber(m.cash_nok, 0)} NOK): ${formatNumber(m.total_value_nok, 0)} NOK (${activeCount} aksjer)`;
+    if (cdlrVal > 0) {
+      els.kpiPortfolioVal.textContent = `${formatNumber(mobileVal, 0)} NOK`;
+      els.kpiTotalVal.textContent = `+ Cadeler-oppgjør (${formatNumber(cdlrVal, 0)} NOK) = ${formatNumber(m.portfolio_value_nok, 0)} NOK`;
+    } else {
+      els.kpiPortfolioVal.textContent = `${formatNumber(m.portfolio_value_nok, 0)} NOK`;
+      els.kpiTotalVal.textContent = `Inkl. kontanter (${formatNumber(m.cash_nok, 0)} NOK): ${formatNumber(m.total_value_nok, 0)} NOK`;
+    }
 
     const dNok = Number(m.day_change_nok || 0);
     const dPct = Number(m.day_change_pct || 0);

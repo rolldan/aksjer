@@ -145,6 +145,13 @@ def update_prices_and_portfolio(data: dict, now_oslo: datetime.datetime):
         ticker = s.get("ticker", "")
         if not ticker or ticker == "PLCS":
             continue
+        # Cadeler A/S (440 aksjer) er under tvangsinnløsning (Squeeze-out) til fast kontantkurs 58,42 NOK (frist 07.12.2026)
+        if ticker == "CDLR.OL" and s.get("squeeze_out_price"):
+            s["price"] = float(s["squeeze_out_price"])
+            s["prev_close"] = float(s["squeeze_out_price"])
+            s["day_change_pct"] = 0.0
+            s["price_updated_at"] = "Fast innløsningskurs (58,42 NOK)"
+            continue
         try:
             q = fetch_yahoo_quote(ticker)
             if q and q.get("price"):
@@ -188,10 +195,11 @@ def update_prices_and_portfolio(data: dict, now_oslo: datetime.datetime):
             s["day_change_nok"] = 0.0
             s["weight_pct"] = 0.0
 
-    # Inkluder eventuell restpost (Polarcus 86.62 NOK) hvis ikke i stocks-listen
-    plcs_val = 86.62
-    total_portfolio_nok = round(total_portfolio_nok + plcs_val, 2)
-    total_prev_nok = round(total_prev_nok + plcs_val, 2)
+    # Beregn både verdi som vises i DNB-mobilappen (uten suspendert Cadeler A/S) og total reell verdi inkl. Cadeler-innløsning (25 704,80 NOK)
+    cdlr_val = sum(float(s.get("value_nok") or 0.0) for s in stocks if s.get("ticker") == "CDLR.OL" and s.get("in_portfolio"))
+    mobile_portfolio_nok = round(total_portfolio_nok - cdlr_val, 2)
+    total_portfolio_nok = round(total_portfolio_nok, 2)
+    total_prev_nok = round(total_prev_nok, 2)
 
     for s in stocks:
         if s.get("in_portfolio") and total_portfolio_nok > 0:
@@ -212,6 +220,8 @@ def update_prices_and_portfolio(data: dict, now_oslo: datetime.datetime):
 
     meta["updated_at"] = now_oslo.isoformat(timespec="seconds")
     meta["portfolio_value_nok"] = total_portfolio_nok
+    meta["mobile_visible_value_nok"] = mobile_portfolio_nok
+    meta["cadeler_squeeze_out_nok"] = round(cdlr_val, 2)
     meta["total_value_nok"] = round(total_portfolio_nok + cash_nok, 2)
     meta["day_change_nok"] = day_change_nok
     meta["day_change_pct"] = day_change_pct

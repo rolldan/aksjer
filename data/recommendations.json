@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "updated_at": "2026-11-25T12:03:42+01:00",
+    "updated_at": "2026-11-25T12:31:42+01:00",
     "timezone": "Europe/Oslo (CET)",
-    "portfolio_value_nok": 339522.62,
+    "portfolio_value_nok": 339027.1,
     "cash_nok": 33.15,
-    "total_value_nok": 339555.77,
+    "total_value_nok": 339060.25,
     "cost_basis_nok": 378828.17,
-    "unrealized_pnl_nok": -39305.55,
-    "unrealized_pnl_pct": -10.38,
+    "unrealized_pnl_nok": -39801.07,
+    "unrealized_pnl_pct": -10.51,
     "realized_pnl_nok": 144493.32,
     "rules": {
       "max_single_stock_pct": 15.0,
@@ -26,15 +26,17 @@
       "Nordea",
       "Danske Bank"
     ],
-    "last_rss_check": "2026-11-25T12:03:42+01:00",
+    "last_rss_check": "2026-11-25T12:31:42+01:00",
     "fx_rates": {
       "NOK": 1.0,
-      "SEK": 0.9604,
-      "DKK": 1.4416,
+      "SEK": 0.9608,
+      "DKK": 1.4427,
       "EUR": 10.79
     },
-    "day_change_nok": -479.04,
-    "day_change_pct": -0.14
+    "day_change_nok": -1450.22,
+    "day_change_pct": -0.43,
+    "mobile_visible_value_nok": 313322.3,
+    "cadeler_squeeze_out_nok": 25704.8
   },
   "model_portfolios": [
     {
@@ -189,17 +191,17 @@
     },
     {
       "step": 4,
-      "action": "SELG / SLETT",
+      "action": "KONTAKT BANK",
       "ticker": "PLCS",
       "name": "Polarcus",
       "shares_delta": -1006,
       "shares_after": 0,
       "price": 0.0861,
       "currency": "NOK",
-      "amount_nok": 87,
+      "amount_nok": 0,
       "weight_before_pct": 0.03,
       "weight_after_pct": 0.0,
-      "rationale": "Avviklet selskap – realiserer -5 370 NOK i skattemessig tapsfradrag."
+      "rationale": "Avviklet selskap – låst i nettbanken; krever melding til DNB/Sbanken kundeservice for sletting og skattemessig tapsfradrag (-5 370 NOK)."
     },
     {
       "step": 5,
@@ -254,10 +256,10 @@
       "in_portfolio": true,
       "shares": 215,
       "gav": 294.33,
-      "price": 331.4,
-      "value_nok": 71251.0,
-      "weight_pct": 20.99,
-      "rule_status": "BRUDD (> 15 %: 20.99 %)",
+      "price": 329.5,
+      "value_nok": 70842.5,
+      "weight_pct": 20.9,
+      "rule_status": "BRUDD (> 15 %: 20.90 %)",
       "portfolio_action": "REDUSER (Trim til ~13 %)",
       "portfolio_rationale": "Sterk kjøpskonsensus etter Q3 (+50 % inntektsvekst), men 20,87 % vekt bryter 15 %-regelen og driver Industri til 32,46 %. Selg 81 aksjer, behold 134.",
       "recommendations": [
@@ -265,7 +267,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 554.0,
-          "upside_pct": 67.2,
+          "upside_pct": 68.1,
           "date": "2026-10-30",
           "source": "Finansavisen / TDN Direkt & Pareto Research (i november-porteføljen)"
         },
@@ -273,7 +275,7 @@
           "broker": "Danske Bank",
           "rating": "KJØP",
           "target": 500.0,
-          "upside_pct": 50.9,
+          "upside_pct": 51.7,
           "date": "2026-09-24",
           "source": "Bloomberg / MarketScreener (oppjustert fra 490 NOK)"
         },
@@ -281,7 +283,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 425.0,
-          "upside_pct": 28.2,
+          "upside_pct": 29.0,
           "date": "2026-10-30",
           "source": "Finansavisen / TDN Direkt (oppjustert etter Q3)"
         },
@@ -289,7 +291,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 425.0,
-          "upside_pct": 28.2,
+          "upside_pct": 29.0,
           "date": "2026-10-30",
           "source": "Finwire / MarketScreener (oppjustert fra 400 NOK)"
         },
@@ -297,7 +299,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 420.0,
-          "upside_pct": 26.7,
+          "upside_pct": 27.5,
           "date": "2026-10-30",
           "source": "Finwire / DNB Nyheter (i ukesporteføljen uke 48)"
         },
@@ -305,7 +307,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 420.0,
-          "upside_pct": 26.7,
+          "upside_pct": 27.5,
           "date": "2026-10-30",
           "source": "Finwire / MarketScreener (oppjustert fra 380 NOK)"
         },
@@ -313,18 +315,18 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 400.0,
-          "upside_pct": 20.7,
+          "upside_pct": 21.4,
           "date": "2026-10-30",
           "source": "Finansavisen / TDN Direkt (gjentar Kjøp etter Q3)"
         }
       ],
       "prev_close": 330.8,
-      "day_change_pct": 0.18,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": 129.0,
+      "day_change_pct": -0.39,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": -279.5,
       "cost_nok": 63280.95,
-      "unrealized_nok": 7970.05,
-      "unrealized_pct": 12.59
+      "unrealized_nok": 7561.55,
+      "unrealized_pct": 11.95
     },
     {
       "ticker": "NOD.OL",
@@ -335,9 +337,9 @@
       "in_portfolio": true,
       "shares": 282,
       "gav": 172.54,
-      "price": 164.3,
-      "value_nok": 46332.6,
-      "weight_pct": 13.65,
+      "price": 163.7,
+      "value_nok": 46163.4,
+      "weight_pct": 13.62,
       "rule_status": "Nær taket (12–15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "Bred kjøpskonsensus (210–250 NOK), men med 14,16 % vekt er posisjonen fullt vektet opp mot 15 %-grensen.",
@@ -346,7 +348,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 250.0,
-          "upside_pct": 52.2,
+          "upside_pct": 52.7,
           "date": "2026-10-22",
           "source": "DNB Nyheter / Paul Harpers ukesportefølje (uke 48)"
         },
@@ -354,7 +356,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 250.0,
-          "upside_pct": 52.2,
+          "upside_pct": 52.7,
           "date": "2026-10-07",
           "source": "Finansavisen / TDN Direkt (55 % BLE design-win andel)"
         },
@@ -362,7 +364,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 225.0,
-          "upside_pct": 36.9,
+          "upside_pct": 37.4,
           "date": "2026-10-22",
           "source": "Finansavisen (Petter Kongslie etter Q3)"
         },
@@ -370,7 +372,7 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 220.0,
-          "upside_pct": 33.9,
+          "upside_pct": 34.4,
           "date": "2026-04-29",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -378,7 +380,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 215.0,
-          "upside_pct": 30.9,
+          "upside_pct": 31.3,
           "date": "2026-10-22",
           "source": "Pareto Research History (tatt ut av månedsporteføljen 02.11)"
         },
@@ -386,18 +388,18 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 210.0,
-          "upside_pct": 27.8,
+          "upside_pct": 28.3,
           "date": "2026-10-23",
           "source": "Finansavisen / TDN Direkt (oppgradert fra Hold til Kjøp)"
         }
       ],
       "prev_close": 168.0,
-      "day_change_pct": -2.2,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": -1043.4,
+      "day_change_pct": -2.56,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": -1212.6,
       "cost_nok": 48656.28,
-      "unrealized_nok": -2323.68,
-      "unrealized_pct": -4.78
+      "unrealized_nok": -2492.88,
+      "unrealized_pct": -5.12
     },
     {
       "ticker": "TEL.OL",
@@ -408,9 +410,9 @@
       "in_portfolio": true,
       "shares": 365,
       "gav": 137.73,
-      "price": 133.6,
-      "value_nok": 48764.0,
-      "weight_pct": 14.36,
+      "price": 133.3,
+      "value_nok": 48654.5,
+      "weight_pct": 14.35,
       "rule_status": "Nær taket (12–15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "Defensiv utbyttebærebjelke (~7,5 % yield) med 1,2x gjeldsgrad. Med 14,11 % vekt er posten fullt vektet.",
@@ -419,7 +421,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 166.0,
-          "upside_pct": 24.3,
+          "upside_pct": 24.5,
           "date": "2026-10-29",
           "source": "Finansavisen / TDN Direkt (hevet fra 164 NOK etter Q3)"
         },
@@ -427,7 +429,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 165.0,
-          "upside_pct": 23.5,
+          "upside_pct": 23.8,
           "date": "2026-10-06",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -435,7 +437,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 150.0,
-          "upside_pct": 12.3,
+          "upside_pct": 12.5,
           "date": "2026-10-29",
           "source": "Finansavisen / TDN Direkt & Pareto Research"
         },
@@ -443,7 +445,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 148.0,
-          "upside_pct": 10.8,
+          "upside_pct": 11.0,
           "date": "2026-10-19",
           "source": "Finwire / Placera"
         },
@@ -451,18 +453,18 @@
           "broker": "ABG Sundal Collier",
           "rating": "HOLD",
           "target": 135.0,
-          "upside_pct": 1.0,
+          "upside_pct": 1.3,
           "date": "2026-10-29",
           "source": "Finansavisen / TDN Direkt (lavere Lyse-roaming 2027–28)"
         }
       ],
       "prev_close": 131.0,
-      "day_change_pct": 1.98,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": 949.0,
+      "day_change_pct": 1.76,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": 839.5,
       "cost_nok": 50271.45,
-      "unrealized_nok": -1507.45,
-      "unrealized_pct": -3.0
+      "unrealized_nok": -1616.95,
+      "unrealized_pct": -3.22
     },
     {
       "ticker": "LSG.OL",
@@ -473,9 +475,9 @@
       "in_portfolio": true,
       "shares": 664,
       "gav": 47.71,
-      "price": 42.86,
-      "value_nok": 28459.04,
-      "weight_pct": 8.38,
+      "price": 42.56,
+      "value_nok": 28259.84,
+      "weight_pct": 8.34,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "90 % EBITDA-vekst i Q3 2026 og bedre biologi. Samlet sjømat er 13,83 %, så 8,49 % vekt holdes uendret.",
@@ -484,7 +486,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 56.0,
-          "upside_pct": 30.7,
+          "upside_pct": 31.6,
           "date": "2026-10-30",
           "source": "Finansavisen / TDN Direkt (sektorrapport sjømat)"
         },
@@ -492,7 +494,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 55.0,
-          "upside_pct": 28.3,
+          "upside_pct": 29.2,
           "date": "2026-11-09",
           "source": "DNB Nyheter (EPS 5–19 % over konsensus 2027–28)"
         },
@@ -500,7 +502,7 @@
           "broker": "Fearnley Securities",
           "rating": "KJØP",
           "target": 52.0,
-          "upside_pct": 21.3,
+          "upside_pct": 22.2,
           "date": "2026-11-11",
           "source": "Finansavisen / TDN Direkt (hevet fra 49 NOK etter Q3)"
         },
@@ -508,7 +510,7 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 46.0,
-          "upside_pct": 7.3,
+          "upside_pct": 8.1,
           "date": "2026-11-11",
           "source": "Finansavisen & Pareto Research (nedgradert fra Kjøp)"
         },
@@ -516,18 +518,18 @@
           "broker": "SEB",
           "rating": "HOLD",
           "target": 45.0,
-          "upside_pct": 5.0,
+          "upside_pct": 5.7,
           "date": "2026-11-18",
           "source": "Finansavisen (foretrekker SalMar og Mowi)"
         }
       ],
       "prev_close": 43.28,
-      "day_change_pct": -0.97,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": -278.88,
+      "day_change_pct": -1.66,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": -478.08,
       "cost_nok": 31679.44,
-      "unrealized_nok": -3220.4,
-      "unrealized_pct": -10.17
+      "unrealized_nok": -3419.6,
+      "unrealized_pct": -10.79
     },
     {
       "ticker": "CDLR.OL",
@@ -538,12 +540,13 @@
       "in_portfolio": true,
       "shares": 440,
       "gav": 52.46,
-      "price": 57.0,
-      "value_nok": 25080.0,
-      "weight_pct": 7.39,
+      "price": 58.42,
+      "squeeze_out_price": 58.42,
+      "value_nok": 25704.8,
+      "weight_pct": 7.58,
       "rule_status": "Innenfor (< 15 %)",
-      "portfolio_action": "HOLD",
-      "portfolio_rationale": "Rekordordrebok på 2,42 mrd. EUR og Forward P/E ~5,9x. Vekt på 7,42 % er passe under flåteutbyggingen.",
+      "portfolio_action": "UTBETALES KONTANT (58,42 NOK)",
+      "portfolio_rationale": "Cadeler A/S tvangsinnløses av Cadeler plc mot 58,42 NOK/aksje i kontanter (= 25 704,80 NOK via DNB Carnegie etter fristen 07.12.2026, jf. børsmelding #685971). Handelen i gamle Cadeler A/S-aksjer er suspendert siden 05.11, og derfor viser DNB-mobilappen ~314 000 NOK uten denne posten.",
       "recommendations": [
         {
           "broker": "DNB Carnegie",
@@ -602,13 +605,13 @@
           "source": "Pareto Research History"
         }
       ],
-      "prev_close": 57.2,
-      "day_change_pct": -0.35,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": -88.0,
+      "prev_close": 58.42,
+      "day_change_pct": 0.0,
+      "price_updated_at": "Fast innløsningskurs (58,42 NOK)",
+      "day_change_nok": 0.0,
       "cost_nok": 23082.4,
-      "unrealized_nok": 1997.6,
-      "unrealized_pct": 8.65
+      "unrealized_nok": 2622.4,
+      "unrealized_pct": 11.36
     },
     {
       "ticker": "NOVO-B.CO",
@@ -619,9 +622,9 @@
       "in_portfolio": true,
       "shares": 50,
       "gav": 281.88,
-      "price": 278.2,
-      "value_nok": 20052.66,
-      "weight_pct": 5.91,
+      "price": 277.5,
+      "value_nok": 20017.46,
+      "weight_pct": 5.9,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "KJØP (ØK til ~11 %)",
       "portfolio_rationale": "Handles til P/E ~10,5x med >40 % EBIT-margin og sterk støtte fra 5 av 6 meglerhus. Øk med ~18 500 NOK (+48 aksjer).",
@@ -630,7 +633,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 440.0,
-          "upside_pct": 58.2,
+          "upside_pct": 58.6,
           "date": "2026-11-20",
           "source": "Smart Investering / MarketScreener"
         },
@@ -638,7 +641,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 400.0,
-          "upside_pct": 43.8,
+          "upside_pct": 44.1,
           "date": "2026-09-25",
           "source": "Euroinvestor / TargetWatch (gjentar Kjøp etter CMD)"
         },
@@ -646,7 +649,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 390.0,
-          "upside_pct": 40.2,
+          "upside_pct": 40.5,
           "date": "2026-11-05",
           "source": "TargetWatch (hevet fra 380 DKK etter Q3)"
         },
@@ -654,7 +657,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 345.0,
-          "upside_pct": 24.0,
+          "upside_pct": 24.3,
           "date": "2026-11-06",
           "source": "TargetWatch (hevet fra 335 DKK etter Q3)"
         },
@@ -662,7 +665,7 @@
           "broker": "Danske Bank",
           "rating": "KJØP",
           "target": 345.0,
-          "upside_pct": 24.0,
+          "upside_pct": 24.3,
           "date": "2026-10-07",
           "source": "TargetWatch / MarketScreener"
         },
@@ -670,18 +673,18 @@
           "broker": "ABG Sundal Collier",
           "rating": "SELG",
           "target": 250.0,
-          "upside_pct": -10.1,
+          "upside_pct": -9.9,
           "date": "2026-11-05",
           "source": "Unge Investorer / Finwire (hevet fra 230 DKK)"
         }
       ],
       "prev_close": 274.65,
-      "day_change_pct": 1.29,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": 255.89,
-      "cost_nok": 20317.91,
-      "unrealized_nok": -265.25,
-      "unrealized_pct": -1.31
+      "day_change_pct": 1.04,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": 205.58,
+      "cost_nok": 20333.41,
+      "unrealized_nok": -315.95,
+      "unrealized_pct": -1.55
     },
     {
       "ticker": "BAKKA.OL",
@@ -692,9 +695,9 @@
       "in_portfolio": true,
       "shares": 43,
       "gav": 464.36,
-      "price": 424.0,
-      "value_nok": 18232.0,
-      "weight_pct": 5.37,
+      "price": 420.4,
+      "value_nok": 18077.2,
+      "weight_pct": 5.33,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "Sterk biologi på Færøyene og med i Paretos november-portefølje. 5,34 % vekt komplementerer Lerøy godt.",
@@ -703,7 +706,7 @@
           "broker": "Fearnley Securities",
           "rating": "KJØP",
           "target": 510.0,
-          "upside_pct": 20.3,
+          "upside_pct": 21.3,
           "date": "2026-11-04",
           "source": "Nordnet / Bloomberg"
         },
@@ -711,7 +714,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 505.0,
-          "upside_pct": 19.1,
+          "upside_pct": 20.1,
           "date": "2026-11-03",
           "source": "Finansavisen / TDN Direkt (oppgradert til Kjøp)"
         },
@@ -719,7 +722,7 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 500.0,
-          "upside_pct": 17.9,
+          "upside_pct": 18.9,
           "date": "2026-11-03",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -727,7 +730,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 490.0,
-          "upside_pct": 15.6,
+          "upside_pct": 16.6,
           "date": "2026-11-03",
           "source": "Pareto Research (i november-porteføljen)"
         },
@@ -735,7 +738,7 @@
           "broker": "SEB",
           "rating": "HOLD",
           "target": 475.0,
-          "upside_pct": 12.0,
+          "upside_pct": 13.0,
           "date": "2026-11-03",
           "source": "Nordnet / Finansavisen"
         },
@@ -743,18 +746,18 @@
           "broker": "DNB Carnegie",
           "rating": "HOLD",
           "target": 430.0,
-          "upside_pct": 1.4,
+          "upside_pct": 2.3,
           "date": "2026-11-03",
           "source": "Finansavisen / TDN Direkt (nedgradert grunnet Skottland)"
         }
       ],
       "prev_close": 419.2,
-      "day_change_pct": 1.15,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": 206.4,
+      "day_change_pct": 0.29,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": 51.6,
       "cost_nok": 19967.48,
-      "unrealized_nok": -1735.48,
-      "unrealized_pct": -8.69
+      "unrealized_nok": -1890.28,
+      "unrealized_pct": -9.47
     },
     {
       "ticker": "SYNSAM.ST",
@@ -766,7 +769,7 @@
       "shares": 225,
       "gav": 60.22,
       "price": 60.9,
-      "value_nok": 13159.88,
+      "value_nok": 13165.36,
       "weight_pct": 3.88,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "KJØP (ØK til ~5,9 %)",
@@ -807,10 +810,10 @@
       ],
       "prev_close": 60.8,
       "day_change_pct": 0.16,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": 21.61,
-      "cost_nok": 13012.94,
-      "unrealized_nok": 146.94,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": 21.62,
+      "cost_nok": 13018.36,
+      "unrealized_nok": 147.0,
       "unrealized_pct": 1.13
     },
     {
@@ -822,9 +825,9 @@
       "in_portfolio": true,
       "shares": 1050,
       "gav": 15.63,
-      "price": 11.17,
-      "value_nok": 11728.5,
-      "weight_pct": 3.45,
+      "price": 11.12,
+      "value_nok": 11676.0,
+      "weight_pct": 3.44,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "Operasjonelt vendepunkt i Q3 (+73 % omsetning, 108 MNOK EBITDA). Hold 3,57 % vekt, avvent positiv FCF før bijkjøp.",
@@ -833,7 +836,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 19.0,
-          "upside_pct": 70.1,
+          "upside_pct": 70.9,
           "date": "2026-11-04",
           "source": "Finansavisen / TDN Direkt & Pareto Research"
         },
@@ -841,18 +844,18 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 16.0,
-          "upside_pct": 43.2,
+          "upside_pct": 43.9,
           "date": "2026-11-06",
           "source": "DNB Nyheter (vekst i Mobile Pipeline og RNG/CNG)"
         }
       ],
       "prev_close": 11.47,
-      "day_change_pct": -2.62,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": -315.0,
+      "day_change_pct": -3.05,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": -367.5,
       "cost_nok": 16411.5,
-      "unrealized_nok": -4683.0,
-      "unrealized_pct": -28.53
+      "unrealized_nok": -4735.5,
+      "unrealized_pct": -28.85
     },
     {
       "ticker": "IVSO.ST",
@@ -863,9 +866,9 @@
       "in_portfolio": true,
       "shares": 61,
       "gav": 236.3,
-      "price": 201.8,
-      "value_nok": 11822.33,
-      "weight_pct": 3.48,
+      "price": 200.4,
+      "value_nok": 11745.2,
+      "weight_pct": 3.46,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "40 % inntektsvekst i Q3 og gjeldfri balanse. Sterk meglerstøtte (280–350 SEK), hold 3,40 % vekt.",
@@ -874,7 +877,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 350.0,
-          "upside_pct": 73.4,
+          "upside_pct": 74.7,
           "date": "2026-07-01",
           "source": "Börskollen konsensusoversikt"
         },
@@ -882,7 +885,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 330.0,
-          "upside_pct": 63.5,
+          "upside_pct": 64.7,
           "date": "2026-09-29",
           "source": "Börskollen (hevet fra 320 SEK)"
         },
@@ -890,7 +893,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 315.0,
-          "upside_pct": 56.1,
+          "upside_pct": 57.2,
           "date": "2026-11-02",
           "source": "Börskollen (etter Q3)"
         },
@@ -898,7 +901,7 @@
           "broker": "Danske Bank",
           "rating": "KJØP",
           "target": 300.0,
-          "upside_pct": 48.7,
+          "upside_pct": 49.7,
           "date": "2026-11-03",
           "source": "Börskollen"
         },
@@ -906,7 +909,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 285.0,
-          "upside_pct": 41.2,
+          "upside_pct": 42.2,
           "date": "2026-11-03",
           "source": "Börskollen"
         },
@@ -914,7 +917,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 280.0,
-          "upside_pct": 38.8,
+          "upside_pct": 39.7,
           "date": "2026-11-03",
           "source": "Börskollen & Pareto Research"
         },
@@ -922,18 +925,18 @@
           "broker": "ABG Sundal Collier",
           "rating": "HOLD",
           "target": 220.0,
-          "upside_pct": 9.0,
+          "upside_pct": 9.8,
           "date": "2026-11-04",
           "source": "Börskollen"
         }
       ],
       "prev_close": 200.8,
-      "day_change_pct": 0.5,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": 58.58,
-      "cost_nok": 13843.49,
-      "unrealized_nok": -2021.16,
-      "unrealized_pct": -14.6
+      "day_change_pct": -0.2,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": -23.45,
+      "cost_nok": 13849.26,
+      "unrealized_nok": -2104.06,
+      "unrealized_pct": -15.19
     },
     {
       "ticker": "ENVIP.OL",
@@ -944,9 +947,9 @@
       "in_portfolio": true,
       "shares": 320,
       "gav": 61.85,
-      "price": 32.75,
-      "value_nok": 10480.0,
-      "weight_pct": 3.09,
+      "price": 32.95,
+      "value_nok": 10544.0,
+      "weight_pct": 3.11,
       "rule_status": "Brudd på kvalitetskrav",
       "portfolio_action": "SELG",
       "portfolio_rationale": "Selv om meglerhusene har Kjøp (Pareto/SEB tilrettela 30 MEUR emisjon 17.11), gir negativ EBITDA (-4,4 MEUR YTD) og utvanning SELG etter kvalitetsreglene.",
@@ -955,7 +958,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 82.0,
-          "upside_pct": 150.4,
+          "upside_pct": 148.9,
           "date": "2026-11-12",
           "source": "Finansavisen (tatt ut av månedsporteføljen 02.11; tilrettelegger i emisjon 17.11)"
         },
@@ -963,7 +966,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 80.0,
-          "upside_pct": 144.3,
+          "upside_pct": 142.8,
           "date": "2026-11-17",
           "source": "Finansavisen (tilrettelegger i 30 MEUR rettet emisjon)"
         },
@@ -971,7 +974,7 @@
           "broker": "Fearnley Securities",
           "rating": "KJØP",
           "target": 56.0,
-          "upside_pct": 71.0,
+          "upside_pct": 70.0,
           "date": "2026-11-12",
           "source": "Finansavisen / TDN Direkt (49 % UK-markedsandel)"
         },
@@ -979,18 +982,18 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 55.0,
-          "upside_pct": 67.9,
+          "upside_pct": 66.9,
           "date": "2026-11-12",
           "source": "DNB Nyheter (9x 2027e P/E)"
         }
       ],
       "prev_close": 33.5,
-      "day_change_pct": -2.24,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": -240.0,
+      "day_change_pct": -1.64,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": -176.0,
       "cost_nok": 19792.0,
-      "unrealized_nok": -9312.0,
-      "unrealized_pct": -47.05
+      "unrealized_nok": -9248.0,
+      "unrealized_pct": -46.73
     },
     {
       "ticker": "REG1V.HE",
@@ -1027,7 +1030,7 @@
       ],
       "prev_close": 9.12,
       "day_change_pct": 0.99,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 97.11,
       "cost_nok": 16433.17,
       "unrealized_nok": -6495.58,
@@ -1042,9 +1045,9 @@
       "in_portfolio": true,
       "shares": 205,
       "gav": 49.19,
-      "price": 47.7,
-      "value_nok": 9778.5,
-      "weight_pct": 2.88,
+      "price": 47.75,
+      "value_nok": 9788.75,
+      "weight_pct": 2.89,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "Petrobras-forlengelser til 2032 støtter ~19 % direkteavkastning (0,22 USD/kvartal). 2,81 % vekt er passe.",
@@ -1053,7 +1056,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 65.0,
-          "upside_pct": 36.3,
+          "upside_pct": 36.1,
           "date": "2026-11-09",
           "source": "DNB Nyheter & Finansavisen"
         },
@@ -1061,7 +1064,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 60.0,
-          "upside_pct": 25.8,
+          "upside_pct": 25.7,
           "date": "2026-08-10",
           "source": "Finansavisen konsensusoversikt"
         },
@@ -1069,7 +1072,7 @@
           "broker": "Fearnley Securities",
           "rating": "KJØP",
           "target": 58.0,
-          "upside_pct": 21.6,
+          "upside_pct": 21.5,
           "date": "2026-08-10",
           "source": "Finansavisen"
         },
@@ -1077,18 +1080,18 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 52.0,
-          "upside_pct": 9.0,
+          "upside_pct": 8.9,
           "date": "2026-09-18",
           "source": "Pareto Research History"
         }
       ],
       "prev_close": 47.05,
-      "day_change_pct": 1.38,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": 133.25,
+      "day_change_pct": 1.49,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": 143.5,
       "cost_nok": 10083.95,
-      "unrealized_nok": -305.45,
-      "unrealized_pct": -3.03
+      "unrealized_nok": -295.2,
+      "unrealized_pct": -2.93
     },
     {
       "ticker": "APR.OL",
@@ -1141,7 +1144,7 @@
       ],
       "prev_close": 34.5,
       "day_change_pct": -1.16,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": -86.0,
       "cost_nok": 13566.5,
       "unrealized_nok": -6235.0,
@@ -1156,9 +1159,9 @@
       "in_portfolio": true,
       "shares": 330,
       "gav": 16.44,
-      "price": 14.08,
-      "value_nok": 4646.4,
-      "weight_pct": 1.37,
+      "price": 14.14,
+      "value_nok": 4666.2,
+      "weight_pct": 1.38,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "19 % valutajustert vekst i Q3 og 18 % EBITA-margin YTD. Enstemmig kjøp med 60–81 % oppside.",
@@ -1167,7 +1170,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 27.0,
-          "upside_pct": 91.8,
+          "upside_pct": 90.9,
           "date": "2026-11-12",
           "source": "DNB Nyheter"
         },
@@ -1175,7 +1178,7 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 25.0,
-          "upside_pct": 77.6,
+          "upside_pct": 76.8,
           "date": "2026-11-13",
           "source": "Finansavisen / TDN Direkt (etter Q3)"
         },
@@ -1183,18 +1186,18 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 24.0,
-          "upside_pct": 70.5,
+          "upside_pct": 69.7,
           "date": "2026-11-18",
           "source": "Finansavisen / TDN Direkt"
         }
       ],
       "prev_close": 14.5,
-      "day_change_pct": -2.9,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": -138.6,
+      "day_change_pct": -2.48,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": -118.8,
       "cost_nok": 5425.2,
-      "unrealized_nok": -778.8,
-      "unrealized_pct": -14.36
+      "unrealized_nok": -759.0,
+      "unrealized_pct": -13.99
     },
     {
       "ticker": "QEC.OL",
@@ -1205,9 +1208,9 @@
       "in_portfolio": true,
       "shares": 1400,
       "gav": 2.96,
-      "price": 1.7,
-      "value_nok": 2380.0,
-      "weight_pct": 0.7,
+      "price": 1.752,
+      "value_nok": 2452.8,
+      "weight_pct": 0.72,
       "rule_status": "Brudd på kvalitetskrav",
       "portfolio_action": "SELG",
       "portfolio_rationale": "Binær politisk risiko og 27,6 MCAD tap i Q3. Kun SB1M dekker aksjen (var rådgiver for selskapet). Selg.",
@@ -1216,18 +1219,18 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 2.7,
-          "upside_pct": 58.8,
+          "upside_pct": 54.1,
           "date": "2026-11-13",
           "source": "Finansavisen (nedjustert fra 3,00 NOK etter Q3)"
         }
       ],
       "prev_close": 1.8,
-      "day_change_pct": -5.56,
-      "price_updated_at": "2026-11-25 12:03 CET",
-      "day_change_nok": -140.0,
+      "day_change_pct": -2.67,
+      "price_updated_at": "2026-11-25 12:31 CET",
+      "day_change_nok": -67.2,
       "cost_nok": 4144.0,
-      "unrealized_nok": -1764.0,
-      "unrealized_pct": -42.57
+      "unrealized_nok": -1691.2,
+      "unrealized_pct": -40.81
     },
     {
       "ticker": "DNB.OL",
@@ -1238,7 +1241,7 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 321.8,
+      "price": 321.3,
       "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat (Finans 0 %)",
@@ -1249,7 +1252,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 360.0,
-          "upside_pct": 11.9,
+          "upside_pct": 12.0,
           "date": "2026-11-19",
           "source": "Finansavisen / TDN Direkt (i november-porteføljen)"
         },
@@ -1257,7 +1260,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 352.0,
-          "upside_pct": 9.4,
+          "upside_pct": 9.6,
           "date": "2026-10-13",
           "source": "Finansavisen / TDN Direkt (foretrukket storbank)"
         },
@@ -1265,7 +1268,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 350.0,
-          "upside_pct": 8.8,
+          "upside_pct": 8.9,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         },
@@ -1273,7 +1276,7 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 345.0,
-          "upside_pct": 7.2,
+          "upside_pct": 7.4,
           "date": "2026-10-26",
           "source": "Finansavisen / TDN Direkt (sektorfavoritt)"
         },
@@ -1281,7 +1284,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 340.0,
-          "upside_pct": 5.7,
+          "upside_pct": 5.8,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         },
@@ -1289,14 +1292,14 @@
           "broker": "Danske Bank",
           "rating": "HOLD",
           "target": 320.0,
-          "upside_pct": -0.6,
+          "upside_pct": -0.4,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         }
       ],
       "prev_close": 324.7,
-      "day_change_pct": -0.89,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "day_change_pct": -1.05,
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     },
     {
@@ -1308,7 +1311,7 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 416.9,
+      "price": 415.9,
       "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat (Finans 0 %)",
@@ -1319,7 +1322,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 465.0,
-          "upside_pct": 11.5,
+          "upside_pct": 11.8,
           "date": "2026-10-19",
           "source": "Börskollen / Placera (hevet fra 440 SEK)"
         },
@@ -1327,7 +1330,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 460.0,
-          "upside_pct": 10.3,
+          "upside_pct": 10.6,
           "date": "2026-10-19",
           "source": "Börskollen"
         },
@@ -1335,7 +1338,7 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 425.0,
-          "upside_pct": 1.9,
+          "upside_pct": 2.2,
           "date": "2026-10-19",
           "source": "Pareto Research & EFN"
         },
@@ -1343,14 +1346,14 @@
           "broker": "SEB",
           "rating": "HOLD",
           "target": 425.0,
-          "upside_pct": 1.9,
+          "upside_pct": 2.2,
           "date": "2026-10-19",
           "source": "EFN / Placera"
         }
       ],
       "prev_close": 414.05,
-      "day_change_pct": 0.69,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "day_change_pct": 0.45,
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     },
     {
@@ -1362,7 +1365,7 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 218.0,
+      "price": 217.2,
       "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat (Finans 0 %)",
@@ -1373,7 +1376,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 245.0,
-          "upside_pct": 12.4,
+          "upside_pct": 12.8,
           "date": "2026-11-19",
           "source": "Finansavisen / TDN Direkt (oppgradert fra Hold)"
         },
@@ -1381,7 +1384,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 235.0,
-          "upside_pct": 7.8,
+          "upside_pct": 8.2,
           "date": "2026-10-13",
           "source": "Finansavisen / TDN Direkt (oppgradert fra Hold)"
         },
@@ -1389,14 +1392,14 @@
           "broker": "Arctic Securities",
           "rating": "HOLD",
           "target": 215.0,
-          "upside_pct": -1.4,
+          "upside_pct": -1.0,
           "date": "2026-10-26",
           "source": "Finansavisen / TDN Direkt"
         }
       ],
       "prev_close": 218.4,
-      "day_change_pct": -0.18,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "day_change_pct": -0.55,
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     },
     {
@@ -1408,7 +1411,7 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 199.3,
+      "price": 199.0,
       "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat (Finans 0 %)",
@@ -1419,7 +1422,7 @@
           "broker": "Danske Bank",
           "rating": "KJØP",
           "target": 245.0,
-          "upside_pct": 22.9,
+          "upside_pct": 23.1,
           "date": "2026-09-09",
           "source": "TargetWatch"
         },
@@ -1427,7 +1430,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 220.0,
-          "upside_pct": 10.4,
+          "upside_pct": 10.6,
           "date": "2026-10-22",
           "source": "Pareto Research & TargetWatch"
         },
@@ -1435,7 +1438,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 217.0,
-          "upside_pct": 8.9,
+          "upside_pct": 9.0,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         },
@@ -1443,14 +1446,14 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 215.0,
-          "upside_pct": 7.9,
+          "upside_pct": 8.0,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         }
       ],
       "prev_close": 199.3,
-      "day_change_pct": -0.0,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "day_change_pct": -0.15,
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     },
     {
@@ -1462,7 +1465,7 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 576.0,
+      "price": 571.0,
       "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Overvåkes",
@@ -1473,7 +1476,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 670.0,
-          "upside_pct": 16.3,
+          "upside_pct": 17.3,
           "date": "2026-11-18",
           "source": "Finansavisen (toppvalg i sjømat)"
         },
@@ -1481,7 +1484,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 664.0,
-          "upside_pct": 15.3,
+          "upside_pct": 16.3,
           "date": "2026-10-30",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -1489,14 +1492,14 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 550.0,
-          "upside_pct": -4.5,
+          "upside_pct": -3.7,
           "date": "2026-11-03",
           "source": "Pareto Research History"
         }
       ],
       "prev_close": 576.0,
-      "day_change_pct": 0.0,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "day_change_pct": -0.87,
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     },
     {
@@ -1574,7 +1577,7 @@
       ],
       "prev_close": 300.3,
       "day_change_pct": -0.97,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     },
     {
@@ -1586,7 +1589,7 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 375.4,
+      "price": 375.5,
       "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Overvåkes",
@@ -1597,7 +1600,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 480.0,
-          "upside_pct": 27.9,
+          "upside_pct": 27.8,
           "date": "2026-10-19",
           "source": "Placera / Finwire"
         },
@@ -1627,8 +1630,8 @@
         }
       ],
       "prev_close": 380.6,
-      "day_change_pct": -1.37,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "day_change_pct": -1.34,
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     },
     {
@@ -1640,7 +1643,7 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 322.4,
+      "price": 323.0,
       "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Overvåkes",
@@ -1651,7 +1654,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 400.0,
-          "upside_pct": 24.1,
+          "upside_pct": 23.8,
           "date": "2026-08-18",
           "source": "Investorprat"
         },
@@ -1659,7 +1662,7 @@
           "broker": "Fearnley Securities",
           "rating": "KJØP",
           "target": 390.0,
-          "upside_pct": 21.0,
+          "upside_pct": 20.7,
           "date": "2026-11-20",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -1667,7 +1670,7 @@
           "broker": "SEB",
           "rating": "HOLD",
           "target": 348.0,
-          "upside_pct": 7.9,
+          "upside_pct": 7.7,
           "date": "2026-11-10",
           "source": "Börskollen"
         },
@@ -1675,7 +1678,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "HOLD",
           "target": 335.0,
-          "upside_pct": 3.9,
+          "upside_pct": 3.7,
           "date": "2026-10-08",
           "source": "Investorprat"
         },
@@ -1683,7 +1686,7 @@
           "broker": "SB1 Markets",
           "rating": "HOLD",
           "target": 315.0,
-          "upside_pct": -2.3,
+          "upside_pct": -2.5,
           "date": "2026-11-04",
           "source": "Investorprat"
         },
@@ -1691,14 +1694,14 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 290.0,
-          "upside_pct": -10.0,
+          "upside_pct": -10.2,
           "date": "2026-11-20",
           "source": "Finansavisen / TDN Direkt"
         }
       ],
       "prev_close": 325.6,
-      "day_change_pct": -0.98,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "day_change_pct": -0.8,
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     },
     {
@@ -1710,7 +1713,7 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 79.8,
+      "price": 79.75,
       "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat",
@@ -1721,7 +1724,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 130.0,
-          "upside_pct": 62.9,
+          "upside_pct": 63.0,
           "date": "2026-11-02",
           "source": "Pareto Research (i november-porteføljen)"
         },
@@ -1729,14 +1732,14 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 128.0,
-          "upside_pct": 60.4,
+          "upside_pct": 60.5,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         }
       ],
       "prev_close": 81.3,
-      "day_change_pct": -1.85,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "day_change_pct": -1.91,
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     },
     {
@@ -1748,7 +1751,7 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 85.35,
+      "price": 85.3,
       "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat",
@@ -1759,7 +1762,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 113.0,
-          "upside_pct": 32.4,
+          "upside_pct": 32.5,
           "date": "2026-11-19",
           "source": "Placera / Finwire"
         },
@@ -1775,14 +1778,14 @@
           "broker": "DNB Carnegie",
           "rating": "HOLD",
           "target": 95.0,
-          "upside_pct": 11.3,
+          "upside_pct": 11.4,
           "date": "2026-11-19",
           "source": "Placera / Finwire"
         }
       ],
       "prev_close": 84.8,
-      "day_change_pct": 0.65,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "day_change_pct": 0.59,
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     },
     {
@@ -1794,7 +1797,7 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 225.8,
+      "price": 224.2,
       "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat",
@@ -1805,14 +1808,14 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 320.0,
-          "upside_pct": 41.7,
+          "upside_pct": 42.7,
           "date": "2026-11-02",
           "source": "Finansavisen (i november-porteføljen)"
         }
       ],
       "prev_close": 221.6,
-      "day_change_pct": 1.9,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "day_change_pct": 1.17,
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     },
     {
@@ -1824,7 +1827,7 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 151.8,
+      "price": 151.9,
       "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Overvåkes",
@@ -1835,7 +1838,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 245.0,
-          "upside_pct": 61.4,
+          "upside_pct": 61.3,
           "date": "2026-11-13",
           "source": "Finansavisen (etter sterke Q3-tall)"
         },
@@ -1843,14 +1846,14 @@
           "broker": "DNB Carnegie",
           "rating": "HOLD",
           "target": 187.0,
-          "upside_pct": 23.2,
+          "upside_pct": 23.1,
           "date": "2026-11-17",
           "source": "Finansavisen / TDN Direkt"
         }
       ],
       "prev_close": 154.9,
-      "day_change_pct": -2.0,
-      "price_updated_at": "2026-11-25 12:03 CET",
+      "day_change_pct": -1.94,
+      "price_updated_at": "2026-11-25 12:31 CET",
       "day_change_nok": 0.0
     }
   ],
@@ -2259,12 +2262,12 @@
   "daily_values": [
     {
       "date": "2026-11-25",
-      "updated_at": "12:03 CET",
-      "portfolio_value_nok": 339522.62,
-      "total_value_nok": 339555.77,
-      "day_change_nok": -479.04,
-      "day_change_pct": -0.14,
-      "unrealized_pnl_nok": -39305.55
+      "updated_at": "12:31 CET",
+      "portfolio_value_nok": 339027.1,
+      "total_value_nok": 339060.25,
+      "day_change_nok": -1450.22,
+      "day_change_pct": -0.43,
+      "unrealized_pnl_nok": -39801.07
     },
     {
       "date": "2026-11-24",
@@ -2276,6 +2279,32 @@
     }
   ],
   "borsmeldinger": [
+    {
+      "id": 687379,
+      "published": "2026-11-25 12:23",
+      "published_raw": "2026-11-25T11:23:39.590Z",
+      "ticker": "ENDUR",
+      "issuer_name": "Endúr ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Endúr ASA - First data center project to Avenia",
+      "url": "https://newsweb.oslobors.no/message/687379",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687378,
+      "published": "2026-11-25 12:15",
+      "published_raw": "2026-11-25T11:15:48.494Z",
+      "ticker": "HEDER",
+      "issuer_name": "Heder Bank ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Heder Bank ASA - New share capital registered",
+      "url": "https://newsweb.oslobors.no/message/687378",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
     {
       "id": 687375,
       "published": "2026-11-25 11:30",
@@ -3286,32 +3315,6 @@
       "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
       "title": "Trade by primary insiders",
       "url": "https://newsweb.oslobors.no/message/686734",
-      "in_portfolio": true,
-      "is_candidate": false,
-      "relevance": "MINE_AKSJER"
-    },
-    {
-      "id": 686735,
-      "published": "2026-11-17 15:00",
-      "published_raw": "2026-11-17T14:00:00.000Z",
-      "ticker": "TEL",
-      "issuer_name": "Telenor ASA",
-      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
-      "title": "Meldepliktig handel primærinnsidere",
-      "url": "https://newsweb.oslobors.no/message/686735",
-      "in_portfolio": true,
-      "is_candidate": false,
-      "relevance": "MINE_AKSJER"
-    },
-    {
-      "id": 686686,
-      "published": "2026-11-17 11:02",
-      "published_raw": "2026-11-17T10:02:15.349Z",
-      "ticker": "PLSV",
-      "issuer_name": "Paratus Energy Services Ltd.",
-      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
-      "title": "Paratus Energy: Contract Award for Seagems Safira",
-      "url": "https://newsweb.oslobors.no/message/686686",
       "in_portfolio": true,
       "is_candidate": false,
       "relevance": "MINE_AKSJER"

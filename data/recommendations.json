@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "updated_at": "2026-11-24T11:03:00+01:00",
+    "updated_at": "2026-11-25T11:53:02+01:00",
     "timezone": "Europe/Oslo (CET)",
-    "portfolio_value_nok": 344223.4,
+    "portfolio_value_nok": 339742.16,
     "cash_nok": 33.15,
-    "total_value_nok": 344256.55,
+    "total_value_nok": 339775.31,
     "cost_basis_nok": 378828.17,
-    "unrealized_pnl_nok": -34604.77,
-    "unrealized_pnl_pct": -9.13,
+    "unrealized_pnl_nok": -39086.01,
+    "unrealized_pnl_pct": -10.32,
     "realized_pnl_nok": 144493.32,
     "rules": {
       "max_single_stock_pct": 15.0,
@@ -26,7 +26,15 @@
       "Nordea",
       "Danske Bank"
     ],
-    "last_rss_check": "2026-11-25T10:56:52+01:00"
+    "last_rss_check": "2026-11-25T11:53:02+01:00",
+    "fx_rates": {
+      "NOK": 1.0,
+      "SEK": 0.961,
+      "DKK": 1.4431,
+      "EUR": 10.8
+    },
+    "day_change_nok": -304.78,
+    "day_change_pct": -0.09
   },
   "model_portfolios": [
     {
@@ -246,10 +254,10 @@
       "in_portfolio": true,
       "shares": 215,
       "gav": 294.33,
-      "price": 334.1,
-      "value_nok": 71831.5,
-      "weight_pct": 20.87,
-      "rule_status": "BRUDD (> 15 %)",
+      "price": 331.9,
+      "value_nok": 71358.5,
+      "weight_pct": 21.0,
+      "rule_status": "BRUDD (> 15 %: 21.00 %)",
       "portfolio_action": "REDUSER (Trim til ~13 %)",
       "portfolio_rationale": "Sterk kjøpskonsensus etter Q3 (+50 % inntektsvekst), men 20,87 % vekt bryter 15 %-regelen og driver Industri til 32,46 %. Selg 81 aksjer, behold 134.",
       "recommendations": [
@@ -257,7 +265,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 554.0,
-          "upside_pct": 65.8,
+          "upside_pct": 66.9,
           "date": "2026-10-30",
           "source": "Finansavisen / TDN Direkt & Pareto Research (i november-porteføljen)"
         },
@@ -265,7 +273,7 @@
           "broker": "Danske Bank",
           "rating": "KJØP",
           "target": 500.0,
-          "upside_pct": 49.7,
+          "upside_pct": 50.6,
           "date": "2026-09-24",
           "source": "Bloomberg / MarketScreener (oppjustert fra 490 NOK)"
         },
@@ -273,7 +281,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 425.0,
-          "upside_pct": 27.2,
+          "upside_pct": 28.1,
           "date": "2026-10-30",
           "source": "Finansavisen / TDN Direkt (oppjustert etter Q3)"
         },
@@ -281,7 +289,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 425.0,
-          "upside_pct": 27.2,
+          "upside_pct": 28.1,
           "date": "2026-10-30",
           "source": "Finwire / MarketScreener (oppjustert fra 400 NOK)"
         },
@@ -289,7 +297,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 420.0,
-          "upside_pct": 25.7,
+          "upside_pct": 26.5,
           "date": "2026-10-30",
           "source": "Finwire / DNB Nyheter (i ukesporteføljen uke 48)"
         },
@@ -297,7 +305,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 420.0,
-          "upside_pct": 25.7,
+          "upside_pct": 26.5,
           "date": "2026-10-30",
           "source": "Finwire / MarketScreener (oppjustert fra 380 NOK)"
         },
@@ -305,11 +313,18 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 400.0,
-          "upside_pct": 19.7,
+          "upside_pct": 20.5,
           "date": "2026-10-30",
           "source": "Finansavisen / TDN Direkt (gjentar Kjøp etter Q3)"
         }
-      ]
+      ],
+      "prev_close": 330.8,
+      "day_change_pct": 0.33,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 236.5,
+      "cost_nok": 63280.95,
+      "unrealized_nok": 8077.55,
+      "unrealized_pct": 12.76
     },
     {
       "ticker": "NOD.OL",
@@ -320,9 +335,9 @@
       "in_portfolio": true,
       "shares": 282,
       "gav": 172.54,
-      "price": 172.8,
-      "value_nok": 48729.6,
-      "weight_pct": 14.16,
+      "price": 164.7,
+      "value_nok": 46445.4,
+      "weight_pct": 13.67,
       "rule_status": "Nær taket (12–15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "Bred kjøpskonsensus (210–250 NOK), men med 14,16 % vekt er posisjonen fullt vektet opp mot 15 %-grensen.",
@@ -331,7 +346,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 250.0,
-          "upside_pct": 44.7,
+          "upside_pct": 51.8,
           "date": "2026-10-22",
           "source": "DNB Nyheter / Paul Harpers ukesportefølje (uke 48)"
         },
@@ -339,7 +354,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 250.0,
-          "upside_pct": 44.7,
+          "upside_pct": 51.8,
           "date": "2026-10-07",
           "source": "Finansavisen / TDN Direkt (55 % BLE design-win andel)"
         },
@@ -347,7 +362,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 225.0,
-          "upside_pct": 30.2,
+          "upside_pct": 36.6,
           "date": "2026-10-22",
           "source": "Finansavisen (Petter Kongslie etter Q3)"
         },
@@ -355,7 +370,7 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 220.0,
-          "upside_pct": 27.3,
+          "upside_pct": 33.6,
           "date": "2026-04-29",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -363,7 +378,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 215.0,
-          "upside_pct": 24.4,
+          "upside_pct": 30.5,
           "date": "2026-10-22",
           "source": "Pareto Research History (tatt ut av månedsporteføljen 02.11)"
         },
@@ -371,11 +386,18 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 210.0,
-          "upside_pct": 21.5,
+          "upside_pct": 27.5,
           "date": "2026-10-23",
           "source": "Finansavisen / TDN Direkt (oppgradert fra Hold til Kjøp)"
         }
-      ]
+      ],
+      "prev_close": 168.0,
+      "day_change_pct": -1.96,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": -930.6,
+      "cost_nok": 48656.28,
+      "unrealized_nok": -2210.88,
+      "unrealized_pct": -4.54
     },
     {
       "ticker": "TEL.OL",
@@ -386,9 +408,9 @@
       "in_portfolio": true,
       "shares": 365,
       "gav": 137.73,
-      "price": 133.1,
-      "value_nok": 48581.5,
-      "weight_pct": 14.11,
+      "price": 133.5,
+      "value_nok": 48727.5,
+      "weight_pct": 14.34,
       "rule_status": "Nær taket (12–15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "Defensiv utbyttebærebjelke (~7,5 % yield) med 1,2x gjeldsgrad. Med 14,11 % vekt er posten fullt vektet.",
@@ -397,7 +419,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 166.0,
-          "upside_pct": 24.7,
+          "upside_pct": 24.3,
           "date": "2026-10-29",
           "source": "Finansavisen / TDN Direkt (hevet fra 164 NOK etter Q3)"
         },
@@ -405,7 +427,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 165.0,
-          "upside_pct": 24.0,
+          "upside_pct": 23.6,
           "date": "2026-10-06",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -413,7 +435,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 150.0,
-          "upside_pct": 12.7,
+          "upside_pct": 12.4,
           "date": "2026-10-29",
           "source": "Finansavisen / TDN Direkt & Pareto Research"
         },
@@ -421,7 +443,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 148.0,
-          "upside_pct": 11.2,
+          "upside_pct": 10.9,
           "date": "2026-10-19",
           "source": "Finwire / Placera"
         },
@@ -429,11 +451,18 @@
           "broker": "ABG Sundal Collier",
           "rating": "HOLD",
           "target": 135.0,
-          "upside_pct": 1.4,
+          "upside_pct": 1.1,
           "date": "2026-10-29",
           "source": "Finansavisen / TDN Direkt (lavere Lyse-roaming 2027–28)"
         }
-      ]
+      ],
+      "prev_close": 131.0,
+      "day_change_pct": 1.91,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 912.5,
+      "cost_nok": 50271.45,
+      "unrealized_nok": -1543.95,
+      "unrealized_pct": -3.07
     },
     {
       "ticker": "LSG.OL",
@@ -444,9 +473,9 @@
       "in_portfolio": true,
       "shares": 664,
       "gav": 47.71,
-      "price": 44.0,
-      "value_nok": 29216.0,
-      "weight_pct": 8.49,
+      "price": 42.94,
+      "value_nok": 28512.16,
+      "weight_pct": 8.39,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "90 % EBITDA-vekst i Q3 2026 og bedre biologi. Samlet sjømat er 13,83 %, så 8,49 % vekt holdes uendret.",
@@ -455,7 +484,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 56.0,
-          "upside_pct": 27.3,
+          "upside_pct": 30.4,
           "date": "2026-10-30",
           "source": "Finansavisen / TDN Direkt (sektorrapport sjømat)"
         },
@@ -463,7 +492,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 55.0,
-          "upside_pct": 25.0,
+          "upside_pct": 28.1,
           "date": "2026-11-09",
           "source": "DNB Nyheter (EPS 5–19 % over konsensus 2027–28)"
         },
@@ -471,7 +500,7 @@
           "broker": "Fearnley Securities",
           "rating": "KJØP",
           "target": 52.0,
-          "upside_pct": 18.2,
+          "upside_pct": 21.1,
           "date": "2026-11-11",
           "source": "Finansavisen / TDN Direkt (hevet fra 49 NOK etter Q3)"
         },
@@ -479,7 +508,7 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 46.0,
-          "upside_pct": 4.5,
+          "upside_pct": 7.1,
           "date": "2026-11-11",
           "source": "Finansavisen & Pareto Research (nedgradert fra Kjøp)"
         },
@@ -487,11 +516,18 @@
           "broker": "SEB",
           "rating": "HOLD",
           "target": 45.0,
-          "upside_pct": 2.3,
+          "upside_pct": 4.8,
           "date": "2026-11-18",
           "source": "Finansavisen (foretrekker SalMar og Mowi)"
         }
-      ]
+      ],
+      "prev_close": 43.28,
+      "day_change_pct": -0.79,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": -225.76,
+      "cost_nok": 31679.44,
+      "unrealized_nok": -3167.28,
+      "unrealized_pct": -10.0
     },
     {
       "ticker": "CDLR.OL",
@@ -502,9 +538,9 @@
       "in_portfolio": true,
       "shares": 440,
       "gav": 52.46,
-      "price": 58.05,
-      "value_nok": 25542.0,
-      "weight_pct": 7.42,
+      "price": 56.89,
+      "value_nok": 25031.6,
+      "weight_pct": 7.37,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "Rekordordrebok på 2,42 mrd. EUR og Forward P/E ~5,9x. Vekt på 7,42 % er passe under flåteutbyggingen.",
@@ -513,7 +549,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 80.0,
-          "upside_pct": 37.8,
+          "upside_pct": 40.6,
           "date": "2026-09-22",
           "source": "Finansavisen / Bloomberg (etter Menck-oppkjøp)"
         },
@@ -521,7 +557,7 @@
           "broker": "Danske Bank",
           "rating": "KJØP",
           "target": 72.0,
-          "upside_pct": 24.0,
+          "upside_pct": 26.6,
           "date": "2026-09-22",
           "source": "Finansavisen / Bloomberg"
         },
@@ -529,7 +565,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 70.0,
-          "upside_pct": 20.6,
+          "upside_pct": 23.0,
           "date": "2026-09-22",
           "source": "Finansavisen / Bloomberg"
         },
@@ -537,7 +573,7 @@
           "broker": "Clarksons Securities",
           "rating": "KJØP",
           "target": 69.0,
-          "upside_pct": 18.9,
+          "upside_pct": 21.3,
           "date": "2026-09-20",
           "source": "Finansavisen"
         },
@@ -545,7 +581,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 68.0,
-          "upside_pct": 17.1,
+          "upside_pct": 19.5,
           "date": "2026-09-20",
           "source": "Finansavisen"
         },
@@ -553,7 +589,7 @@
           "broker": "SEB",
           "rating": "HOLD",
           "target": 61.0,
-          "upside_pct": 5.1,
+          "upside_pct": 7.2,
           "date": "2026-09-22",
           "source": "Finansavisen"
         },
@@ -561,11 +597,18 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 55.0,
-          "upside_pct": -5.3,
+          "upside_pct": -3.3,
           "date": "2026-08-26",
           "source": "Pareto Research History"
         }
-      ]
+      ],
+      "prev_close": 57.2,
+      "day_change_pct": -0.54,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": -136.4,
+      "cost_nok": 23082.4,
+      "unrealized_nok": 1949.2,
+      "unrealized_pct": 8.44
     },
     {
       "ticker": "NOVO-B.CO",
@@ -576,9 +619,9 @@
       "in_portfolio": true,
       "shares": 50,
       "gav": 281.88,
-      "price": 268.8,
-      "value_nok": 19313.28,
-      "weight_pct": 5.61,
+      "price": 278.45,
+      "value_nok": 20091.56,
+      "weight_pct": 5.91,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "KJØP (ØK til ~11 %)",
       "portfolio_rationale": "Handles til P/E ~10,5x med >40 % EBIT-margin og sterk støtte fra 5 av 6 meglerhus. Øk med ~18 500 NOK (+48 aksjer).",
@@ -587,7 +630,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 440.0,
-          "upside_pct": 63.7,
+          "upside_pct": 58.0,
           "date": "2026-11-20",
           "source": "Smart Investering / MarketScreener"
         },
@@ -595,7 +638,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 400.0,
-          "upside_pct": 48.8,
+          "upside_pct": 43.7,
           "date": "2026-09-25",
           "source": "Euroinvestor / TargetWatch (gjentar Kjøp etter CMD)"
         },
@@ -603,7 +646,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 390.0,
-          "upside_pct": 45.1,
+          "upside_pct": 40.1,
           "date": "2026-11-05",
           "source": "TargetWatch (hevet fra 380 DKK etter Q3)"
         },
@@ -611,7 +654,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 345.0,
-          "upside_pct": 28.3,
+          "upside_pct": 23.9,
           "date": "2026-11-06",
           "source": "TargetWatch (hevet fra 335 DKK etter Q3)"
         },
@@ -619,7 +662,7 @@
           "broker": "Danske Bank",
           "rating": "KJØP",
           "target": 345.0,
-          "upside_pct": 28.3,
+          "upside_pct": 23.9,
           "date": "2026-10-07",
           "source": "TargetWatch / MarketScreener"
         },
@@ -627,11 +670,18 @@
           "broker": "ABG Sundal Collier",
           "rating": "SELG",
           "target": 250.0,
-          "upside_pct": -7.0,
+          "upside_pct": -10.2,
           "date": "2026-11-05",
           "source": "Unge Investorer / Finwire (hevet fra 230 DKK)"
         }
-      ]
+      ],
+      "prev_close": 274.65,
+      "day_change_pct": 1.38,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 274.19,
+      "cost_nok": 20339.05,
+      "unrealized_nok": -247.49,
+      "unrealized_pct": -1.22
     },
     {
       "ticker": "BAKKA.OL",
@@ -642,9 +692,9 @@
       "in_portfolio": true,
       "shares": 43,
       "gav": 464.36,
-      "price": 427.8,
-      "value_nok": 18395.4,
-      "weight_pct": 5.34,
+      "price": 424.2,
+      "value_nok": 18240.6,
+      "weight_pct": 5.37,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "Sterk biologi på Færøyene og med i Paretos november-portefølje. 5,34 % vekt komplementerer Lerøy godt.",
@@ -653,7 +703,7 @@
           "broker": "Fearnley Securities",
           "rating": "KJØP",
           "target": 510.0,
-          "upside_pct": 19.2,
+          "upside_pct": 20.2,
           "date": "2026-11-04",
           "source": "Nordnet / Bloomberg"
         },
@@ -661,7 +711,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 505.0,
-          "upside_pct": 18.0,
+          "upside_pct": 19.0,
           "date": "2026-11-03",
           "source": "Finansavisen / TDN Direkt (oppgradert til Kjøp)"
         },
@@ -669,7 +719,7 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 500.0,
-          "upside_pct": 16.9,
+          "upside_pct": 17.9,
           "date": "2026-11-03",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -677,7 +727,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 490.0,
-          "upside_pct": 14.5,
+          "upside_pct": 15.5,
           "date": "2026-11-03",
           "source": "Pareto Research (i november-porteføljen)"
         },
@@ -685,7 +735,7 @@
           "broker": "SEB",
           "rating": "HOLD",
           "target": 475.0,
-          "upside_pct": 11.0,
+          "upside_pct": 12.0,
           "date": "2026-11-03",
           "source": "Nordnet / Finansavisen"
         },
@@ -693,11 +743,18 @@
           "broker": "DNB Carnegie",
           "rating": "HOLD",
           "target": 430.0,
-          "upside_pct": 0.5,
+          "upside_pct": 1.4,
           "date": "2026-11-03",
           "source": "Finansavisen / TDN Direkt (nedgradert grunnet Skottland)"
         }
-      ]
+      ],
+      "prev_close": 419.2,
+      "day_change_pct": 1.19,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 215.0,
+      "cost_nok": 19967.48,
+      "unrealized_nok": -1726.88,
+      "unrealized_pct": -8.65
     },
     {
       "ticker": "SYNSAM.ST",
@@ -708,9 +765,9 @@
       "in_portfolio": true,
       "shares": 225,
       "gav": 60.22,
-      "price": 60.3,
-      "value_nok": 12981.38,
-      "weight_pct": 3.77,
+      "price": 60.9,
+      "value_nok": 13168.1,
+      "weight_pct": 3.88,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "KJØP (ØK til ~5,9 %)",
       "portfolio_rationale": "Sterk Q3 (7,6 % organisk vekst, 73,6 % bruttomargin), lav P/E (~14x 2027e) og undervektet konsumsektor. Øk med ~7 200 NOK.",
@@ -719,7 +776,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 87.0,
-          "upside_pct": 44.3,
+          "upside_pct": 42.9,
           "date": "2026-11-13",
           "source": "Placera / Finwire & Börskollen (hevet fra 83 SEK etter Q3)"
         },
@@ -727,7 +784,7 @@
           "broker": "Danske Bank",
           "rating": "KJØP",
           "target": 85.0,
-          "upside_pct": 41.0,
+          "upside_pct": 39.6,
           "date": "2026-08-24",
           "source": "Börskollen (hevet fra 80 SEK)"
         },
@@ -735,7 +792,7 @@
           "broker": "Nordea",
           "rating": "HOLD",
           "target": 62.0,
-          "upside_pct": 2.8,
+          "upside_pct": 1.8,
           "date": "2026-11-16",
           "source": "Placera / Finwire (hevet fra 60 SEK)"
         },
@@ -743,11 +800,18 @@
           "broker": "SEB",
           "rating": "HOLD",
           "target": 60.0,
-          "upside_pct": -0.5,
+          "upside_pct": -1.5,
           "date": "2026-05-11",
           "source": "Börskollen"
         }
-      ]
+      ],
+      "prev_close": 60.8,
+      "day_change_pct": 0.16,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 21.62,
+      "cost_nok": 13021.07,
+      "unrealized_nok": 147.03,
+      "unrealized_pct": 1.13
     },
     {
       "ticker": "HEX.OL",
@@ -758,9 +822,9 @@
       "in_portfolio": true,
       "shares": 1050,
       "gav": 15.63,
-      "price": 11.7,
-      "value_nok": 12285.0,
-      "weight_pct": 3.57,
+      "price": 11.18,
+      "value_nok": 11739.0,
+      "weight_pct": 3.46,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "Operasjonelt vendepunkt i Q3 (+73 % omsetning, 108 MNOK EBITDA). Hold 3,57 % vekt, avvent positiv FCF før bijkjøp.",
@@ -769,7 +833,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 19.0,
-          "upside_pct": 62.4,
+          "upside_pct": 69.9,
           "date": "2026-11-04",
           "source": "Finansavisen / TDN Direkt & Pareto Research"
         },
@@ -777,11 +841,18 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 16.0,
-          "upside_pct": 36.8,
+          "upside_pct": 43.1,
           "date": "2026-11-06",
           "source": "DNB Nyheter (vekst i Mobile Pipeline og RNG/CNG)"
         }
-      ]
+      ],
+      "prev_close": 11.47,
+      "day_change_pct": -2.53,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": -304.5,
+      "cost_nok": 16411.5,
+      "unrealized_nok": -4672.5,
+      "unrealized_pct": -28.47
     },
     {
       "ticker": "IVSO.ST",
@@ -792,9 +863,9 @@
       "in_portfolio": true,
       "shares": 61,
       "gav": 236.3,
-      "price": 200.8,
-      "value_nok": 11719.65,
-      "weight_pct": 3.4,
+      "price": 201.4,
+      "value_nok": 11806.27,
+      "weight_pct": 3.48,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "40 % inntektsvekst i Q3 og gjeldfri balanse. Sterk meglerstøtte (280–350 SEK), hold 3,40 % vekt.",
@@ -803,7 +874,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 350.0,
-          "upside_pct": 74.3,
+          "upside_pct": 73.8,
           "date": "2026-07-01",
           "source": "Börskollen konsensusoversikt"
         },
@@ -811,7 +882,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 330.0,
-          "upside_pct": 64.3,
+          "upside_pct": 63.9,
           "date": "2026-09-29",
           "source": "Börskollen (hevet fra 320 SEK)"
         },
@@ -819,7 +890,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 315.0,
-          "upside_pct": 56.9,
+          "upside_pct": 56.4,
           "date": "2026-11-02",
           "source": "Börskollen (etter Q3)"
         },
@@ -827,7 +898,7 @@
           "broker": "Danske Bank",
           "rating": "KJØP",
           "target": 300.0,
-          "upside_pct": 49.4,
+          "upside_pct": 49.0,
           "date": "2026-11-03",
           "source": "Börskollen"
         },
@@ -835,7 +906,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 285.0,
-          "upside_pct": 41.9,
+          "upside_pct": 41.5,
           "date": "2026-11-03",
           "source": "Börskollen"
         },
@@ -843,7 +914,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 280.0,
-          "upside_pct": 39.4,
+          "upside_pct": 39.0,
           "date": "2026-11-03",
           "source": "Börskollen & Pareto Research"
         },
@@ -851,11 +922,18 @@
           "broker": "ABG Sundal Collier",
           "rating": "HOLD",
           "target": 220.0,
-          "upside_pct": 9.6,
+          "upside_pct": 9.2,
           "date": "2026-11-04",
           "source": "Börskollen"
         }
-      ]
+      ],
+      "prev_close": 200.8,
+      "day_change_pct": 0.3,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 35.17,
+      "cost_nok": 13852.14,
+      "unrealized_nok": -2045.87,
+      "unrealized_pct": -14.77
     },
     {
       "ticker": "ENVIP.OL",
@@ -866,9 +944,9 @@
       "in_portfolio": true,
       "shares": 320,
       "gav": 61.85,
-      "price": 34.3,
-      "value_nok": 10976.0,
-      "weight_pct": 3.19,
+      "price": 32.75,
+      "value_nok": 10480.0,
+      "weight_pct": 3.08,
       "rule_status": "Brudd på kvalitetskrav",
       "portfolio_action": "SELG",
       "portfolio_rationale": "Selv om meglerhusene har Kjøp (Pareto/SEB tilrettela 30 MEUR emisjon 17.11), gir negativ EBITDA (-4,4 MEUR YTD) og utvanning SELG etter kvalitetsreglene.",
@@ -877,7 +955,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 82.0,
-          "upside_pct": 139.1,
+          "upside_pct": 150.4,
           "date": "2026-11-12",
           "source": "Finansavisen (tatt ut av månedsporteføljen 02.11; tilrettelegger i emisjon 17.11)"
         },
@@ -885,7 +963,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 80.0,
-          "upside_pct": 133.2,
+          "upside_pct": 144.3,
           "date": "2026-11-17",
           "source": "Finansavisen (tilrettelegger i 30 MEUR rettet emisjon)"
         },
@@ -893,7 +971,7 @@
           "broker": "Fearnley Securities",
           "rating": "KJØP",
           "target": 56.0,
-          "upside_pct": 63.3,
+          "upside_pct": 71.0,
           "date": "2026-11-12",
           "source": "Finansavisen / TDN Direkt (49 % UK-markedsandel)"
         },
@@ -901,11 +979,18 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 55.0,
-          "upside_pct": 60.3,
+          "upside_pct": 67.9,
           "date": "2026-11-12",
           "source": "DNB Nyheter (9x 2027e P/E)"
         }
-      ]
+      ],
+      "prev_close": 33.5,
+      "day_change_pct": -2.24,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": -240.0,
+      "cost_nok": 19792.0,
+      "unrealized_nok": -9312.0,
+      "unrealized_pct": -47.05
     },
     {
       "ticker": "REG1V.HE",
@@ -916,9 +1001,9 @@
       "in_portfolio": true,
       "shares": 100,
       "gav": 15.23,
-      "price": 9.17,
-      "value_nok": 9849.86,
-      "weight_pct": 2.86,
+      "price": 9.2,
+      "value_nok": 9936.0,
+      "weight_pct": 2.92,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD (Avvent integrasjon)",
       "portfolio_rationale": "Visionix-oppkjøpet har midlertidig økt gjeldsgraden til 5,1x EBITDA. Hold 2,86 % vekt, men ikke øk før synergier vises.",
@@ -927,7 +1012,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 21.6,
-          "upside_pct": 135.6,
+          "upside_pct": 134.8,
           "date": "2026-09-07",
           "source": "DNB Nyheter (venter Visionix-synergier)"
         },
@@ -935,11 +1020,18 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 12.0,
-          "upside_pct": 30.9,
+          "upside_pct": 30.4,
           "date": "2026-11-13",
           "source": "Placera / Finwire & TargetWatch (etter Q3)"
         }
-      ]
+      ],
+      "prev_close": 9.12,
+      "day_change_pct": 0.88,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 86.4,
+      "cost_nok": 16448.4,
+      "unrealized_nok": -6512.4,
+      "unrealized_pct": -39.59
     },
     {
       "ticker": "PLSV.OL",
@@ -950,9 +1042,9 @@
       "in_portfolio": true,
       "shares": 205,
       "gav": 49.19,
-      "price": 47.1,
-      "value_nok": 9655.5,
-      "weight_pct": 2.81,
+      "price": 47.55,
+      "value_nok": 9747.75,
+      "weight_pct": 2.87,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "Petrobras-forlengelser til 2032 støtter ~19 % direkteavkastning (0,22 USD/kvartal). 2,81 % vekt er passe.",
@@ -961,7 +1053,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 65.0,
-          "upside_pct": 38.0,
+          "upside_pct": 36.7,
           "date": "2026-11-09",
           "source": "DNB Nyheter & Finansavisen"
         },
@@ -969,7 +1061,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 60.0,
-          "upside_pct": 27.4,
+          "upside_pct": 26.2,
           "date": "2026-08-10",
           "source": "Finansavisen konsensusoversikt"
         },
@@ -977,7 +1069,7 @@
           "broker": "Fearnley Securities",
           "rating": "KJØP",
           "target": 58.0,
-          "upside_pct": 23.1,
+          "upside_pct": 22.0,
           "date": "2026-08-10",
           "source": "Finansavisen"
         },
@@ -985,11 +1077,18 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 52.0,
-          "upside_pct": 10.4,
+          "upside_pct": 9.4,
           "date": "2026-09-18",
           "source": "Pareto Research History"
         }
-      ]
+      ],
+      "prev_close": 47.05,
+      "day_change_pct": 1.06,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 102.5,
+      "cost_nok": 10083.95,
+      "unrealized_nok": -336.2,
+      "unrealized_pct": -3.33
     },
     {
       "ticker": "APR.OL",
@@ -1000,9 +1099,9 @@
       "in_portfolio": true,
       "shares": 215,
       "gav": 63.1,
-      "price": 35.1,
-      "value_nok": 7546.5,
-      "weight_pct": 2.19,
+      "price": 34.1,
+      "value_nok": 7331.5,
+      "weight_pct": 2.16,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD (Under oppsyn)",
       "portfolio_rationale": "Gjeldfri balanse og 70,1 % bruttomargin, men svak EMEA i 2026. Hold 2,19 % vekt, avvent snuoperasjon i 2027.",
@@ -1011,7 +1110,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 70.0,
-          "upside_pct": 99.4,
+          "upside_pct": 105.3,
           "date": "2026-08-03",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -1019,7 +1118,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 51.0,
-          "upside_pct": 45.3,
+          "upside_pct": 49.6,
           "date": "2026-10-19",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -1027,7 +1126,7 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 50.0,
-          "upside_pct": 42.5,
+          "upside_pct": 46.6,
           "date": "2026-10-26",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -1035,11 +1134,18 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 50.0,
-          "upside_pct": 42.5,
+          "upside_pct": 46.6,
           "date": "2026-10-13",
           "source": "Finansavisen / TDN Direkt"
         }
-      ]
+      ],
+      "prev_close": 34.5,
+      "day_change_pct": -1.16,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": -86.0,
+      "cost_nok": 13566.5,
+      "unrealized_nok": -6235.0,
+      "unrealized_pct": -45.96
     },
     {
       "ticker": "GENO.OL",
@@ -1050,9 +1156,9 @@
       "in_portfolio": true,
       "shares": 330,
       "gav": 16.44,
-      "price": 14.92,
-      "value_nok": 4923.6,
-      "weight_pct": 1.43,
+      "price": 14.12,
+      "value_nok": 4659.6,
+      "weight_pct": 1.37,
       "rule_status": "Innenfor (< 15 %)",
       "portfolio_action": "HOLD",
       "portfolio_rationale": "19 % valutajustert vekst i Q3 og 18 % EBITA-margin YTD. Enstemmig kjøp med 60–81 % oppside.",
@@ -1061,7 +1167,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 27.0,
-          "upside_pct": 81.0,
+          "upside_pct": 91.2,
           "date": "2026-11-12",
           "source": "DNB Nyheter"
         },
@@ -1069,7 +1175,7 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 25.0,
-          "upside_pct": 67.6,
+          "upside_pct": 77.1,
           "date": "2026-11-13",
           "source": "Finansavisen / TDN Direkt (etter Q3)"
         },
@@ -1077,11 +1183,18 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 24.0,
-          "upside_pct": 60.9,
+          "upside_pct": 70.0,
           "date": "2026-11-18",
           "source": "Finansavisen / TDN Direkt"
         }
-      ]
+      ],
+      "prev_close": 14.5,
+      "day_change_pct": -2.62,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": -125.4,
+      "cost_nok": 5425.2,
+      "unrealized_nok": -765.6,
+      "unrealized_pct": -14.11
     },
     {
       "ticker": "QEC.OL",
@@ -1092,9 +1205,9 @@
       "in_portfolio": true,
       "shares": 1400,
       "gav": 2.96,
-      "price": 1.85,
-      "value_nok": 2590.0,
-      "weight_pct": 0.75,
+      "price": 1.7,
+      "value_nok": 2380.0,
+      "weight_pct": 0.7,
       "rule_status": "Brudd på kvalitetskrav",
       "portfolio_action": "SELG",
       "portfolio_rationale": "Binær politisk risiko og 27,6 MCAD tap i Q3. Kun SB1M dekker aksjen (var rådgiver for selskapet). Selg.",
@@ -1103,11 +1216,18 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 2.7,
-          "upside_pct": 45.9,
+          "upside_pct": 58.8,
           "date": "2026-11-13",
           "source": "Finansavisen (nedjustert fra 3,00 NOK etter Q3)"
         }
-      ]
+      ],
+      "prev_close": 1.8,
+      "day_change_pct": -5.56,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": -140.0,
+      "cost_nok": 4144.0,
+      "unrealized_nok": -1764.0,
+      "unrealized_pct": -42.57
     },
     {
       "ticker": "DNB.OL",
@@ -1118,8 +1238,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 328.3,
-      "value_nok": 0,
+      "price": 321.7,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat (Finans 0 %)",
       "portfolio_action": "KJØP NY (~15 000 NOK)",
@@ -1129,7 +1249,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 360.0,
-          "upside_pct": 9.7,
+          "upside_pct": 11.9,
           "date": "2026-11-19",
           "source": "Finansavisen / TDN Direkt (i november-porteføljen)"
         },
@@ -1137,7 +1257,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 352.0,
-          "upside_pct": 7.2,
+          "upside_pct": 9.4,
           "date": "2026-10-13",
           "source": "Finansavisen / TDN Direkt (foretrukket storbank)"
         },
@@ -1145,7 +1265,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 350.0,
-          "upside_pct": 6.6,
+          "upside_pct": 8.8,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         },
@@ -1153,7 +1273,7 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 345.0,
-          "upside_pct": 5.1,
+          "upside_pct": 7.2,
           "date": "2026-10-26",
           "source": "Finansavisen / TDN Direkt (sektorfavoritt)"
         },
@@ -1161,7 +1281,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 340.0,
-          "upside_pct": 3.6,
+          "upside_pct": 5.7,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         },
@@ -1169,11 +1289,15 @@
           "broker": "Danske Bank",
           "rating": "HOLD",
           "target": 320.0,
-          "upside_pct": -2.5,
+          "upside_pct": -0.5,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         }
-      ]
+      ],
+      "prev_close": 324.7,
+      "day_change_pct": -0.92,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     },
     {
       "ticker": "INVE-B.ST",
@@ -1184,8 +1308,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 434.7,
-      "value_nok": 0,
+      "price": 416.6,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat (Finans 0 %)",
       "portfolio_action": "KANDIDAT (Alternativ til DNB)",
@@ -1195,7 +1319,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 465.0,
-          "upside_pct": 7.0,
+          "upside_pct": 11.6,
           "date": "2026-10-19",
           "source": "Börskollen / Placera (hevet fra 440 SEK)"
         },
@@ -1203,7 +1327,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 460.0,
-          "upside_pct": 5.8,
+          "upside_pct": 10.4,
           "date": "2026-10-19",
           "source": "Börskollen"
         },
@@ -1211,7 +1335,7 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 425.0,
-          "upside_pct": -2.2,
+          "upside_pct": 2.0,
           "date": "2026-10-19",
           "source": "Pareto Research & EFN"
         },
@@ -1219,11 +1343,15 @@
           "broker": "SEB",
           "rating": "HOLD",
           "target": 425.0,
-          "upside_pct": -2.2,
+          "upside_pct": 2.0,
           "date": "2026-10-19",
           "source": "EFN / Placera"
         }
-      ]
+      ],
+      "prev_close": 414.05,
+      "day_change_pct": 0.62,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     },
     {
       "ticker": "MING.OL",
@@ -1234,8 +1362,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 215.0,
-      "value_nok": 0,
+      "price": 218.0,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat (Finans 0 %)",
       "portfolio_action": "KANDIDAT",
@@ -1245,7 +1373,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 245.0,
-          "upside_pct": 14.0,
+          "upside_pct": 12.4,
           "date": "2026-11-19",
           "source": "Finansavisen / TDN Direkt (oppgradert fra Hold)"
         },
@@ -1253,7 +1381,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 235.0,
-          "upside_pct": 9.3,
+          "upside_pct": 7.8,
           "date": "2026-10-13",
           "source": "Finansavisen / TDN Direkt (oppgradert fra Hold)"
         },
@@ -1261,11 +1389,15 @@
           "broker": "Arctic Securities",
           "rating": "HOLD",
           "target": 215.0,
-          "upside_pct": 0.0,
+          "upside_pct": -1.4,
           "date": "2026-10-26",
           "source": "Finansavisen / TDN Direkt"
         }
-      ]
+      ],
+      "prev_close": 218.4,
+      "day_change_pct": -0.18,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     },
     {
       "ticker": "STB.OL",
@@ -1276,8 +1408,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 202.6,
-      "value_nok": 0,
+      "price": 199.2,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat (Finans 0 %)",
       "portfolio_action": "KANDIDAT",
@@ -1287,7 +1419,7 @@
           "broker": "Danske Bank",
           "rating": "KJØP",
           "target": 245.0,
-          "upside_pct": 20.9,
+          "upside_pct": 23.0,
           "date": "2026-09-09",
           "source": "TargetWatch"
         },
@@ -1295,7 +1427,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 220.0,
-          "upside_pct": 8.6,
+          "upside_pct": 10.4,
           "date": "2026-10-22",
           "source": "Pareto Research & TargetWatch"
         },
@@ -1303,7 +1435,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 217.0,
-          "upside_pct": 7.1,
+          "upside_pct": 8.9,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         },
@@ -1311,11 +1443,15 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 215.0,
-          "upside_pct": 6.1,
+          "upside_pct": 7.9,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         }
-      ]
+      ],
+      "prev_close": 199.3,
+      "day_change_pct": -0.05,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     },
     {
       "ticker": "SALM.OL",
@@ -1326,8 +1462,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 587.5,
-      "value_nok": 0,
+      "price": 576.5,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Overvåkes",
       "portfolio_action": "AVVENT (Sjømat allerede 13,8 %)",
@@ -1337,7 +1473,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 670.0,
-          "upside_pct": 14.0,
+          "upside_pct": 16.2,
           "date": "2026-11-18",
           "source": "Finansavisen (toppvalg i sjømat)"
         },
@@ -1345,7 +1481,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "KJØP",
           "target": 664.0,
-          "upside_pct": 13.0,
+          "upside_pct": 15.2,
           "date": "2026-10-30",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -1353,11 +1489,15 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 550.0,
-          "upside_pct": -6.4,
+          "upside_pct": -4.6,
           "date": "2026-11-03",
           "source": "Pareto Research History"
         }
-      ]
+      ],
+      "prev_close": 576.0,
+      "day_change_pct": 0.09,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     },
     {
       "ticker": "AKRBP.OL",
@@ -1368,8 +1508,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 307.9,
-      "value_nok": 0,
+      "price": 297.5,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Overvåkes",
       "portfolio_action": "OVERblikk",
@@ -1379,7 +1519,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 430.0,
-          "upside_pct": 39.7,
+          "upside_pct": 44.5,
           "date": "2026-10-30",
           "source": "Pareto Research (i november-porteføljen)"
         },
@@ -1387,7 +1527,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 420.0,
-          "upside_pct": 36.4,
+          "upside_pct": 41.2,
           "date": "2026-10-19",
           "source": "Investorprat / Placera"
         },
@@ -1395,7 +1535,7 @@
           "broker": "Arctic Securities",
           "rating": "HOLD",
           "target": 400.0,
-          "upside_pct": 29.9,
+          "upside_pct": 34.5,
           "date": "2026-11-02",
           "source": "Investorprat"
         },
@@ -1403,7 +1543,7 @@
           "broker": "SB1 Markets",
           "rating": "KJØP",
           "target": 395.0,
-          "upside_pct": 28.3,
+          "upside_pct": 32.8,
           "date": "2026-11-10",
           "source": "Börskollen / Investorprat"
         },
@@ -1411,7 +1551,7 @@
           "broker": "Fearnley Securities",
           "rating": "HOLD",
           "target": 365.0,
-          "upside_pct": 18.5,
+          "upside_pct": 22.7,
           "date": "2026-11-03",
           "source": "Investorprat"
         },
@@ -1419,7 +1559,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "HOLD",
           "target": 325.0,
-          "upside_pct": 5.6,
+          "upside_pct": 9.2,
           "date": "2026-11-20",
           "source": "Finansavisen (oppgradert til Hold)"
         },
@@ -1427,11 +1567,15 @@
           "broker": "SEB",
           "rating": "HOLD",
           "target": 318.0,
-          "upside_pct": 3.3,
+          "upside_pct": 6.9,
           "date": "2026-11-10",
           "source": "Börskollen / Investorprat"
         }
-      ]
+      ],
+      "prev_close": 300.3,
+      "day_change_pct": -0.93,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     },
     {
       "ticker": "EQNR.OL",
@@ -1442,8 +1586,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 383.3,
-      "value_nok": 0,
+      "price": 375.6,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Overvåkes",
       "portfolio_action": "UNNGÅ",
@@ -1453,7 +1597,7 @@
           "broker": "Nordea",
           "rating": "KJØP",
           "target": 480.0,
-          "upside_pct": 25.2,
+          "upside_pct": 27.8,
           "date": "2026-10-19",
           "source": "Placera / Finwire"
         },
@@ -1461,7 +1605,7 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 430.0,
-          "upside_pct": 12.2,
+          "upside_pct": 14.5,
           "date": "2026-10-30",
           "source": "Pareto Research History"
         },
@@ -1469,7 +1613,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "SELG",
           "target": 360.0,
-          "upside_pct": -6.1,
+          "upside_pct": -4.2,
           "date": "2026-11-20",
           "source": "Finansavisen"
         },
@@ -1477,11 +1621,15 @@
           "broker": "SEB",
           "rating": "SELG",
           "target": 356.0,
-          "upside_pct": -7.1,
+          "upside_pct": -5.2,
           "date": "2026-11-10",
           "source": "Börskollen / Finwire"
         }
-      ]
+      ],
+      "prev_close": 380.6,
+      "day_change_pct": -1.31,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     },
     {
       "ticker": "SUBC.OL",
@@ -1492,8 +1640,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 307.4,
-      "value_nok": 0,
+      "price": 323.4,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Overvåkes",
       "portfolio_action": "OVERBLIKK",
@@ -1503,7 +1651,7 @@
           "broker": "DNB Carnegie",
           "rating": "KJØP",
           "target": 400.0,
-          "upside_pct": 30.1,
+          "upside_pct": 23.7,
           "date": "2026-08-18",
           "source": "Investorprat"
         },
@@ -1511,7 +1659,7 @@
           "broker": "Fearnley Securities",
           "rating": "KJØP",
           "target": 390.0,
-          "upside_pct": 26.9,
+          "upside_pct": 20.6,
           "date": "2026-11-20",
           "source": "Finansavisen / TDN Direkt"
         },
@@ -1519,7 +1667,7 @@
           "broker": "SEB",
           "rating": "HOLD",
           "target": 348.0,
-          "upside_pct": 13.2,
+          "upside_pct": 7.6,
           "date": "2026-11-10",
           "source": "Börskollen"
         },
@@ -1527,7 +1675,7 @@
           "broker": "ABG Sundal Collier",
           "rating": "HOLD",
           "target": 335.0,
-          "upside_pct": 9.0,
+          "upside_pct": 3.6,
           "date": "2026-10-08",
           "source": "Investorprat"
         },
@@ -1535,7 +1683,7 @@
           "broker": "SB1 Markets",
           "rating": "HOLD",
           "target": 315.0,
-          "upside_pct": 2.5,
+          "upside_pct": -2.6,
           "date": "2026-11-04",
           "source": "Investorprat"
         },
@@ -1543,11 +1691,15 @@
           "broker": "Pareto Securities",
           "rating": "HOLD",
           "target": 290.0,
-          "upside_pct": -5.7,
+          "upside_pct": -10.3,
           "date": "2026-11-20",
           "source": "Finansavisen / TDN Direkt"
         }
-      ]
+      ],
+      "prev_close": 325.6,
+      "day_change_pct": -0.68,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     },
     {
       "ticker": "SCATC.OL",
@@ -1558,8 +1710,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 83.95,
-      "value_nok": 0,
+      "price": 80.0,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat",
       "portfolio_action": "KANDIDAT",
@@ -1569,7 +1721,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 130.0,
-          "upside_pct": 54.9,
+          "upside_pct": 62.5,
           "date": "2026-11-02",
           "source": "Pareto Research (i november-porteføljen)"
         },
@@ -1577,11 +1729,15 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 128.0,
-          "upside_pct": 52.5,
+          "upside_pct": 60.0,
           "date": "2026-10-22",
           "source": "Placera / Finwire"
         }
-      ]
+      ],
+      "prev_close": 81.3,
+      "day_change_pct": -1.6,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     },
     {
       "ticker": "HAFNI.OL",
@@ -1592,8 +1748,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 92.0,
-      "value_nok": 0,
+      "price": 85.4,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat",
       "portfolio_action": "KANDIDAT",
@@ -1603,7 +1759,7 @@
           "broker": "SEB",
           "rating": "KJØP",
           "target": 113.0,
-          "upside_pct": 22.8,
+          "upside_pct": 32.3,
           "date": "2026-11-19",
           "source": "Placera / Finwire"
         },
@@ -1611,7 +1767,7 @@
           "broker": "Arctic Securities",
           "rating": "KJØP",
           "target": 111.0,
-          "upside_pct": 20.7,
+          "upside_pct": 30.0,
           "date": "2026-11-19",
           "source": "Placera / Finwire"
         },
@@ -1619,11 +1775,15 @@
           "broker": "DNB Carnegie",
           "rating": "HOLD",
           "target": 95.0,
-          "upside_pct": 3.3,
+          "upside_pct": 11.2,
           "date": "2026-11-19",
           "source": "Placera / Finwire"
         }
-      ]
+      ],
+      "prev_close": 84.8,
+      "day_change_pct": 0.71,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     },
     {
       "ticker": "VEND.OL",
@@ -1634,8 +1794,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 250.0,
-      "value_nok": 0,
+      "price": 225.4,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Kandidat",
       "portfolio_action": "KANDIDAT",
@@ -1645,11 +1805,15 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 320.0,
-          "upside_pct": 28.0,
+          "upside_pct": 42.0,
           "date": "2026-11-02",
           "source": "Finansavisen (i november-porteføljen)"
         }
-      ]
+      ],
+      "prev_close": 221.6,
+      "day_change_pct": 1.71,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     },
     {
       "ticker": "NORBT.OL",
@@ -1660,8 +1824,8 @@
       "in_portfolio": false,
       "shares": 0,
       "gav": 0,
-      "price": 178.8,
-      "value_nok": 0,
+      "price": 151.7,
+      "value_nok": 0.0,
       "weight_pct": 0.0,
       "rule_status": "Overvåkes",
       "portfolio_action": "OVERBLIKK",
@@ -1671,7 +1835,7 @@
           "broker": "Pareto Securities",
           "rating": "KJØP",
           "target": 245.0,
-          "upside_pct": 37.0,
+          "upside_pct": 61.5,
           "date": "2026-11-13",
           "source": "Finansavisen (etter sterke Q3-tall)"
         },
@@ -1679,11 +1843,15 @@
           "broker": "DNB Carnegie",
           "rating": "HOLD",
           "target": 187.0,
-          "upside_pct": 4.6,
+          "upside_pct": 23.3,
           "date": "2026-11-17",
           "source": "Finansavisen / TDN Direkt"
         }
-      ]
+      ],
+      "prev_close": 154.9,
+      "day_change_pct": -2.07,
+      "price_updated_at": "2026-11-25 11:53 CET",
+      "day_change_nok": 0.0
     }
   ],
   "news_feed": [
@@ -2086,6 +2254,1067 @@
       "detected_ticker": "IVSO.ST",
       "detected_rating": null,
       "detected_target": null
+    }
+  ],
+  "daily_values": [
+    {
+      "date": "2026-11-25",
+      "updated_at": "11:53 CET",
+      "portfolio_value_nok": 339742.16,
+      "total_value_nok": 339775.31,
+      "day_change_nok": -304.78,
+      "day_change_pct": -0.09,
+      "unrealized_pnl_nok": -39086.01
+    },
+    {
+      "date": "2026-11-24",
+      "portfolio_value_nok": 344223.4,
+      "total_value_nok": 344256.55,
+      "day_change_nok": -978.84,
+      "day_change_pct": -0.28,
+      "unrealized_pnl_nok": -34604.77
+    }
+  ],
+  "borsmeldinger": [
+    {
+      "id": 687375,
+      "published": "2026-11-25 11:30",
+      "published_raw": "2026-11-25T10:30:14.752Z",
+      "ticker": "BISG",
+      "issuer_name": "Bulk Infrastructure Group AS",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Bulk Infrastructure Group AS - Approval of Prospectus",
+      "url": "https://newsweb.oslobors.no/message/687375",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687373,
+      "published": "2026-11-25 10:59",
+      "published_raw": "2026-11-25T09:59:04.636Z",
+      "ticker": "ROGS",
+      "issuer_name": "Rogaland Sparebank",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "Rogaland Sparebank etablerer nytt grønt obligasjonsrammeverk",
+      "url": "https://newsweb.oslobors.no/message/687373",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687372,
+      "published": "2026-11-25 10:56",
+      "published_raw": "2026-11-25T09:56:38.082Z",
+      "ticker": "ROGS",
+      "issuer_name": "Rogaland Sparebank",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "Rogaland Sparebank etablerer nytt grønt obligasjonsrammeverk",
+      "url": "https://newsweb.oslobors.no/message/687372",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687371,
+      "published": "2026-11-25 10:30",
+      "published_raw": "2026-11-25T09:30:00.000Z",
+      "ticker": "NORT",
+      "issuer_name": "Nortura SA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Frode Moss blir fast CFO i Nortura",
+      "url": "https://newsweb.oslobors.no/message/687371",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687370,
+      "published": "2026-11-25 10:30",
+      "published_raw": "2026-11-25T09:30:00.000Z",
+      "ticker": "NORT",
+      "issuer_name": "Nortura SA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Frode Moss appointed permanent CFO of Nortura",
+      "url": "https://newsweb.oslobors.no/message/687370",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687369,
+      "published": "2026-11-25 10:20",
+      "published_raw": "2026-11-25T09:20:44.779Z",
+      "ticker": "ZENA",
+      "issuer_name": "Zenith Energy Ltd",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "Strong Profitability from Italian Gas Production and 2027 Outlook",
+      "url": "https://newsweb.oslobors.no/message/687369",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687368,
+      "published": "2026-11-25 10:15",
+      "published_raw": "2026-11-25T09:15:56.555Z",
+      "ticker": "TOM",
+      "issuer_name": "Tomra Systems ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "TOMRA: Initiation of share buyback for employees' share purchase program",
+      "url": "https://newsweb.oslobors.no/message/687368",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687367,
+      "published": "2026-11-25 10:05",
+      "published_raw": "2026-11-25T09:05:00.000Z",
+      "ticker": "NB",
+      "issuer_name": "Norges Bank",
+      "category": "INNSIDEINFORMASJON",
+      "title": "Result of buyback auction of NGB 02/2027",
+      "url": "https://newsweb.oslobors.no/message/687367",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687366,
+      "published": "2026-11-25 09:50",
+      "published_raw": "2026-11-25T08:50:26.616Z",
+      "ticker": "FERDE",
+      "issuer_name": "Ferde AS",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Ferde AS - Contemplated tap issue of existing bonds",
+      "url": "https://newsweb.oslobors.no/message/687366",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687365,
+      "published": "2026-11-25 09:47",
+      "published_raw": "2026-11-25T08:47:51.616Z",
+      "ticker": "NORSE",
+      "issuer_name": "Norse Atlantic ASA",
+      "category": "MELDING FRA OSLO BØRS",
+      "title": "Norse Atlantic ASA is placed in Recovery Box",
+      "url": "https://newsweb.oslobors.no/message/687365",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687364,
+      "published": "2026-11-25 09:38",
+      "published_raw": "2026-11-25T08:38:38.097Z",
+      "ticker": "LYTIX",
+      "issuer_name": "Lytix Biopharma ASA",
+      "category": "KAPITAL- OG STEMMERETTSENDRINGER",
+      "title": "Lytix Biopharma ASA - New share capital registered",
+      "url": "https://newsweb.oslobors.no/message/687364",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687363,
+      "published": "2026-11-25 09:28",
+      "published_raw": "2026-11-25T08:28:10.847Z",
+      "ticker": "BIEN",
+      "issuer_name": "Bien Sparebank ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Bien Sparebank ASA - Utvidelse av obligasjonslån",
+      "url": "https://newsweb.oslobors.no/message/687363",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687362,
+      "published": "2026-11-25 09:22",
+      "published_raw": "2026-11-25T08:22:33.031Z",
+      "ticker": "VLGR",
+      "issuer_name": "VIEW Group AS",
+      "category": "HALVÅRSRAPPORT",
+      "title": "VIEW Group, Consolidated Financial Statement Q3 2026",
+      "url": "https://newsweb.oslobors.no/message/687362",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687361,
+      "published": "2026-11-25 09:00",
+      "published_raw": "2026-11-25T08:00:00.000Z",
+      "ticker": "FUTRL",
+      "issuer_name": "Futura Resources Limited",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "Futura Resources Limited - Withdrawal of Requisition and Cancellation of General Meeting",
+      "url": "https://newsweb.oslobors.no/message/687361",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687360,
+      "published": "2026-11-25 09:00",
+      "published_raw": "2026-11-25T08:00:00.000Z",
+      "ticker": "SOFTX",
+      "issuer_name": "SoftOx Solutions AS",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "SoftOx Solutions AS: Third Quarter Report 2026",
+      "url": "https://newsweb.oslobors.no/message/687360",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687359,
+      "published": "2026-11-25 08:56",
+      "published_raw": "2026-11-25T07:56:53.300Z",
+      "ticker": "NORSE",
+      "issuer_name": "Norse Atlantic ASA",
+      "category": "INNSIDEINFORMASJON",
+      "title": "Norse Atlantic ASA: Update on financial situation and strategic review",
+      "url": "https://newsweb.oslobors.no/message/687359",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687358,
+      "published": "2026-11-25 08:50",
+      "published_raw": "2026-11-25T07:50:08.394Z",
+      "ticker": "ZLNA",
+      "issuer_name": "Zelluna ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Zelluna ASA: Notice of EGM -international biopharma executives Adrian Woolfson and Nerida Scott proposed as new Chair and Board member to further strengthen the Board",
+      "url": "https://newsweb.oslobors.no/message/687358",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687357,
+      "published": "2026-11-25 08:50",
+      "published_raw": "2026-11-25T07:50:08.368Z",
+      "ticker": "ZLNA",
+      "issuer_name": "Zelluna ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Zelluna ASA: Innkalling til ekstraordinær generalforsamling - internasjonale biofarma ledere Adrian Woolfson og Nerida Scott foreslått som ny styreleder og nytt styremedlem for ytterligere å styrke styret",
+      "url": "https://newsweb.oslobors.no/message/687357",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687356,
+      "published": "2026-11-25 08:45",
+      "published_raw": "2026-11-25T07:45:05.232Z",
+      "ticker": "GOD",
+      "issuer_name": "Goodtech ASA",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "Goodtech ASA: Enters into a strategic partnership with leading defence manufacturer in multi-year digitalization program",
+      "url": "https://newsweb.oslobors.no/message/687356",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687355,
+      "published": "2026-11-25 08:31",
+      "published_raw": "2026-11-25T07:31:05.225Z",
+      "ticker": "VEND",
+      "issuer_name": "Vend Marketplaces ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Vend Marketplaces ASA: Initiation of first tranche of new share buyback programme",
+      "url": "https://newsweb.oslobors.no/message/687355",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687354,
+      "published": "2026-11-25 08:30",
+      "published_raw": "2026-11-25T07:30:00.000Z",
+      "ticker": "NAS",
+      "issuer_name": "Norwegian Air Shuttle ASA",
+      "category": "UTSTEDERS MELDEPLIKT VED HANDEL I EGNE AKSJER",
+      "title": "Norwegian Air Shuttle ASA (NAS) - Initiates share buy-back in conjunction with employee share saving programme and LTI option plan",
+      "url": "https://newsweb.oslobors.no/message/687354",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687353,
+      "published": "2026-11-25 08:28",
+      "published_raw": "2026-11-25T07:28:48.397Z",
+      "ticker": "LAKRB",
+      "issuer_name": "Landkreditt Bank AS",
+      "category": "ENDRINGER I RETTIGHETENE TIL AKSJER/VERDIPAPIRER",
+      "title": "Landkreditt Bank: utvidelse i LANDK65 PRO",
+      "url": "https://newsweb.oslobors.no/message/687353",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687352,
+      "published": "2026-11-25 08:25",
+      "published_raw": "2026-11-25T07:25:59.472Z",
+      "ticker": "NTIGH",
+      "issuer_name": "NTI Group Holding A/S",
+      "category": "HALVÅRSRAPPORT",
+      "title": "NTI Group Holding A/S Q3 2026 Interim Report",
+      "url": "https://newsweb.oslobors.no/message/687352",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687351,
+      "published": "2026-11-25 08:11",
+      "published_raw": "2026-11-25T07:11:33.208Z",
+      "ticker": "HSHP",
+      "issuer_name": "Himalaya Shipping Ltd",
+      "category": "FLAGGING",
+      "title": "NOTIFICATION OF MAJOR HOLDINGS",
+      "url": "https://newsweb.oslobors.no/message/687351",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687350,
+      "published": "2026-11-25 08:07",
+      "published_raw": "2026-11-25T07:07:44.289Z",
+      "ticker": "GENO",
+      "issuer_name": "General Oceans ASA",
+      "category": "FLAGGING",
+      "title": "Major Shareholder Disclosure Notification",
+      "url": "https://newsweb.oslobors.no/message/687350",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 687349,
+      "published": "2026-11-25 08:05",
+      "published_raw": "2026-11-25T07:05:06.746Z",
+      "ticker": "SNSG",
+      "issuer_name": "Snowball Software Group AS",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Snowball Software Group AS: Q3 2026 Financial Report",
+      "url": "https://newsweb.oslobors.no/message/687349",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687348,
+      "published": "2026-11-25 08:00",
+      "published_raw": "2026-11-25T07:00:23.935Z",
+      "ticker": "ORK",
+      "issuer_name": "Orkla ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Orkla ASA: Status share buyback programme",
+      "url": "https://newsweb.oslobors.no/message/687348",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687347,
+      "published": "2026-11-25 08:00",
+      "published_raw": "2026-11-25T07:00:10.423Z",
+      "ticker": "VAR",
+      "issuer_name": "Vår Energi ASA",
+      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
+      "title": "Vår Energi ASA: Mandatory Notification of Trade",
+      "url": "https://newsweb.oslobors.no/message/687347",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687346,
+      "published": "2026-11-25 08:00",
+      "published_raw": "2026-11-25T07:00:07.646Z",
+      "ticker": "CAPT",
+      "issuer_name": "Capital Tankers Corp.",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "Capital Tankers Corp.   Transfer to Euronext Oslo Børs",
+      "url": "https://newsweb.oslobors.no/message/687346",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687345,
+      "published": "2026-11-25 08:00",
+      "published_raw": "2026-11-25T07:00:00.000Z",
+      "ticker": "WKOM",
+      "issuer_name": "WeKomply ApS",
+      "category": "PROSPEKT / OPPTAKSDOKUMENT",
+      "title": "WeKomply ApS - Successful listing of bond issue on Euronext Oslo Børs",
+      "url": "https://newsweb.oslobors.no/message/687345",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687344,
+      "published": "2026-11-25 07:45",
+      "published_raw": "2026-11-25T06:45:04.676Z",
+      "ticker": "MULTI",
+      "issuer_name": "Multiconsult ASA",
+      "category": "UTSTEDERS MELDEPLIKT VED HANDEL I EGNE AKSJER",
+      "title": "Multiconsult ASA - Terminates existing share buyback programme and initiates new share buyback programme",
+      "url": "https://newsweb.oslobors.no/message/687344",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687343,
+      "published": "2026-11-25 07:45",
+      "published_raw": "2026-11-25T06:45:01.133Z",
+      "ticker": "BWO",
+      "issuer_name": "BW Offshore Limited",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "BW Offshore: Dividend information",
+      "url": "https://newsweb.oslobors.no/message/687343",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687342,
+      "published": "2026-11-25 07:43",
+      "published_raw": "2026-11-25T06:43:07.738Z",
+      "ticker": "MULTI",
+      "issuer_name": "Multiconsult ASA",
+      "category": "UTSTEDERS MELDEPLIKT VED HANDEL I EGNE AKSJER",
+      "title": "Multiconsult ASA - Status on share buyback",
+      "url": "https://newsweb.oslobors.no/message/687342",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687341,
+      "published": "2026-11-25 07:30",
+      "published_raw": "2026-11-25T06:30:06.170Z",
+      "ticker": "BWO",
+      "issuer_name": "BW Offshore Limited",
+      "category": "HALVÅRSRAPPORT",
+      "title": "BW Offshore: Third quarter results 2026",
+      "url": "https://newsweb.oslobors.no/message/687341",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687340,
+      "published": "2026-11-25 07:30",
+      "published_raw": "2026-11-25T06:30:00.000Z",
+      "ticker": "HAFNI",
+      "issuer_name": "Hafnia Limited",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "HAFNIA LIMITED: Update relating to dividend for the third quarter 2026",
+      "url": "https://newsweb.oslobors.no/message/687340",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687339,
+      "published": "2026-11-25 07:15",
+      "published_raw": "2026-11-25T06:15:03.778Z",
+      "ticker": "SWG",
+      "issuer_name": "Shearwater GeoServices AS",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "Shearwater awarded 4D streamer project by TotalEnergies offshore Angola",
+      "url": "https://newsweb.oslobors.no/message/687339",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687338,
+      "published": "2026-11-25 07:14",
+      "published_raw": "2026-11-25T06:14:27.328Z",
+      "ticker": "JACK",
+      "issuer_name": "Jacktel AS",
+      "category": "HALVÅRSRAPPORT",
+      "title": "Jacktel AS - Q3 2026 Report",
+      "url": "https://newsweb.oslobors.no/message/687338",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687337,
+      "published": "2026-11-25 07:05",
+      "published_raw": "2026-11-25T06:05:04.037Z",
+      "ticker": "MPCC",
+      "issuer_name": "MPC Container Ships ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Key information relating to the cash dividend to be paid by MPC Container Ships ASA",
+      "url": "https://newsweb.oslobors.no/message/687337",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687336,
+      "published": "2026-11-25 07:05",
+      "published_raw": "2026-11-25T06:05:00.000Z",
+      "ticker": "IWS",
+      "issuer_name": "Integrated Wind Solutions ASA",
+      "category": "EKS.DATO",
+      "title": "Integrated Wind Solutions ASA: Ex dividend NOK 1.00 today",
+      "url": "https://newsweb.oslobors.no/message/687336",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687335,
+      "published": "2026-11-25 07:01",
+      "published_raw": "2026-11-25T06:01:03.257Z",
+      "ticker": "NHY",
+      "issuer_name": "Norsk Hydro ASA",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "Norsk Hydro Investor Day 2026: Defining the future of aluminium, turning leadership into growth",
+      "url": "https://newsweb.oslobors.no/message/687335",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687334,
+      "published": "2026-11-25 07:01",
+      "published_raw": "2026-11-25T06:01:02.661Z",
+      "ticker": "NHY",
+      "issuer_name": "Norsk Hydro ASA",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "Norsk Hydros investordag 2026: Definerer fremtiden til aluminium, omsetter lederskap til vekst",
+      "url": "https://newsweb.oslobors.no/message/687334",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687333,
+      "published": "2026-11-25 07:00",
+      "published_raw": "2026-11-25T06:00:46.355Z",
+      "ticker": "MPCC",
+      "issuer_name": "MPC Container Ships ASA",
+      "category": "HALVÅRSRAPPORT",
+      "title": "MPC Container Ships ASA Reports Q3 2026 Results",
+      "url": "https://newsweb.oslobors.no/message/687333",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687332,
+      "published": "2026-11-25 07:00",
+      "published_raw": "2026-11-25T06:00:03.102Z",
+      "ticker": "ATEA",
+      "issuer_name": "Atea ASA",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "Atea recognized among Europe's leaders in ESG reporting",
+      "url": "https://newsweb.oslobors.no/message/687332",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687331,
+      "published": "2026-11-25 07:00",
+      "published_raw": "2026-11-25T06:00:00.000Z",
+      "ticker": "COSH",
+      "issuer_name": "Constellation Oil Services Holding S.A.",
+      "category": "EKS.DATO",
+      "title": "COSH - EX-distribution date",
+      "url": "https://newsweb.oslobors.no/message/687331",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687330,
+      "published": "2026-11-25 06:45",
+      "published_raw": "2026-11-25T05:45:38.603Z",
+      "ticker": "BORR",
+      "issuer_name": "Borr Drilling Limited",
+      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
+      "title": "Borr Drilling Limited - Notification of PDMR Transaction",
+      "url": "https://newsweb.oslobors.no/message/687330",
+      "in_portfolio": false,
+      "is_candidate": false,
+      "relevance": "OSLO_BORS_ELLERS"
+    },
+    {
+      "id": 687321,
+      "published": "2026-11-24 17:11",
+      "published_raw": "2026-11-24T16:11:40.446Z",
+      "ticker": "DOFG",
+      "issuer_name": "DOF Group ASA",
+      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
+      "title": "DOF Group ASA - Mandatory notification of trade",
+      "url": "https://newsweb.oslobors.no/message/687321",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687280,
+      "published": "2026-11-24 13:43",
+      "published_raw": "2026-11-24T12:43:10.540Z",
+      "ticker": "ENVIP",
+      "issuer_name": "Envipco Holding N.V.",
+      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
+      "title": "Mandatory notification of trade   Redelivery of shares in Envipco Holding N.V.",
+      "url": "https://newsweb.oslobors.no/message/687280",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 687265,
+      "published": "2026-11-24 09:44",
+      "published_raw": "2026-11-24T08:44:33.273Z",
+      "ticker": "DOFG",
+      "issuer_name": "DOF Group ASA",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "DOF Group ASA - Sale of vessel",
+      "url": "https://newsweb.oslobors.no/message/687265",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687258,
+      "published": "2026-11-24 08:00",
+      "published_raw": "2026-11-24T07:00:10.073Z",
+      "ticker": "EQNR",
+      "issuer_name": "Equinor ASA",
+      "category": "UTSTEDERS MELDEPLIKT VED HANDEL I EGNE AKSJER",
+      "title": "Equinor ASA: Tilbakekjøp av egne aksjer - fjerde transje for 2026",
+      "url": "https://newsweb.oslobors.no/message/687258",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687257,
+      "published": "2026-11-24 08:00",
+      "published_raw": "2026-11-24T07:00:09.945Z",
+      "ticker": "EQNR",
+      "issuer_name": "Equinor ASA",
+      "category": "UTSTEDERS MELDEPLIKT VED HANDEL I EGNE AKSJER",
+      "title": "Equinor ASA: Share buy-back - fourth tranche for 2026",
+      "url": "https://newsweb.oslobors.no/message/687257",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687236,
+      "published": "2026-11-23 21:00",
+      "published_raw": "2026-11-23T20:00:00.000Z",
+      "ticker": "ENDUR",
+      "issuer_name": "Endúr ASA",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "Endúr ASA - Closure of ship maintenance operations",
+      "url": "https://newsweb.oslobors.no/message/687236",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687227,
+      "published": "2026-11-23 18:14",
+      "published_raw": "2026-11-23T17:14:07.690Z",
+      "ticker": "ENVIP",
+      "issuer_name": "Envipco Holding N.V.",
+      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
+      "title": "Mandatory notification of trade   Redelivery of shares in Envipco Holding N.V.",
+      "url": "https://newsweb.oslobors.no/message/687227",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 687222,
+      "published": "2026-11-23 16:35",
+      "published_raw": "2026-11-23T15:35:00.000Z",
+      "ticker": "KOG",
+      "issuer_name": "Kongsberg Gruppen ASA",
+      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
+      "title": "Subscription period for employee share programme completed",
+      "url": "https://newsweb.oslobors.no/message/687222",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 687223,
+      "published": "2026-11-23 16:35",
+      "published_raw": "2026-11-23T15:35:00.000Z",
+      "ticker": "KOG",
+      "issuer_name": "Kongsberg Gruppen ASA",
+      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
+      "title": "Tegningsperiode for aksjeprogram for ansatte fullført",
+      "url": "https://newsweb.oslobors.no/message/687223",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 687212,
+      "published": "2026-11-23 14:12",
+      "published_raw": "2026-11-23T13:12:26.872Z",
+      "ticker": "KIT",
+      "issuer_name": "Kitron ASA",
+      "category": "KAPITAL- OG STEMMERETTSENDRINGER",
+      "title": "Kitron ASA: New share capital registered",
+      "url": "https://newsweb.oslobors.no/message/687212",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687192,
+      "published": "2026-11-23 13:49",
+      "published_raw": "2026-11-23T12:49:12.658Z",
+      "ticker": "ELK",
+      "issuer_name": "Elkem ASA",
+      "category": "RENTEREGULERING",
+      "title": "Rentefastsettelse",
+      "url": "https://newsweb.oslobors.no/message/687192",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687187,
+      "published": "2026-11-23 13:00",
+      "published_raw": "2026-11-23T12:00:04.959Z",
+      "ticker": "PLSV",
+      "issuer_name": "Paratus Energy Services Ltd.",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Paratus Energy: Invitation to Q3 2026 Results Presentation",
+      "url": "https://newsweb.oslobors.no/message/687187",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 687151,
+      "published": "2026-11-23 08:30",
+      "published_raw": "2026-11-23T07:30:17.733Z",
+      "ticker": "DNB",
+      "issuer_name": "DNB Bank ASA",
+      "category": "UTSTEDERS MELDEPLIKT VED HANDEL I EGNE AKSJER",
+      "title": "DNB Bank ASA - status of share buy-back programme after week 47 2026",
+      "url": "https://newsweb.oslobors.no/message/687151",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687150,
+      "published": "2026-11-23 08:30",
+      "published_raw": "2026-11-23T07:30:15.857Z",
+      "ticker": "DNB",
+      "issuer_name": "DNB Bank ASA",
+      "category": "UTSTEDERS MELDEPLIKT VED HANDEL I EGNE AKSJER",
+      "title": "DNB Bank ASA - status for tilbakekjøpsprogram etter uke 47 2026",
+      "url": "https://newsweb.oslobors.no/message/687150",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687131,
+      "published": "2026-11-23 08:00",
+      "published_raw": "2026-11-23T07:00:00.000Z",
+      "ticker": "CDLR",
+      "issuer_name": "Cadeler plc",
+      "category": "HALVÅRSRAPPORT",
+      "title": "Q3 2026 Earnings Release: Cadeler delivers robust revenue growth alongside continued strong execution and investments in its full-scope foundation installation capabilities",
+      "url": "https://newsweb.oslobors.no/message/687131",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 687123,
+      "published": "2026-11-23 07:00",
+      "published_raw": "2026-11-23T06:00:00.000Z",
+      "ticker": "TEL",
+      "issuer_name": "Telenor ASA",
+      "category": "UTSTEDERS MELDEPLIKT VED HANDEL I EGNE AKSJER",
+      "title": "Status update share buyback program",
+      "url": "https://newsweb.oslobors.no/message/687123",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 687124,
+      "published": "2026-11-23 07:00",
+      "published_raw": "2026-11-23T06:00:00.000Z",
+      "ticker": "TEL",
+      "issuer_name": "Telenor ASA",
+      "category": "UTSTEDERS MELDEPLIKT VED HANDEL I EGNE AKSJER",
+      "title": "Status tilbakekjøp av egne aksjer",
+      "url": "https://newsweb.oslobors.no/message/687124",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 687106,
+      "published": "2026-11-20 17:18",
+      "published_raw": "2026-11-20T16:18:41.797Z",
+      "ticker": "DOFG",
+      "issuer_name": "DOF Group ASA",
+      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
+      "title": "DOF Group ASA - Mandatory notification of trade",
+      "url": "https://newsweb.oslobors.no/message/687106",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687058,
+      "published": "2026-11-20 10:06",
+      "published_raw": "2026-11-20T09:06:04.914Z",
+      "ticker": "ENVIP",
+      "issuer_name": "Envipco Holding N.V.",
+      "category": "KAPITAL- OG STEMMERETTSENDRINGER",
+      "title": "Envipco Holding N.V. New share capital registered",
+      "url": "https://newsweb.oslobors.no/message/687058",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 687039,
+      "published": "2026-11-20 07:50",
+      "published_raw": "2026-11-20T06:50:00.891Z",
+      "ticker": "EQNR",
+      "issuer_name": "Equinor ASA",
+      "category": "KAPITAL- OG STEMMERETTSENDRINGER",
+      "title": "Equinor ASA: Announcement of cash dividend of NOK 3.7448 per share for second quarter 2026",
+      "url": "https://newsweb.oslobors.no/message/687039",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687038,
+      "published": "2026-11-20 07:50",
+      "published_raw": "2026-11-20T06:50:00.861Z",
+      "ticker": "EQNR",
+      "issuer_name": "Equinor ASA",
+      "category": "KAPITAL- OG STEMMERETTSENDRINGER",
+      "title": "Equinor ASA: Annonsering av kontantutbytte på NOK 3,7448 per aksje for andre kvartal 2026",
+      "url": "https://newsweb.oslobors.no/message/687038",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687031,
+      "published": "2026-11-20 07:00",
+      "published_raw": "2026-11-20T06:00:11.974Z",
+      "ticker": "DOFG",
+      "issuer_name": "DOF Group ASA",
+      "category": "EKS.DATO",
+      "title": "DOF Group ASA - Ex dividend USD 0.40 today",
+      "url": "https://newsweb.oslobors.no/message/687031",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 687006,
+      "published": "2026-11-19 14:25",
+      "published_raw": "2026-11-19T13:25:39.990Z",
+      "ticker": "ENDUR",
+      "issuer_name": "Endúr ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Endúr ASA - Contract award Engelsen Total",
+      "url": "https://newsweb.oslobors.no/message/687006",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 686907,
+      "published": "2026-11-19 10:55",
+      "published_raw": "2026-11-19T09:55:45.860Z",
+      "ticker": "GJF",
+      "issuer_name": "Gjensidige Forsikring ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Euronext Oslo Børs - GJENSIDIGE FORSIKRING ASA - Mottatt søknad om notering av obligasjonslån",
+      "url": "https://newsweb.oslobors.no/message/686907",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 686908,
+      "published": "2026-11-19 10:55",
+      "published_raw": "2026-11-19T09:55:45.854Z",
+      "ticker": "GJF",
+      "issuer_name": "Gjensidige Forsikring ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Euronext Oslo Børs - GJENSIDIGE FORSIKRING ASA - Received application for listing of bonds",
+      "url": "https://newsweb.oslobors.no/message/686908",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 686871,
+      "published": "2026-11-18 21:11",
+      "published_raw": "2026-11-18T20:11:18.504Z",
+      "ticker": "KIT",
+      "issuer_name": "Kitron ASA",
+      "category": "KAPITAL- OG STEMMERETTSENDRINGER",
+      "title": "Kitron ASA: Issuance of shares in connection with employee share purchase program",
+      "url": "https://newsweb.oslobors.no/message/686871",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 686794,
+      "published": "2026-11-18 08:46",
+      "published_raw": "2026-11-18T07:46:15.909Z",
+      "ticker": "DNB",
+      "issuer_name": "DNB Bank ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Euronext Oslo Børs - DNB BANK ASA - Mottatt søknad om notering av obligasjonslån",
+      "url": "https://newsweb.oslobors.no/message/686794",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 686793,
+      "published": "2026-11-18 08:46",
+      "published_raw": "2026-11-18T07:46:15.878Z",
+      "ticker": "DNB",
+      "issuer_name": "DNB Bank ASA",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Euronext Oslo Børs - DNB BANK ASA - Received application for listing of bonds",
+      "url": "https://newsweb.oslobors.no/message/686793",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 686775,
+      "published": "2026-11-18 07:32",
+      "published_raw": "2026-11-18T06:32:10.982Z",
+      "ticker": "HAFNI",
+      "issuer_name": "Hafnia Limited",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "HAFNIA LIMITED: Key information relating to dividend for the third quarter 2026",
+      "url": "https://newsweb.oslobors.no/message/686775",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 686774,
+      "published": "2026-11-18 07:30",
+      "published_raw": "2026-11-18T06:30:43.439Z",
+      "ticker": "HAFNI",
+      "issuer_name": "Hafnia Limited",
+      "category": "IKKE-INFORMASJONSPLIKTIGE PRESSEMELDINGER",
+      "title": "HAFNIA FINANCIAL INFORMATION Q3 2026",
+      "url": "https://newsweb.oslobors.no/message/686774",
+      "in_portfolio": false,
+      "is_candidate": true,
+      "relevance": "KANDIDATER"
+    },
+    {
+      "id": 686756,
+      "published": "2026-11-18 01:24",
+      "published_raw": "2026-11-18T00:24:40.964Z",
+      "ticker": "PLSV",
+      "issuer_name": "Paratus Energy Services Ltd.",
+      "category": "INNSIDEINFORMASJON",
+      "title": "Paratus Energy: Strategic Review of Investment in the Seagems JV",
+      "url": "https://newsweb.oslobors.no/message/686756",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 686755,
+      "published": "2026-11-18 00:51",
+      "published_raw": "2026-11-17T23:51:11.614Z",
+      "ticker": "ENVIP",
+      "issuer_name": "Envipco Holding N.V.",
+      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
+      "title": "Mandatory notification of trade   Share lending Envipco Holding N.V.",
+      "url": "https://newsweb.oslobors.no/message/686755",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 686734,
+      "published": "2026-11-17 15:00",
+      "published_raw": "2026-11-17T14:00:00.000Z",
+      "ticker": "TEL",
+      "issuer_name": "Telenor ASA",
+      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
+      "title": "Trade by primary insiders",
+      "url": "https://newsweb.oslobors.no/message/686734",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 686735,
+      "published": "2026-11-17 15:00",
+      "published_raw": "2026-11-17T14:00:00.000Z",
+      "ticker": "TEL",
+      "issuer_name": "Telenor ASA",
+      "category": "MELDEPLIKTIG HANDEL FOR PRIMÆRINNSIDERE",
+      "title": "Meldepliktig handel primærinnsidere",
+      "url": "https://newsweb.oslobors.no/message/686735",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
+    },
+    {
+      "id": 686686,
+      "published": "2026-11-17 11:02",
+      "published_raw": "2026-11-17T10:02:15.349Z",
+      "ticker": "PLSV",
+      "issuer_name": "Paratus Energy Services Ltd.",
+      "category": "ANNEN INFORMASJONSPLIKTIG REGULATORISK INFORMASJON",
+      "title": "Paratus Energy: Contract Award for Seagems Safira",
+      "url": "https://newsweb.oslobors.no/message/686686",
+      "in_portfolio": true,
+      "is_candidate": false,
+      "relevance": "MINE_AKSJER"
     }
   ]
 }

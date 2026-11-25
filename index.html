@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nordiske Megleranbefalinger & Porteføljestyring (15 % / 30 %)</title>
+  <title>Nordiske Megleranbefalinger, Børsmeldinger & Porteføljestyring</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -11,46 +11,53 @@
     <div class="container">
       <div class="header-top">
         <div>
-          <h1>Nordiske Megleranbefalinger &amp; Porteføljeforslag</h1>
+          <h1>Nordiske Megleranbefalinger, Børsmeldinger &amp; Portefølje</h1>
           <p class="subtitle">
-            Oslo Børs &amp; Norden — Kursmål fra Pareto, DNB Carnegie, ABG, Arctic, SB1 Markets, SEB, Fearnley, Clarksons, Nordea og Danske Bank
+            Oppdateres hver time med ferske kurser, aktuell daglig porteføljeverdi, Oslo Børs NewsWeb-meldinger og kursmål fra 10 nordiske meglerhus
           </p>
         </div>
-        <div class="meta-badge" id="last-updated-badge">
-          Oppdatert: <strong>Laster...</strong>
+        <div class="header-actions">
+          <div class="meta-badge" id="last-updated-badge">
+            Oppdatert: <strong>Laster...</strong>
+          </div>
+          <button class="btn" id="refresh-now-btn" title="Hent nyeste data fra serveren nå">Oppdater nå</button>
         </div>
       </div>
 
       <div class="kpi-grid" id="kpi-grid">
         <div class="kpi-card">
-          <div class="kpi-label">Porteføljeverdi (16 aktive)</div>
-          <div class="kpi-value" id="kpi-portfolio-val">344 223 NOK</div>
-          <div class="kpi-sub">Total inkl. kontanter: 344 257 NOK</div>
+          <div class="kpi-label">Aktuell porteføljeverdi i dag</div>
+          <div class="kpi-value" id="kpi-portfolio-val">339 742 NOK</div>
+          <div class="kpi-sub" id="kpi-total-val">Inkl. kontanter: 339 775 NOK</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Utvikling i dag &amp; Urealisert</div>
+          <div class="kpi-value" id="kpi-day-change">-305 NOK (-0,09 %)</div>
+          <div class="kpi-sub" id="kpi-unrealized">Urealisert: -39 086 NOK</div>
         </div>
         <div class="kpi-card">
           <div class="kpi-label">Posisjonsgrense (15 %-regel)</div>
-          <div class="kpi-value" style="color: #f87171;">1 brudd (KOG 20,9 %)</div>
-          <div class="kpi-sub">2 nær taket: NOD (14,2 %), TEL (14,1 %)</div>
+          <div class="kpi-value" id="kpi-rule-15" style="color: #f87171;">1 brudd (KOG)</div>
+          <div class="kpi-sub" id="kpi-rule-15-sub">2 nær taket (NOD, TEL)</div>
         </div>
         <div class="kpi-card">
-          <div class="kpi-label">Sektorgrense (30 %-regel)</div>
-          <div class="kpi-value" style="color: #f87171;">Industri 32,5 %</div>
-          <div class="kpi-sub">Faller til 21,4 % etter rebalansering</div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-label">Frigjort til kjøp (Steg 1–2)</div>
-          <div class="kpi-value" style="color: #34d399;">~40 748 NOK</div>
-          <div class="kpi-sub">Øk i NOVO-B, SYNSAM + ny post i DNB</div>
+          <div class="kpi-label">Siste børsmeldinger (Oslo Børs)</div>
+          <div class="kpi-value" id="kpi-newsweb-count" style="color: #38bdf8;">80 meldinger</div>
+          <div class="kpi-sub" id="kpi-newsweb-sub">Overvåker dine aksjer + Oslo Børs</div>
         </div>
       </div>
     </div>
   </header>
 
   <main class="container">
+    <div id="local-override-banner" class="status-banner"></div>
+
     <div class="tabs">
       <button class="tab-btn active" data-tab="panel-recommendations">Megleranbefalinger &amp; Kursmål</button>
-      <button class="tab-btn" data-tab="panel-rebalance">Porteføljegrep (15 % / 30 %-reglene)</button>
-      <button class="tab-btn" data-tab="panel-models">Modellporteføljer &amp; Nyhetsstrøm</button>
+      <button class="tab-btn" data-tab="panel-borsmeldinger">Børsmeldinger (Oslo Børs)</button>
+      <button class="tab-btn" data-tab="panel-editor">Rediger aksjeliste / Portefølje</button>
+      <button class="tab-btn" data-tab="panel-rebalance">Porteføljegrep &amp; Daglig verdi</button>
+      <button class="tab-btn" data-tab="panel-models">Modellporteføljer &amp; Finansnyheter</button>
     </div>
 
     <!-- PANEL 1: MEGLERANBEFALINGER -->
@@ -79,7 +86,7 @@
           <label for="ownership-filter">Porteføljestatus</label>
           <select id="ownership-filter">
             <option value="ALL">Alle aksjer (Portefølje + Kandidater)</option>
-            <option value="PORTFOLIO">Kun i porteføljen (16)</option>
+            <option value="PORTFOLIO">Kun i min portefølje</option>
             <option value="CANDIDATES">Kun nye kandidater</option>
           </select>
         </div>
@@ -99,12 +106,181 @@
       <div class="stocks-grid" id="stocks-grid"></div>
     </section>
 
-    <!-- PANEL 2: PORTEFØLJEGREP & REBALANSERING -->
+    <!-- PANEL 2: BØRSMELDINGER OSLO BØRS -->
+    <section id="panel-borsmeldinger" class="panel">
+      <div class="filters-bar">
+        <div class="filter-group">
+          <label for="bm-search">Søk i børsmeldinger (ticker, selskap, tekst)</label>
+          <input type="text" id="bm-search" placeholder="F.eks. KOG, innside, kontrakt, utbytte..." />
+        </div>
+        <div class="filter-group">
+          <label for="bm-relevance">Utvalg av selskaper</label>
+          <select id="bm-relevance">
+            <option value="ALL">Alle relevante meldinger på Oslo Børs</option>
+            <option value="MINE_AKSJER">Kun mine porteføljeaksjer</option>
+            <option value="MINE_OG_KANDIDATER">Mine aksjer + kandidataksjer</option>
+            <option value="KANDIDATER">Kun kandidataksjer</option>
+            <option value="OSLO_BORS_ELLERS">Øvrige selskaper på Oslo Børs</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="bm-category">Kategori</label>
+          <select id="bm-category">
+            <option value="ALL">Alle kategorier</option>
+            <option value="INNSIDE">Meldepliktig handel (Innsidehandel)</option>
+            <option value="RAPPORT">Resultat- og kvartalsrapporter</option>
+            <option value="FLAGGING">Flagging / Kapitalendringer</option>
+            <option value="ANNEN">Kontrakter og øvrige børsmeldinger</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="bm-summary" class="subtitle" style="margin-bottom: 0.85rem;"></div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Tidspunkt (CET)</th>
+              <th>Status</th>
+              <th>Ticker / Selskap</th>
+              <th>Kategori</th>
+              <th>Meldingstittel (lenke til NewsWeb)</th>
+            </tr>
+          </thead>
+          <tbody id="bm-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PANEL 3: REDIGER AKSJELISTE / PORTEFØLJE -->
+    <section id="panel-editor" class="panel">
+      <div class="editor-card">
+        <div class="header-top" style="margin-bottom: 0.85rem;">
+          <div>
+            <h2 class="section-title" style="margin: 0;">Manuell oppdatering av aksjeliste og beholdning</h2>
+            <p class="subtitle">
+              Endre antall aksjer, GAV (snittkurs), kurs eller legg til nye aksjer. Endringene lagres umiddelbart i nettleseren din og oppdaterer porteføljeverdi, vekter og 15 %/30 %-regler. Du kan også lagre permanent til GitHub-repoet <code>rolldan/aksjer</code>.
+            </p>
+          </div>
+          <div class="header-actions">
+            <label style="font-size: 0.82rem; color: var(--text-muted);">
+              Kontanter (NOK):
+              <input type="number" step="0.01" id="edit-cash-input" class="inline-input" style="margin-left: 0.35rem;" />
+            </label>
+            <button class="btn" id="export-json-btn">Last ned JSON</button>
+            <button class="btn btn-danger" id="reset-local-btn">Tilbakestill til GitHub-standard</button>
+          </div>
+        </div>
+
+        <!-- Legg til ny aksje -->
+        <div class="filters-bar" style="margin-bottom: 0.85rem;">
+          <div class="filter-group">
+            <label for="new-ticker">Ticker (f.eks. DNB.OL, MOWI.OL)</label>
+            <input type="text" id="new-ticker" placeholder="MOWI.OL" />
+          </div>
+          <div class="filter-group">
+            <label for="new-name">Selskapsnavn</label>
+            <input type="text" id="new-name" placeholder="Mowi ASA" />
+          </div>
+          <div class="filter-group">
+            <label for="new-sector">Sektor</label>
+            <input type="text" id="new-sector" placeholder="Sjømat" />
+          </div>
+          <div class="filter-group">
+            <label for="new-currency">Valuta</label>
+            <select id="new-currency">
+              <option value="NOK">NOK (Oslo Børs)</option>
+              <option value="SEK">SEK (Stockholm)</option>
+              <option value="DKK">DKK (København)</option>
+              <option value="EUR">EUR (Helsinki)</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="new-shares">Antall aksjer</label>
+            <input type="number" step="1" id="new-shares" placeholder="100" />
+          </div>
+          <div class="filter-group">
+            <label for="new-gav">GAV (kostpris/aksje)</label>
+            <input type="number" step="0.01" id="new-gav" placeholder="220.00" />
+          </div>
+          <div class="filter-group">
+            <label for="new-price">Siste kurs</label>
+            <input type="number" step="0.01" id="new-price" placeholder="225.60" />
+          </div>
+          <div class="filter-group">
+            <button class="btn btn-primary" id="add-stock-btn" style="width: 100%;">+ Legg til / Oppdater aksje</button>
+          </div>
+        </div>
+
+        <!-- Synkroniser permanent til GitHub -->
+        <details style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">
+          <summary style="cursor: pointer; color: var(--accent); font-weight: 600;">
+            Lagre endringer permanent til GitHub (`rolldan/aksjer`) eller lim inn fra DNB/Sbanken
+          </summary>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 0.85rem;">
+            <div class="filter-group">
+              <label for="gh-token-input">GitHub Personal Access Token (lagres kun lokalt i din nettleser)</label>
+              <div style="display: flex; gap: 0.5rem;">
+                <input type="password" id="gh-token-input" placeholder="ghp_... eller github_pat_..." />
+                <button class="btn btn-primary" id="save-to-github-btn">Push til GitHub</button>
+              </div>
+              <span id="gh-sync-status" style="display: block; margin-top: 0.35rem; font-size: 0.78rem;"></span>
+            </div>
+            <div class="filter-group">
+              <label for="bulk-paste-input">Hurtigimport: Lim inn linjer med <code>TICKER ANTALL GAV</code> (én per linje)</label>
+              <div style="display: flex; gap: 0.5rem;">
+                <textarea id="bulk-paste-input" rows="2" placeholder="KOG.OL 134 294.33&#10;DNB.OL 45 328.30"></textarea>
+                <button class="btn" id="bulk-import-btn">Importer</button>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>I portefølje</th>
+              <th>Aksje (Ticker)</th>
+              <th>Sektor</th>
+              <th>Antall aksjer</th>
+              <th>GAV (lokal)</th>
+              <th>Siste kurs</th>
+              <th>Markedsverdi (NOK)</th>
+              <th>Urealisert (NOK / %)</th>
+              <th>Vekt (%)</th>
+              <th>Handling</th>
+            </tr>
+          </thead>
+          <tbody id="editor-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PANEL 4: PORTEFØLJEGREP & DAGLIG VERDI -->
     <section id="panel-rebalance" class="panel">
-      <h2 class="section-title">Konkret ordre- og rebalanseringsplan (Steg 1–3)</h2>
-      <p class="subtitle" style="margin-bottom: 1rem;">
-        Kryssjekk av meglerhusenes kursmål mot porteføljereglene (maks 15 % per aksje, maks 30 % per sektor og krav til positiv kontantstrøm/EBITDA).
+      <h2 class="section-title">Daglig verdiutvikling for porteføljen</h2>
+      <p class="subtitle" style="margin-bottom: 0.85rem;">
+        Logges automatisk hver time av oppdateringsskriptet i <code>data/recommendations.json</code>.
       </p>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Dato</th>
+              <th>Sist målt</th>
+              <th>Aksjeverdi (NOK)</th>
+              <th>Totalverdi inkl. kontanter (NOK)</th>
+              <th>Endring i dag (NOK / %)</th>
+              <th>Urealisert totalt (NOK)</th>
+            </tr>
+          </thead>
+          <tbody id="daily-values-tbody"></tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title">Konkret ordre- og rebalanseringsplan (Steg 1–3)</h2>
       <div class="table-wrapper">
         <table>
           <thead>
@@ -140,15 +316,12 @@
       </div>
     </section>
 
-    <!-- PANEL 3: MODELLPORTEFØLJER & NYHETSSTRØM -->
+    <!-- PANEL 5: MODELLPORTEFØLJER & NYHETSSTRØM -->
     <section id="panel-models" class="panel">
       <h2 class="section-title">Meglerhusenes modellporteføljer (november 2026)</h2>
       <div class="model-grid" id="model-grid"></div>
 
-      <h2 class="section-title">Siste innhentede finansnyheter (RSS-oppdatering)</h2>
-      <p class="subtitle" style="margin-bottom: 1rem;">
-        Oppdateres automatisk via <code>scripts/fetch_recommendations.py</code> og GitHub Actions på hverdager.
-      </p>
+      <h2 class="section-title">Siste innhentede finansnyheter om kursmål (RSS-oppdatering hver time)</h2>
       <div class="table-wrapper">
         <table>
           <thead>

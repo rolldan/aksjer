@@ -2,10 +2,8 @@ name: Oppdater Megleranbefalinger & Publiser GitHub Pages
 
 on:
   schedule:
-    # Kjører kl. 07:30, 11:30 og 15:45 UTC (08:30, 12:30 og 16:45 CET) mandag–fredag
-    - cron: "30 7 * * 1-5"
-    - cron: "30 11 * * 1-5"
-    - cron: "45 15 * * 1-5"
+    # Kjører hver time (5 minutter over hel time, hele døgnet) for ferske kurser, porteføljeverdi og børsmeldinger
+    - cron: "5 * * * *"
   workflow_dispatch:
   push:
     branches:
@@ -36,7 +34,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Hent siste megleranbefalinger og finansnyheter
+      - name: Hent siste kurser, porteføljeverdi, børsmeldinger og megleranbefalinger
         run: python3 scripts/fetch_recommendations.py
 
       - name: Commit og push oppdatert recommendations.json
@@ -45,7 +43,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           if ! git diff --quiet data/recommendations.json; then
             git add data/recommendations.json
-            git commit -m "chore(data): oppdater megleranbefalinger og nyhetsstrøm [skip ci]"
+            git commit -m "chore(data): oppdater kurser, verdi, børsmeldinger og anbefalinger [skip ci]"
             git push origin HEAD:main
           else
             echo "Ingen nye endringer i data/recommendations.json"

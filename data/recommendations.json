@@ -26,7 +26,7 @@
       "Nordea",
       "Danske Bank"
     ],
-    "last_rss_check": "2026-11-25T10:03:37+01:00"
+    "last_rss_check": "2026-11-25T10:50:25+01:00"
   },
   "model_portfolios": [
     {
@@ -1778,6 +1778,16 @@
       "detected_target": null
     },
     {
+      "published": "2026-11-13",
+      "source": "Finansavisen",
+      "broker": "ABG Sundal Collier",
+      "title": "OKEANIS: DNB NEDJUSTERER KURSMÅL, ABG OPPJUSTERER - Finansavisen",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMksybUZJa2FkcTkyMGZFRWZVTkN2OGl5czY1RkpKNDVPWjRab0Vyd3BwcjNLN3lvWmtjVjJ2ck9kZjdpLWFDcWtOamkzQkx3anlzc2ZoRy15SmU3QzRrOGhDejRvT0Y1N0V0RXQ2MVk0bnhqYjhyNVJlMldOWjJKaTFIVDFxNkdXbEVndFBVa2ttbmxvOUYxTmhWdWdWNUFP?oc=5",
+      "detected_ticker": "DNB.OL",
+      "detected_rating": null,
+      "detected_target": null
+    },
+    {
       "published": "2026-11-11",
       "source": "DNB",
       "broker": null,
@@ -2074,16 +2084,6 @@
       "title": "Invisio stiger efter DNB Carnegies höjda riktkurs - DI",
       "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9Qazk4VklBRzZSVk5udWVzc29zbkJMZHFyaHZ3V1BVVUVIY0NrY2RNbHdBanU1NlFTUUVrV0hYVGc0TUNBRWtqT3NpWjJxeUhEU3hFY3lsZmk0N0pIUERoM2UzdXRjamZkS0lRUE1uSUY3ZG1ZcGJ6SlZQTzdHdw?oc=5",
       "detected_ticker": "IVSO.ST",
-      "detected_rating": null,
-      "detected_target": null
-    },
-    {
-      "published": "2026-09-23",
-      "source": "iLaks",
-      "broker": "Arctic Securities",
-      "title": "Arctic Securities tror Mowi slakter vesentlig mer laks enn guidet for tredje kvartal - iLaks",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNa1NXcEt1X1dBNUNMc2h3akFEX0FaV3p2Q2t3SUs3ZEpzdENnZHhzdXp0d0U1TzJfcC0yX2U2VmNKWk1sRnUzLTdmWjVZS2twdDFuSlByemNnYmJXSVhhOXpDOXA0Rmd0ek5Xb01WdTNCN3hPMEViZEVSLUwta3ZPODZRaXIyWGwzQ2x4aXRpWGFMcjlGZXBsbjZqYmFUZWt4MlZOYw?oc=5",
-      "detected_ticker": null,
       "detected_rating": null,
       "detected_target": null
     }
